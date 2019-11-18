@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 검색결과 -->
+	<div class="wrapSchResult" style="display: ;">
+		<div class="wrapTop">
+			<div class="resultNum">장소 <span class="num">888</span>건 <span class="iconsArrow"></span></div>
+			<div class="sort">
+				<ul>
+					<li><button class="on"><span>관련도순</span></button></li>
+					<li><button><span>거리순</span></button></li>
+				</ul>
+			</div>
+		</div>
+		<div class="plugin-scrollbar-bd">
+			<div class="plugin-scrollbar">
+				<div class="list">
+					<ul>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당 팝업</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+								<a href="#" target="_blank" class="web">홈페이지</a>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="departureArrival">
+								<button class="ic_start"><span class="btnsSch"></span>출발</button>
+								<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+								<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+							</div>
+							<div class="icons">
+								<button class="btnsSch ic_share" onclick="javascript:fncShare();" title="공유하기">공유하기</button>
+								<button class="btnsSch ic_theme" onclick="javascript:fncTheme();" title="주변테마">주변테마</button>
+								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_bookmark" onclick="javascript:fncBookmark();" title="즐겨찾기">즐겨찾기</button>
+							</div>
+							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+							<div class="associationAreas">
+								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+							</div>
+
+							<!-- 공유하기 -->
+							<div class="lyBox" id="lypopShare" style="display: none;">
+								<div class="title">공유하기</div>
+								<div class="listShare">
+									<ul>
+										<li><button><span class="btnsShare icKakao"></span><span class="txt">카카오톡</span></button></li>
+										<li><button><span class="btnsShare icFacebook"></span><span class="txt">페이스북</span></button></li>
+										<li><button><span class="btnsShare icTwitter"></span><span class="txt">트위터</span></button></li>
+									</ul>
+									<div class="copyUrl">
+										<div class="inner">
+											<input type="text" value="http://www/asdfasdf.com">
+											<button>URL 복사</button>
+										</div>
+									</div>
+								</div>
+								<button class="btnsSch btnClose">닫기</button>
+							</div>
+							<!-- //공유하기 -->
+
+							<!-- 주변테마 -->
+							<div class="lyBox" id="lypopTheme" style="display: none;">
+								<div class="title">주변테마</div>
+								<div class="listTheme">
+									<ul>
+										<li><button><span class="btnsTheme ic1"></span><span class="txt">주유소</span></button></li>
+										<li><button><span class="btnsTheme ic2"></span><span class="txt">LPG</span></button></li>
+										<li><button><span class="btnsTheme ic3"></span><span class="txt">주차장</span></button></li>
+										<li><button><span class="btnsTheme ic4"></span><span class="txt">숙박</span></button></li>
+										<li><button><span class="btnsTheme ic5"></span><span class="txt">은행/ATM</span></button></li>
+										<li><button><span class="btnsTheme ic6"></span><span class="txt">대형마트</span></button></li>
+										<li><button><span class="btnsTheme ic7"></span><span class="txt">병원</span></button></li>
+										<li><button><span class="btnsTheme ic8"></span><span class="txt">약국</span></button></li>
+										<li><button><span class="btnsTheme ic9"></span><span class="txt">화장실</span></button></li>
+										<li><button><span class="btnsTheme ic10"></span><span class="txt">세차장</span></button></li>
+										<li><button><span class="btnsTheme ic11"></span><span class="txt">음식점</span></button></li>
+										<li><button><span class="btnsTheme ic12"></span><span class="txt">편의점</span></button></li>
+									</ul>
+								</div>
+								<button class="btnsSch btnClose">닫기</button>
+							</div>
+							<!-- //주변테마 -->
+
+							<!-- 즐겨찾기 -->
+							<div class="lyBox" id="lypopBookmark" style="display: none;">
+								<div class="title">즐겨찾기</div>
+								<div class="listBookmark">
+									<ul class="act-radioTab">
+										<li><label class="inpRadio" onclick="javascript:fncBookmarkAdd();"><input type="radio" name="rdoBookmark"><span>새목록</span></label></li>
+										<li><label class="inpRadio"><input type="radio" name="rdoBookmark"><span>내 장소</span></label></li>
+										<li><label class="inpRadio"><input type="radio" name="rdoBookmark"><span>주말 산행 장소</span></label></li>
+										<li><label class="inpRadio"><input type="radio" name="rdoBookmark"><span>서울특별시 근교 맛집</span></label></li>
+									</ul>
+									<div class="btnWrap">
+										<button>내 즐겨찾기 보기</button>
+									</div>
+								</div>
+								<button class="btnsSch btnClose">닫기</button>
+							</div>
+							<!-- //즐겨찾기 -->
+
+							<!-- 새 목록 추가 -->
+							<div class="lyBox" id="lypopBookmarkAdd" style="display: none;">
+								<div class="title">새 목록 추가</div>
+								<div class="bookmarkAdd">
+									<div class="inner"><input type="text" placeholder="목록명을 입력하세요."></div>
+									<div class="btnWrap">
+										<button disabled="disabled">완료</button>
+										<button>완료</button>
+									</div>
+								</div>
+								<button class="btnsSch btnClose">닫기</button>
+							</div>
+							<!-- //새 목록 추가 -->
+						</li>
+						<li>
+							<div class="name"><span class="num">B</span>로그인 안내팝업</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+								<a href="#" target="_blank" class="web">홈페이지</a>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="departureArrival">
+								<button class="ic_start"><span class="btnsSch"></span>출발</button>
+								<button class="ic_waypoint"><span class="btnsSch"></span>경유지</button>
+								<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+							</div>
+							<div class="icons">
+								<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+								<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_bookmark" onclick="javascript:fncGuest();" title="즐겨찾기">즐겨찾기</button>
+							</div>
+							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+							<div class="associationAreas">
+								<button class="open"><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+							</div>
+
+							<!-- 로그인 하시겠습니까? -->
+							<div class="lyBox" id="lypopGuest" style="display: none;">
+								<div class="wrapGuest">
+									<div class="txt1"><span>로그인</span>이 필요한 메뉴입니다. <br>지금 로그인 하시겠습니까?</div>
+									<div class="btnWrap btnBig">
+										<button class="btnCancel">취소</button>
+										<button class="btnLogin">로그인</button>
+									</div>
+								</div>
+								<button class="btnsSch btnClose">닫기</button>
+							</div>
+							<!-- //로그인 하시겠습니까? -->
+						</li>
+						<li class="relevantPlace"><!-- 연관장소 class="relevantPlace" 추가 -->
+							<div class="name"><span class="num">B1</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+								<a href="#" target="_blank" class="web">홈페이지</a>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="departureArrival">
+								<button class="ic_start"><span class="btnsSch"></span>출발</button>
+								<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+								<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+							</div>
+							<div class="icons">
+								<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+								<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+							</div>
+							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+							<div class="associationAreas">
+								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+							</div>
+						</li>
+						<li class="relevantPlace">
+							<div class="name"><span class="num">B2</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+								<a href="#" target="_blank" class="web">홈페이지</a>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="departureArrival">
+								<button class="ic_start"><span class="btnsSch"></span>출발</button>
+								<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+								<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+							</div>
+							<div class="icons">
+								<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+								<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+							</div>
+							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+							<div class="associationAreas">
+								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+							</div>
+						</li>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+								<a href="#" target="_blank" class="web">홈페이지</a>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="departureArrival">
+								<button class="ic_start"><span class="btnsSch"></span>출발</button>
+								<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+								<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+							</div>
+							<div class="icons">
+								<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+								<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+							</div>
+							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+							<div class="associationAreas">
+								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+							</div>
+						</li>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+								<a href="#" target="_blank" class="web">홈페이지</a>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="departureArrival">
+								<button class="ic_start"><span class="btnsSch"></span>출발</button>
+								<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+								<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+							</div>
+							<div class="icons">
+								<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+								<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+							</div>
+							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+							<div class="associationAreas">
+								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="wrapBot">
+			<div class="pagenation">
+				<a href="#" class="btnsSch prev disabled">이전</a>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#" class="btnsSch next">다음</a>
+			</div>
+			<a href="#" class="btnLink">GIS 신규계약안내</a>
+		</div>
+		<div class="btnToggleWrap">
+			<button class="btnsSch btnToggle">열기/닫기</button>
+		</div>
+	</div>
+	<!-- //검색결과 -->
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 검색영역 -->
+	<div class="wrapSearch">
+		<button class="btnsBg menuLnb">메뉴</button>
+		<input type="search" placeholder="방문할 목적지를 검색해 주세요.">
+		<div class="iconLoc">
+			<button class="btnsBg btnFind">검색</button>
+			<!-- <button class="btnsBg btnDel">삭제</button> -->
+		</div>
+		<button class="btnsBg findingWay">길찾기</button>
+		<div class="searchList" style="display: none;">
+			<ul>
+				<li><a href="#">예술의전당</a></li>
+				<li><a href="#">예술의전당</a></li>
+				<li><a href="#">예술의전당</a></li>
+			</ul>
+			<div class="autoCompt">
+				<button class="btnOff"><span>자동완성 끄기</span> <span class="btnsBg"></span></button>
+			</div>
+		</div>
+	</div>
+	<!-- //검색영역 -->
+
+	<!-- 검색결과 -->
+	<!-- //검색결과 -->
+
+	<!-- LNB영역 -->
+	<div class="wrapLnb">
+		<div class="inner">
+			<div class="header">
+				<span class="kt">kt</span> <strong>GEO</strong>Master
+				<button class="btnsLnb btnClose">닫기</button>
+			</div>
+			<div class="plugin-scrollbar-bd">
+				<div class="plugin-scrollbar">
+					<div class="list1">
+						<ul>
+							<li><a href="#"><span class="btnsLnb ic1"></span>검색</a></li>
+							<li><a href="#"><span class="btnsLnb ic2"></span>길찾기</a></li>
+							<li><a href="#" class="disabled"><span class="btnsLnb ic3"></span>버스</a></li>
+							<li><a href="#" class="disabled"><span class="btnsLnb ic4"></span>지하철</a></li>
+						</ul>
+						<ul>
+							<li><a href="#"><span class="btnsLnb ic5"></span>내 즐겨찾기</a></li>
+							<li><a href="#"><span class="btnsLnb ic6"></span>신규 장소등록</a></li>
+							<li><a href="#"><span class="btnsLnb ic7"></span>처리내역 조회</a></li>
+						</ul>
+					</div>
+					<div class="list1 small">
+						<ul>
+							<li><a href="#">지도범례</a></li>
+							<li><a href="#">지도 Open API</a></li>
+							<li><a href="#">KT GEO Master 소개</a></li>
+						</ul>
+					</div>
+					<div class="banner">
+						<ul>
+							<li><a href="#"><img src="../imgs/data/banner@x2.png" alt="KT GIS 플랫폼 서비스를 경험하세요! 신규 계약안내"></a></li>
+							<li><a href="#"><img src="../imgs/data/banner@x2.png" alt="KT GIS 플랫폼 서비스를 경험하세요! 신규 계약안내"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="appDownload">
+				<div class="txt1">당신이 찾는 모든 길 안내</div>
+				<div class="txt2">원내비</div>
+				<img src="../imgs/im_onenavi.png" alt="원내비" class="onenavi">
+				<div class="btnsWrap">
+					<a href="#"><img src="../imgs/appstore_google.png" alt="Google Play"></a>
+					<a href="#"><img src="../imgs/appstore_apple.png" alt="App Store"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //LNB영역 -->
+
+	<!-- 로그인영역 -->
+	<div class="wrapLogin">
+		<div class="myAccessLoc">
+			<button class="btnsBg">내 접속위치</button>
+		</div>
+		<div class="locationSettings">
+			<div class="address">
+				<span>서울특별시</span>
+				<span>종로구</span>
+				<span>청진동</span>
+			</div>
+			<div class="weather">
+				<img src="../imgs/data/icon_weather_sample@2x.png" alt="흐림">
+				<span>20℃</span>
+			</div>
+			<div class="dust">
+				<img src="../imgs/data/icon_dust.png" alt="매우나쁨">
+				<span class="lv6">매우나쁨</span>
+			</div>
+		</div>
+		<div class="modChange">
+			<div class="mapType">
+				<button>
+					<span class="iconMap basic">
+						<!--
+							class="basic" : 일반지도
+							class="airView" : 항공지도
+							class="basicAir" : 일반+항공
+						 -->
+					</span>
+					<span>일반</span>
+					<span class="iconMap icAr">열기/닫기</span>
+				</button>
+				<div class="list">
+					<ul>
+						<li><button><span class="iconMap basic"></span>일반지도</button></li>
+						<li><button><span class="iconMap airView"></span>항공지도</button></li>
+						<li><button><span class="iconMap basicAir"></span>일반+항공</button></li>
+					</ul>
+				</div>
+			</div>
+			<div class="language">
+				<button>
+					<span>KR</span>
+					<span class="iconMap icAr">열기/닫기</span>
+				</button>
+				<div class="list">
+					<ul>
+						<li><button>KR</button></li>
+						<li><button>EN</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="myInfo">
+			<a href="#" class="myphoto"><img src="../imgs/data/photo_my3.png" alt="사진"></a>
+			<div class="boxPos" style="display: ;">
+				<div class="boxStyle snsLogin">
+					<div class="title">소셜 간편 로그인</div>
+					<div class="snsList">
+						<a href="#">
+							<span class="iconsBg ic_naver"></span>네이버 아이디로 로그인
+						</a>
+						<a href="#">
+							<span class="iconsBg ic_kakao"></span>카카오 아이디로 로그인
+						</a>
+						<a href="#">
+							<span class="iconsBg ic_facebook"></span>페이스북 아이디로 로그인
+						</a>
+						<a href="#">
+							<span class="iconsBg ic_google"></span>구글 아이디로 로그인
+						</a>
+					</div>
+					<div class="tx1">원내비와 동일한 소설계정으로 로그인하시면 <br>원내비와 연계된 서비스를 이용할 수 있습니다.</div>
+					<div class="certKey">
+						<div class="tx2">KT Geo master 기업회원이신가요.</div>
+						<div class="inner">
+							<textarea name="" id="" placeholder="Geo master 인증키를 입력하세요."></textarea>
+							<button><span>로그인</span></button>
+						</div>
+					</div>
+					<button class="btnsBg btnClose">닫기</button>
+				</div>
+				<!-- //.snsLogin -->
+				<div class="boxStyle myInfoMod">
+					<div class="photo">
+						<img src="../imgs/data/photo_my.png" alt="내사진">
+						<button class="iconsBg photoChange">사진 교체</button>
+					</div>
+					<div class="name">
+						<strong>Asdfasdf</strong>
+						<a href="#" class="mod">수정</a>
+					</div>
+					<div class="accountInfo">Naver 계정으로 로그인 중</div>
+					<div class="btnBot">
+						<button><span>로그아웃</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //로그인영역 -->
+
+	<!-- GNB영역 -->
+	<div class="wrapGnb">
+		<ul>
+			<li><button title="교통정보"><span class="btnsGnb ic1"></span><span class="txt">교통정보</span></button></li>
+			<li><button title="지적편집도"><span class="btnsGnb ic2"></span><span class="txt">지적편집도</span></button></li>
+			<li><button title="지형도"><span class="btnsGnb ic3"></span><span class="txt">지형도</span></button></li>
+			<li><button title="거리재기"><span class="btnsGnb ic4"></span><span class="txt">거리재기</span></button></li>
+			<li><button title="면적재기"><span class="btnsGnb ic5"></span><span class="txt">면적재기</span></button></li>
+			<li><button title="초기화"><span class="btnsGnb ic6"></span><span class="txt">초기화</span></button></li>
+			<li><button title="그림도구"><span class="btnsGnb ic7"></span><span class="txt">그림도구</span></button></li>
+			<li><button title="인쇄"><span class="btnsGnb ic8"></span><span class="txt">인쇄</span></button></li>
+			<li><button title="신규장소"><span class="btnsGnb ic9"></span><span class="txt">신규장소</span></button></li>
+		</ul>
+		<button class="btnToggle">열기/닫기</button>
+	</div>
+	<!-- //GNB영역 -->
+
+	<!-- 확대-축소 -->
+	<div class="wrapZoom">
+		<button class="btnsBg btnFoldToggle"><span>펼치기</span></button>
+		<div class="btnsZoom">
+			<button class="btnsBg btnZoomIn">확대</button>
+			<div class="scaleWrap" style="display: ;">
+				<div class="current" style="top: 25%;"></div>
+				<div class="unitName">
+					<span class="btnsBg">새주소</span>
+					<span class="btnsBg">거리</span>
+					<span class="btnsBg">동,리</span>
+					<span class="btnsBg">시군구</span>
+					<span class="btnsBg">도</span>
+					<span class="btnsBg">전국</span>
+				</div>
+			</div>
+			<button class="btnsBg btnZoomOut">축소</button>
+		</div>
+		<div class="scaleInfo">
+			<span class="kt">kt</span>
+			<div class="distanceUnit">
+				<span>400m</span>
+			</div>
+		</div>
+	</div>
+	<!-- //확대-축소 -->
+
+	<!-- 미니맵 -->
+	<div class="wrapMiniMap">
+		<div class="inner"><img src="../imgs/data/@minimap.jpg" alt=""></div>
+		<button class="btnsBg btnToggle">열기/닫기</button>
+	</div>
+	<!-- //미니맵 -->
+
+</body>
+</html>

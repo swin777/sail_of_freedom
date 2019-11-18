@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 주소 및 장소 -->
+	<div class="wrapSchResult addressPlace" style="display: ;">
+		<div class="wrapAddress">
+			<div class="wrapTop">
+				<div class="resultNum">주소 <span class="num">888</span>건 </div>
+				<div class="btnWrap">
+					<button class="btnToggle">지도에서 감추기 <span class="btnsSch"><!-- class="open, close" --></span></button>
+				</div>
+			</div>
+			<div class="list address">
+				<ul>
+					<li>
+						<div class="name">서울 서초구 남부순환로 1111</div>
+						<div class="departureArrival">
+							<button class="ic_start"><span class="btnsSch"></span>출발</button>
+							<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+						</div>
+						<div class="icons">
+							<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+						</div>
+					</li>
+					<li>
+						<div class="name">서울 서초구 남부순환로 1111</div>
+						<div class="departureArrival">
+							<button class="ic_start"><span class="btnsSch"></span>출발</button>
+							<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+						</div>
+						<div class="icons">
+							<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+						</div>
+					</li>
+					<li>
+						<div class="name">서울 서초구 남부순환로 1111</div>
+						<div class="departureArrival">
+							<button class="ic_start"><span class="btnsSch"></span>출발</button>
+							<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+						</div>
+						<div class="icons">
+							<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+						</div>
+					</li>
+					<li class="btnWrap">
+						<button class="btnMore">더보기</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="wrapPlace" style="height: 600px;"><!-- 주소 목록 및 브라우저 창 크기에 따라서 height값 변화 -->
+			<div class="wrapTop">
+				<div class="resultNum">장소 <span class="num">888</span>건 </div>
+				<div class="sort">
+					<ul>
+						<li><button class="on"><span>관련도순</span></button></li>
+						<li><button><span>거리순</span></button></li>
+					</ul>
+				</div>
+				<div class="btnWrap">
+					<button class="btnToggle"><span class="btnsSch close"><!-- class="open, close" --></span></button>
+				</div>
+			</div>
+			<div class="plugin-scrollbar-bd">
+				<div class="plugin-scrollbar">
+					<div class="list">
+						<ul>
+							<li>
+								<div class="name"><span class="num">A</span>예술의전당</div>
+								<div class="info">
+									<span class="kind">대형예술센터</span>
+									<span class="tel">02-580-1300</span>
+									<a href="#" target="_blank" class="web">홈페이지</a>
+								</div>
+								<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+								<div class="address">
+									<span class="jibun">지번</span>
+									서초동 700
+								</div>
+								<div class="departureArrival">
+									<button class="ic_start"><span class="btnsSch"></span>출발</button>
+									<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+									<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+								</div>
+								<div class="icons">
+									<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+									<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+									<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+									<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+								</div>
+								<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+								<div class="associationAreas">
+									<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+								</div>
+							</li>
+							<li>
+								<div class="name"><span class="num">B</span>예술의전당</div>
+								<div class="info">
+									<span class="kind">대형예술센터</span>
+									<span class="tel">02-580-1300</span>
+									<a href="#" target="_blank" class="web">홈페이지</a>
+								</div>
+								<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+								<div class="address">
+									<span class="jibun">지번</span>
+									서초동 700
+								</div>
+								<div class="departureArrival">
+									<button class="ic_start"><span class="btnsSch"></span>출발</button>
+									<button class="ic_waypoint"><span class="btnsSch"></span>경유지</button>
+									<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+								</div>
+								<div class="icons">
+									<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+									<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+									<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+									<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+								</div>
+								<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+								<div class="associationAreas">
+									<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+								</div>
+							</li>
+							<li>
+								<div class="name"><span class="num">A</span>예술의전당</div>
+								<div class="info">
+									<span class="kind">대형예술센터</span>
+									<span class="tel">02-580-1300</span>
+									<a href="#" target="_blank" class="web">홈페이지</a>
+								</div>
+								<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+								<div class="address">
+									<span class="jibun">지번</span>
+									서초동 700
+								</div>
+								<div class="departureArrival">
+									<button class="ic_start"><span class="btnsSch"></span>출발</button>
+									<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+									<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+								</div>
+								<div class="icons">
+									<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+									<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+									<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+									<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+								</div>
+								<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+								<div class="associationAreas">
+									<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+								</div>
+							</li>
+							<li>
+								<div class="name"><span class="num">A</span>예술의전당</div>
+								<div class="info">
+									<span class="kind">대형예술센터</span>
+									<span class="tel">02-580-1300</span>
+									<a href="#" target="_blank" class="web">홈페이지</a>
+								</div>
+								<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+								<div class="address">
+									<span class="jibun">지번</span>
+									서초동 700
+								</div>
+								<div class="departureArrival">
+									<button class="ic_start"><span class="btnsSch"></span>출발</button>
+									<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+									<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+								</div>
+								<div class="icons">
+									<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+									<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+									<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+									<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+								</div>
+								<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+								<div class="associationAreas">
+									<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+								</div>
+							</li>
+							<li>
+								<div class="name"><span class="num">A</span>예술의전당</div>
+								<div class="info">
+									<span class="kind">대형예술센터</span>
+									<span class="tel">02-580-1300</span>
+									<a href="#" target="_blank" class="web">홈페이지</a>
+								</div>
+								<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+								<div class="address">
+									<span class="jibun">지번</span>
+									서초동 700
+								</div>
+								<div class="departureArrival">
+									<button class="ic_start"><span class="btnsSch"></span>출발</button>
+									<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+									<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+								</div>
+								<div class="icons">
+									<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+									<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+									<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+									<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+								</div>
+								<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+								<div class="associationAreas">
+									<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+								</div>
+							</li>
+							<li>
+								<div class="name"><span class="num">A</span>예술의전당</div>
+								<div class="info">
+									<span class="kind">대형예술센터</span>
+									<span class="tel">02-580-1300</span>
+									<a href="#" target="_blank" class="web">홈페이지</a>
+								</div>
+								<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+								<div class="address">
+									<span class="jibun">지번</span>
+									서초동 700
+								</div>
+								<div class="departureArrival">
+									<button class="ic_start"><span class="btnsSch"></span>출발</button>
+									<!-- <button class="ic_waypoint"><span class="btnsSch"></span>경유지</button> -->
+									<button class="ic_arrival"><span class="btnsSch"></span>도착</button>
+								</div>
+								<div class="icons">
+									<button class="btnsSch ic_share" title="공유하기">공유하기</button>
+									<button class="btnsSch ic_theme" title="주변테마">주변테마</button>
+									<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+									<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+								</div>
+								<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+								<div class="associationAreas">
+									<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="wrapBot">
+				<div class="pagenation">
+					<a href="#" class="btnsSch prev disabled">이전</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" class="btnsSch next">다음</a>
+				</div>
+				<a href="#" class="btnLink">GIS 신규계약안내</a>
+			</div>
+		</div>
+
+		<div class="btnToggleWrap">
+			<button class="btnsSch btnToggle">열기/닫기</button>
+		</div>
+	</div>
+	<!-- //주소 및 장소 -->
+
+</body>
+</html>
