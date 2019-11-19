@@ -59,6 +59,9 @@ $(document).ready(function(){
 	$(".wrapGnb .btnToggle").on("click", function(){
 		$(this).parent().toggleClass("small");
 	});
+	$(".wrapGnb li button").on("click", function(){
+		$(this).parent().toggleClass("open");
+	});
 	// 확대축소 펼치기
 	$(".btnFoldToggle").on("click", function(){
 		$(".wrapZoom .btnsZoom").toggleClass("open");
@@ -95,7 +98,9 @@ $(document).ready(function(){
 		$(this).parent().css("display","none");
 	});
 	$(".listTheme button").on("click", function(){
-		$(this).toggleClass("on");
+		// $(this).toggleClass("on");
+		$(".listTheme button").removeClass("on");
+		$(this).addClass("on");
 	});
 	$(".listShare ul li button").on("click", function(){
 		$(".listShare ul li button").removeClass("on");
