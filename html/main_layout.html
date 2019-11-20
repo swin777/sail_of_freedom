@@ -99,17 +99,115 @@
 		</div>
 		<div class="locationSettings">
 			<div class="address">
-				<span>서울특별시</span>
-				<span>종로구</span>
-				<span>청진동</span>
+				<a href="#" class="current">
+					<span>서울특별시</span>
+					<span>종로구</span>
+					<span>청진동</span>
+				</a>
+				<div class="lyBox adrsSelect" style="display: none;">
+					<div class="inner">
+						<div class="choice">
+							<div class="plugin-scrollbar-bd">
+								<div class="plugin-scrollbar">
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+								</div>
+							</div>
+						</div>
+						<div class="choice">
+							<div class="plugin-scrollbar-bd">
+								<div class="plugin-scrollbar">
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+								</div>
+							</div>
+						</div>
+						<div class="choice">
+							<div class="plugin-scrollbar-bd">
+								<div class="plugin-scrollbar">
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+									<a href="#">서울특별시</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btnWrap">
+						<button class="btnCancel">취소</button>
+						<button class="btnSubmit">확인</button>
+					</div>
+				</div>
 			</div>
-			<div class="weather">
-				<img src="../imgs/data/icon_weather_sample@2x.png" alt="흐림">
-				<span>20℃</span>
-			</div>
-			<div class="dust">
-				<img src="../imgs/data/icon_dust.png" alt="매우나쁨">
-				<span class="lv6">매우나쁨</span>
+			<div class="weatherWrap">
+				<a href="#" class="current">
+					<img src="../imgs/data/icon_weather_sample_small.png" alt="흐림">
+					<span class="temperature">20℃</span>
+					<img src="../imgs/data/icon_dust.png" alt="매우나쁨">
+					<span class="dust lv4">매우나쁨</span>
+				</a>
+				<div class="lyBox weatherInfo" style="display: none;">
+					<div class="title">양재1동</div>
+					<div class="detail">
+						<img src="../imgs/data/icon_weather_sample.png" alt="">
+						<div class="wpWether">
+							<span class="txt1">구름많음</span>
+							<span class="txt2">20<strong>℃</strong></span>
+						</div>
+						<div class="wpDust">
+							<dl>
+								<dt>미세</dt>
+								<dd class="dust lv4">매우나쁨</dd>
+							</dl>
+							<dl>
+								<dt>초미세</dt>
+								<dd class="dust lv1">좋음</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="week">
+						<ul>
+							<li>
+								<span class="txt1">오늘</span>
+								<img src="../imgs/data/icon_weather_sample.png" alt="">
+								<span class="txt2">7˚/13˚</span>
+							</li>
+							<li>
+								<span class="txt1">내일</span>
+								<img src="../imgs/data/icon_weather_sample.png" alt="">
+								<span class="txt2">7˚/13˚</span>
+							</li>
+							<li>
+								<span class="txt1">모레</span>
+								<img src="../imgs/data/icon_weather_sample.png" alt="">
+								<span class="txt2">7˚/13˚</span>
+							</li>
+							<li>
+								<span class="txt1">11.11 월</span>
+								<img src="../imgs/data/icon_weather_sample.png" alt="">
+								<span class="txt2">7˚/13˚</span>
+							</li>
+						</ul>
+					</div>
+					<button class="btnsSch btnClose">닫기</button>
+				</div>
 			</div>
 		</div>
 		<div class="modChange">
@@ -234,12 +332,36 @@
 					<button><span class="btnsGnb ic7"></span><span class="txt">도형</span></button>
 				</div>
 			</li>
-			<li><button title="인쇄"><span class="btnsGnb ic8"></span><span class="txt">인쇄</span></button></li>
+			<li><button onclick="javascript:fncPrint();" title="인쇄"><span class="btnsGnb ic8"></span><span class="txt">인쇄</span></button></li>
 			<li><button title="신규장소"><span class="btnsGnb ic9"></span><span class="txt">신규장소</span></button></li>
 		</ul>
 		<button class="btnToggle">열기/닫기</button>
 	</div>
 	<!-- //GNB영역 -->
+
+	<!-- 인쇄 -->
+	<div class="lyBox lyPrint" id="lypopPrint" style="display: none;">
+		<div class="title">인쇄</div>
+		<div class="inner">
+			<div class="mapArea">
+				<div class="mapInner"><img src="../imgs/data/@bg_map.jpg" alt=""></div>
+				<div class="btnWrapZoom">
+					<button class="btnsBg btnZoomIn">확대</button>
+					<button class="btnsBg btnZoomOut">축소</button>
+				</div>
+				<div class="btnWrapRef">
+					<button class="btnsGnb">초기화</button>
+				</div>
+			</div>
+			<textarea name="" id="" placeholder="메모를 남기면 지도와 함께 인쇄됩니다."></textarea>
+			<div class="btnWrap">
+				<button class="btnCancel">취소</button>
+				<button class="btnPrint">인쇄</button>
+			</div>
+		</div>
+		<button class="btnsSch btnClose">닫기</button>
+	</div>
+	<!-- //인쇄 -->
 
 	<!-- 확대-축소 -->
 	<div class="wrapZoom">

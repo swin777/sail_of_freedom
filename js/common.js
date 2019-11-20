@@ -34,6 +34,18 @@ $(document).ready(function(){
 	$(".searchList .btnOff").on("click", function(){
 		$(".searchList>ul").css("display","none");
 	});
+	// 주소 선택
+	$(".address a.current").on("click", function(){
+		$(".adrsSelect").css("display","block");
+	});
+	$(".adrsSelect .btnWrap button").on("click", function(){
+		$(".adrsSelect").css("display","none");
+	});
+	// 날씨정보 확장
+	$(".weatherWrap a.current").on("click", function(){
+		$(".weatherInfo").css("display","block");
+	});
+
 	// 지도 선택
 	$(".mapType>button").on("click", function(){
 		$(this).parent().toggleClass("open");
@@ -125,4 +137,7 @@ function fncBookmarkAdd(){
 }
 function fncGuest(){
 	$("#lypopGuest").css("display","block");
+}
+function fncPrint(){
+	$("#lypopPrint").css("display","block");
 }

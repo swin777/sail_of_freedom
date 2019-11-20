@@ -170,11 +170,11 @@ span{position:relative;}
 .wrapSchResult .list.address ul li.btnWrap.current{background-color: #fff;}
 .wrapSchResult .list.address ul li .btnMore{min-width: 72px;height: 28px;color: #777;font-size: 12px;font-weight: 500;letter-spacing: -1px;border: solid 1px #9b9b9b;border-radius: 14px;}
 
-
 /* 검색리스트 레이어팝업 */
-.wrapSchResult .lyBox{position: absolute;overflow: hidden;z-index: 19;top: 12px;right: 12px;min-width: 200px;border: solid 1px #ccc;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
-.wrapSchResult .lyBox .title{height: 40px;line-height: 40px;padding-left: 15px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border-bottom: 1px solid #f5f5f5;}
-.wrapSchResult .lyBox .btnClose{position: absolute;top: 6px;right: 6px;width: 26px;height: 26px;background-position-x: -275px;text-indent: -9999px;}
+.lyBox{position: absolute;overflow: hidden;z-index: 19;top: 50%;right: 50%;min-width: 200px;border: solid 1px #ccc;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
+.lyBox .title{height: 40px;line-height: 40px;padding-left: 15px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border-bottom: 1px solid #f5f5f5;}
+.lyBox .btnClose{position: absolute;top: 6px;right: 6px;width: 26px;height: 26px;background-position-x: -275px;text-indent: -9999px;}
+.wrapSchResult .lyBox{top: 12px;right: 12px;}
 .wrapSchResult .lyBox ul li{padding: 0;}
 .wrapSchResult .lyBox ul li:after{display: none;}
 .wrapSchResult .lyBox ul li:hover{background-color: #fff;}
@@ -280,19 +280,49 @@ span{position:relative;}
 .wrapLogin .myAccessLoc button{width: 28px;height: 28px;background-position-x: -200px;border-radius: 30px;}
 .wrapLogin .locationSettings{height: 30px;padding: 0 20px;font-size: 11px;color: #555;letter-spacing: -.6px;line-height: 29px;border: solid 1px #dedede;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
 .wrapLogin .locationSettings>div{display: inline-block;}
-.wrapLogin .locationSettings .address:after{content: "";display: inline-block;margin: 4px 6px 0 12px;vertical-align: -6px;width: 1px;height: 20px;background-color: #ededed;}
-.wrapLogin .locationSettings .address span:after{content: "";display: inline-block;width: 6px;height: 12px;margin: 0px 5px 0 7px;vertical-align: -2px;background: url(../imgs/icons_arrow.png) no-repeat;background-size: auto 200px;}
-.wrapLogin .locationSettings .address span:last-child:after{display: none;}
-.wrapLogin .locationSettings .weather{padding-right: 12px;font-weight: bold;}
-.wrapLogin .locationSettings .weather img{width: 16px;height: 16px;margin-right: 4px;vertical-align: -3px;}
-.wrapLogin .locationSettings .dust .lv1{color: blue;}
-.wrapLogin .locationSettings .dust .lv2{color: skyblue;}
-.wrapLogin .locationSettings .dust .lv3{color: #09ebc3;}
-.wrapLogin .locationSettings .dust .lv4{color: green;}
-.wrapLogin .locationSettings .dust .lv5{color: orange;}
-.wrapLogin .locationSettings .dust .lv6{color: #d0021b;}
-.wrapLogin .locationSettings .dust .lv7{color: black;}
-.wrapLogin .locationSettings .dust img{width: 16px;height: 16px;margin-right: 4px;vertical-align: -3px;}
+.wrapLogin .locationSettings .current{display: inline-block;}
+.wrapLogin .locationSettings .current:hover{text-decoration: none;}
+.wrapLogin .locationSettings .address{position: relative;}
+.wrapLogin .locationSettings .address .current:after{content: "";display: inline-block;margin: 4px 0px 0 12px;vertical-align: -6px;width: 1px;height: 20px;background-color: #ededed;}
+.wrapLogin .locationSettings .address .current span:after{content: "";display: inline-block;width: 6px;height: 12px;margin: 0px 5px 0 7px;vertical-align: -2px;background: url(../imgs/icons_arrow.png) no-repeat;background-size: auto 200px;}
+.wrapLogin .locationSettings .address .current span:last-child:after{display: none;}
+.wrapLogin .locationSettings .address .adrsSelect.lyBox{top: 36px;left: -12px;width: 312px;height: 264px;}
+.wrapLogin .locationSettings .address .adrsSelect .inner{position: relative;display: flex;height: 220px;padding: 4px 0 0;}
+.wrapLogin .locationSettings .address .adrsSelect .inner .choice{position: relative;width: 100%;border-right: 1px solid #f5f5f5;}
+.wrapLogin .locationSettings .address .adrsSelect .inner .choice:last-child{border-right: none;}
+.wrapLogin .locationSettings .address .adrsSelect .inner .choice a{display: block;height: 29px;line-height: 29px;padding-left: 10px;color: #777;font-size: 11px;letter-spacing: -.6px;}
+.wrapLogin .locationSettings .address .adrsSelect .inner .choice a:hover{background-color: #f5f5f5;text-decoration: none;}
+.wrapLogin .os-theme-dark > .os-scrollbar-vertical, .wrapLogin .os-theme-light > .os-scrollbar-vertical {width: 7px;}
+.wrapLogin .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {background: rgba(124, 124, 124, 0.4);}
+.wrapLogin .locationSettings .address .adrsSelect .btnWrap{padding-top: 7px;border-top: 1px solid #f5f5f5;text-align: center;}
+.wrapLogin .locationSettings .address .adrsSelect .btnWrap button{width: 48px;height: 24px;margin: 0 2px;font-size: 12px;font-weight: bold;letter-spacing: -.6px;border: 1px solid #ccc;border-radius: 20px;}
+.wrapLogin .locationSettings .address .adrsSelect .btnWrap button.btnSubmit{color: #7725ff;border: 1px solid #7725ff;}
+.wrapLogin .locationSettings .weatherWrap{position: relative;z-index: 9;}
+.wrapLogin .locationSettings .weatherWrap .current{font-weight: bold;}
+.wrapLogin .locationSettings .weatherWrap .current img{width: 16px;height: 16px;margin: 0 4px 0 10px;vertical-align: -3px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo.lyBox{top: 36px;right: -12px;min-width: 312px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail{position: relative;height: 83px;margin: 0 10px;line-height: 1;border-bottom: 2px solid #f5f5f5;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail img{position: absolute;top: 15px;left: 16px;width: 54px;height: 54px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether{position: absolute;top: 17px;left: 86px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether>span{display: block;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether .txt1{margin-bottom: 2px;font-size: 10px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether .txt2{font-size: 30px;letter-spacing: -1.6px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether .txt2 strong{font-family: LucidaGrande;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust{position: absolute;top: 17px;right: 16px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust dl{margin-bottom: 8px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust dl dt{display: inline-block;width: 36px;height: 16px;line-height: 16px;color: #777;font-size: 10px;letter-spacing: -.5px;text-align: center;background-color: #f5f5f5;border-radius: 4px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust dl dd{display: inline-block;width: 60px;font-size: 11px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .week ul{display: flex;padding: 0 10px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .week ul li{width: 100%;padding: 15px 0;text-align: center;line-height: 1;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .week img{display: block;margin: 14px auto 18px;width: 32px;height: 32px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .week li span{display: block;font-size: 10px;letter-spacing: -.5px;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .week .txt1{color: #999;font-weight: 500;}
+.wrapLogin .locationSettings .weatherWrap .weatherInfo .week .txt2{color: #777;font-weight: bold;}
+.wrapLogin .locationSettings .dust.lv1{color: #4A90E2;}
+.wrapLogin .locationSettings .dust.lv2{color: #57BD3F;}
+.wrapLogin .locationSettings .dust.lv3{color: #F5A623;}
+.wrapLogin .locationSettings .dust.lv4{color: #D0021B;}
+
 .wrapLogin .modChange{height: 30px;font-size: 11px;color: #555;letter-spacing: -.6px;line-height: 29px;border: solid 1px #dedede;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
 .wrapLogin .modChange>div{display: inline-block;}
 .wrapLogin .modChange button:hover .iconMap, .wrapLogin .modChange button:focus .iconMap{background-position-y: -20px !important;}
@@ -385,18 +415,36 @@ span{position:relative;}
 .wrapGnb ul li button .btnsGnb.theme11{background-position-x: -660px;}
 .wrapGnb ul li button .btnsGnb.theme12{background-position-x: -690px;}
 .wrapGnb ul li .sub{display: none;position: absolute;top: 0;right: 50px;width: 162px;padding: 0 2px;border: solid 1px #dedede;background-color: #fff;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);border-radius: 4px;}
+.wrapGnb.small ul li .sub{right: 35px;}
 .wrapGnb ul li .sub.ea4{width: 214px;}
 .wrapGnb ul li.open .sub{display: flex;flex-wrap: wrap;}
 .wrapGnb ul li.hasSubmenu.open>button{background-color: #ebebeb;opacity: .6;}
 .wrapGnb ul li.hasSubmenu:after{content:"";display: block;position: absolute;bottom: 3px;left: 2px;width: 0;height: 0;border-left: 7px solid #888;border-top: 7px solid transparent;}
 .wrapGnb ul li.hasSubmenu.open:after{opacity: .6;}
 .wrapGnb ul li .sub>button{margin: 0 1px;}
-.wrapGnb .btnToggle{position: absolute;bottom: 0;width: 50px;height: 14px;background: #dedede url(../imgs/btns_gnb.png) no-repeat;background-position: 0 -100px;background-size: auto 200px;text-indent: -9999px;border-radius: 0 0 16px 16px;}
+.wrapGnb .btnToggle{position: absolute;bottom: 0;width: 50px;height: 14px;background: #f5f5f5 url(../imgs/btns_gnb.png) no-repeat;background-position: 0 -100px;background-size: auto 200px;text-indent: -9999px;border-radius: 0 0 16px 16px;}
 .wrapGnb.small{right: 0px;border-radius: 16px 0 0 16px;border-right: none;}
 .wrapGnb.small ul li button{width: 35px;}
+.wrapGnb.small .sub button{width: 50px;}
 .wrapGnb.small ul li button .txt{opacity: 0;}
+.wrapGnb.small .sub button .txt{opacity: 1;}
 .wrapGnb.small ul li button .btnsGnb{margin-left: 6px;}
+.wrapGnb.small .sub .btnsGnb{margin: 0 auto;}
 .wrapGnb.small .btnToggle{width: 35px;background-position-x: -50px;border-radius: 0 0 0 16px;}
+.lyBox.lyPrint{width: 400px;right: 70px;margin-top: -200px;}
+.lyBox.lyPrint .inner{position: relative;padding: 13px 20px 15px;}
+.lyBox.lyPrint .inner .mapArea{position: relative;margin-bottom: 14px;}
+.lyBox.lyPrint .inner .mapArea img{width: 100%;height: 100%;}
+.lyBox.lyPrint .inner .mapArea button{width: 24px;height: 24px;text-indent: -9999px;}
+.lyBox.lyPrint .inner .mapArea .btnWrapZoom{position: absolute;top: 7px;right: 7px;width: 24px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 4px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
+.lyBox.lyPrint .inner .mapArea .btnWrapZoom .btnZoomIn{background-position: -700px 0;border-bottom: 1px solid #e8e8e8;}
+.lyBox.lyPrint .inner .mapArea .btnWrapZoom .btnZoomOut{background-position: -750px 0;}
+.lyBox.lyPrint .inner .mapArea .btnWrapRef{position: absolute;bottom: 7px;left: 7px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 4px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
+.lyBox.lyPrint .inner .mapArea .btnWrapRef .btnsGnb{background-position-x: -150px;}
+.lyBox.lyPrint .inner textarea{width: 100%;height: 56px;padding: 10px 12px;color: #777;font-size: 11px;font-weight: 500;border: solid 1px #dcdcdc;border-radius: 2px;}
+.lyBox.lyPrint .inner .btnWrap{padding-top: 10px;text-align: center;}
+.lyBox.lyPrint .inner .btnWrap button{width: 80px;height: 32px;margin: 0 2px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 32px;}
+.lyBox.lyPrint .inner .btnWrap button.btnPrint{color: #7725ff;border: 1px solid #7725ff;}
 
 .wrapZoom{position: absolute;right: 12px;bottom: 12px;font-size: 10px;}
 .wrapZoom .btnFoldToggle{position: absolute;top: 7px;left: -50px;width: 48px;height: 18px;line-height: 1;background-position: -550px 0;text-indent: -5px;}
