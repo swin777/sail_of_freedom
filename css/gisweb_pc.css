@@ -62,6 +62,8 @@ span{position:relative;}
 .inpRadio input[type="radio"]:disabled + span{cursor:not-allowed;}
 .inpRadio input[type="radio"]:disabled + span::before{background:#e6e6e6;}
 .inpRadio input[type="radio"]:checked:disabled + span:before{border-color:#999;background:#e6e6e6;}
+.inpSt1{height:34px;padding:0 12px;border:1px solid #dcdcdc;background-color:#fff;vertical-align:middle;border-radius: 2px;}
+.inpSt1:focus{border-color:#999;}
 
 
 .wrapSearch{position: absolute;top: 12px;left: 12px;width: 384px;min-height: 48px;padding: 3px 0px 0;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
@@ -76,7 +78,7 @@ span{position:relative;}
 .wrapSearch .searchList{margin-top: 3px;font-size: 14px;letter-spacing: -.78px;}
 .wrapSearch .searchList ul{padding: 10px 0 14px;border-top: 1px solid #e8e8e8;}
 .wrapSearch .searchList ul li a{display: block;padding: 5px 20px;color: #777;}
-.wrapSearch .searchList ul li a:hover, .wrapSearch .searchList ul li a:focus{color: #333;background-color: #eee;text-decoration: none;}
+.wrapSearch .searchList ul li a:hover, .wrapSearch .searchList ul li a:focus{color: #333;background-color: #faf6ff;text-decoration: none;}
 .wrapSearch .searchList .autoCompt{height: 48px;line-height: 48px;padding-right: 16px;border-top: 1px solid #e8e8e8;text-align: right;}
 .wrapSearch .searchList .autoCompt .btnOff{letter-spacing: -.78px;}
 .wrapSearch .searchList .autoCompt .btnOff .btnsBg{width: 20px;height: 20px;margin-left: 6px;background-position-x: -250px;vertical-align: middle;}
@@ -164,11 +166,27 @@ span{position:relative;}
 .wrapSchResult .list ul li .associationAreas button{font-size: 12px;letter-spacing: -.25px;}
 .wrapSchResult .list ul li .associationAreas .iconsArrow{width: 16px;height: 16px;vertical-align: middle;background-position: -25px 0;}
 .wrapSchResult .list ul li .associationAreas button.open .iconsArrow{background-position: -50px 0;}
-.wrapSchResult .list.address:after{content: "";display: block;width: 100%;height: 10px;margin-top: -1px;border-top: solid 1px #e8e8e8;border-bottom: solid 1px #e8e8e8;background-color: #f5f5f5;}
+.wrapSchResult .list.address:after{content: "";display: block;width: 100%;height: 10px;border-top: solid 1px #e8e8e8;border-bottom: solid 1px #e8e8e8;background-color: #f5f5f5;}
+.wrapSchResult .hide .list.address:after{margin-top: -1px;}
 .wrapSchResult .list.address ul li.btnWrap{text-align: center;}
 .wrapSchResult .list.address ul li.btnWrap:hover{background-color: #fff;}
 .wrapSchResult .list.address ul li.btnWrap.current{background-color: #fff;}
 .wrapSchResult .list.address ul li .btnMore{min-width: 72px;height: 28px;color: #777;font-size: 12px;font-weight: 500;letter-spacing: -1px;border: solid 1px #9b9b9b;border-radius: 14px;}
+
+.wrapSchResult.themeSch .wrapTop{height: 246px;padding: 0;}
+.wrapSchResult.themeSch .listTheme ul{width: 100%;border-radius: 16px 16px 0 0;}
+.wrapSchResult.themeSch .listTheme ul li{width: 95px;}
+.wrapSchResult.themeSch .listTheme ul li:nth-child(4n+4){width: 97px;border-right: none;}
+.wrapSchResult.themeSch .plugin-scrollbar-bd{top:246px;}
+.wrapSchResult.themeSch .nodata{padding: 70px 0;color: #999;font-size: 14px;letter-spacing: -1px;text-align: center;}
+.wrapSchResult.themeSch .searchList{margin-top: -1px;font-size: 14px;letter-spacing: -.78px;}
+.wrapSchResult.themeSch .searchList ul{padding: 10px 0 14px;border-top: 1px solid #e8e8e8;}
+.wrapSchResult.themeSch .searchList ul li a{display: block;padding: 8px 20px;color: #777;}
+.wrapSchResult.themeSch .searchList ul li a:hover, .wrapSchResult.themeSch .searchList ul li a:focus{color: #333;background-color: #faf6ff;text-decoration: none;}
+.wrapSchResult.themeSch .btnWrap{position: absolute;right: 6px;bottom: 4px;}
+.wrapSchResult.themeSch .btnWrap button{font-size: 14px;letter-spacing: -.7px;}
+.wrapSchResult.themeSch .btnWrap button:hover .btnsBg, .wrapSchResult.themeSch .btnWrap button:focus .btnsBg{background-position-y: -50px;}
+.wrapSchResult.themeSch .btnWrap .btnsBg{width: 40px;height: 40px;margin-left: -4px;vertical-align: -14px;background-position-x: -100px;}
 
 /* 검색리스트 레이어팝업 */
 .lyBox{position: absolute;overflow: hidden;z-index: 19;top: 50%;right: 50%;min-width: 200px;border: solid 1px #ccc;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
@@ -195,10 +213,11 @@ span{position:relative;}
 .listShare .copyUrl .inner input{width: 138px;padding-left: 13px;border: none;color: #777;font-size: 12px;letter-spacing: -.75px;background-color: #f5f5f5;}
 .listShare .copyUrl .inner button{width: 72px;color: #777;font-size: 12px;letter-spacing: -.75px;border-left: 1px solid #ccc;}
 
-.listTheme ul{overflow-y: hidden;width: 270px;margin-top: -1px;}
-.listTheme ul li{float: left;width: 90px;height: 82px;border-top: 1px solid #f5f5f5;}
+.listTheme ul{overflow-y: hidden;width: 270px;}
+.listTheme ul li{float: left;width: 90px;height: 82px;border-bottom: 1px solid #f5f5f5;border-right: 1px solid #f5f5f5;}
+.listTheme ul li:hover{background-color: #faf6ff;}
 .wrapSchResult .lyBox .listTheme ul li:hover{background-color: #faf6ff;}
-.listTheme ul li:nth-child(3n+2){border-left: 1px solid #f5f5f5;border-right: 1px solid #f5f5f5;}
+.wrapSchResult .lyBox .listTheme ul li:nth-child(3n+3){border-right: none;}
 .listTheme ul li button{width: 100%;height: 100%;}
 .listTheme ul li button .btnsTheme{width: 34px;height: 34px;}
 .listTheme ul li button.on .btnsTheme{background-position-y: -50px !important;}
@@ -217,6 +236,46 @@ span{position:relative;}
 .listTheme ul li button .txt{display: block;color: #888;font-size: 12px;font-weight: 500;letter-spacing: -.75px;text-align: center;}
 .listTheme ul li button.on .txt{color: #7725ff;}
 
+.lyBox.placeInfoMod{top: 12px;left: 12px;bottom: 12px;width: 384px;}
+.placeInfoMod .plugin-scrollbar-bd{top: 40px;}
+.placeInfoMod .inner{padding: 10px 17px;}
+.placeInfoMod .inner .txt1{margin-bottom: 12px;color: #d0021b;font-size: 10px;font-weight: 500;letter-spacing: -.6px;text-align: right;}
+.placeInfoMod dl{display: flex;width: 100%;margin-bottom: 16px;}
+.placeInfoMod dl dt{width: 62px;padding-top: 6px;font-size: 12px;font-weight: 500;letter-spacing: -.7px;}
+.placeInfoMod dl dt.ess:after{content: "*";color: #d0021b;}
+.placeInfoMod dl dd{width: 100%;}
+.placeInfoMod dl dd input[type="text"]{width: 100%;font-size: 12px;letter-spacing: -.7px;}
+.placeInfoMod dl dd textarea{width: 100%;height: 180px;padding: 12px;font-size: 12px;letter-spacing: -.7px;}
+.placeInfoMod dl dd .inpBx{position: relative;margin-bottom: 6px;border: 1px solid #dcdcdc;}
+.placeInfoMod dl dd .inpBx:last-child{margin-bottom: 0;}
+.placeInfoMod dl dd .inpBx.focus{border-color: #999;}
+.placeInfoMod dl dd .inpBx .inpSt1{border: 0;}
+.placeInfoMod dl dd .inpBx .dv{position: absolute;display: block;top: 50%;left: 8px;min-width: 32px;height: 14px;margin-top: -7px;padding: 0 2px;line-height: 13px;color: #999;font-size: 10px;font-weight: 500;letter-spacing: -.6px;text-align: center;border: 1px solid #ccc;background-color: #f5f5f5;border-radius: 2px;}
+.placeInfoMod dl dd .inpBx .btnFind{position: absolute;top: -4px;right: 0;width: 40px;height: 40px;background-position-x: -50px;}
+.placeInfoMod dl.address input[type="text"]{padding-left: 48px;}
+.placeInfoMod dl.placePhoto .img{position: relative;display: inline-block;width: 34px;height: 34px;margin-right: 2px;vertical-align: top;}
+.placeInfoMod dl.placePhoto .img img{width: 100%;height: 100%;border-radius: 2px;}
+.placeInfoMod dl.placePhoto .btnDel{position: absolute;top: 4px;left: 4px;width: 26px;height: 26px;background-position-x: -350px;text-indent: -9999px;}
+.placeInfoMod dl.placePhoto .btnAdd{width: 34px;height: 34px;border: 1px solid #dcdcdc;background-color: #f5f5f5;background-position-x: -451px;vertical-align: top;border-radius: 2px;}
+.placeInfoMod .btnWrap{text-align: center;}
+.placeInfoMod .btnWrap .btnMod{width: 120px;height: 40px;font-size: 14px;font-weight: bold;letter-spacing: -.8px;border: 1px solid #ccc;border-radius: 20px;}
+
+.lyBox.categoryReg{top: 233px;left: 408px;width: 470px;}
+.categoryReg .plugin-scrollbar-bd{top: 32px;}
+.categoryReg .inner{display: flex;padding: 0 13px;}
+.categoryReg .inner .dvBox{position: relative;width: 100%;height: 342px;}
+.categoryReg .inner .dvBox .stitle{padding: 7px 0 0 12px;font-size: 12px;font-weight: 500;letter-spacing: -.7px;}
+.categoryReg .inner .dvBox .plugin-scrollbar-bd{margin: 0 10px;padding: 4px 0 0;border: solid 1px #dcdcdc;border-radius: 2px;}
+.categoryReg .inner .dvBox .plugin-scrollbar-bd a{display: block;padding: 7px 5px 7px 10px;line-height: 1.3;color: #777;font-size: 12px;letter-spacing: -.6px;}
+.categoryReg .inner .dvBox .plugin-scrollbar-bd a:hover, .categoryReg .inner .dvBox .plugin-scrollbar-bd a:focus{background-color: #f5f5f5;text-decoration: none;}
+.categoryReg .inner .dvBox .plugin-scrollbar-bd a.on{color: #7725ff;}
+.categoryReg .inner .dvBox .plugin-scrollbar-bd a.on:after{content: "";display: inline-block;width: 16px;height: 15px;margin-left: 4px;background: url(../imgs/icons_01.png) -25px -2px no-repeat;background-size: auto 200px;vertical-align: -4px;}
+.categoryReg .os-theme-dark > .os-scrollbar-vertical, .categoryReg .os-theme-light > .os-scrollbar-vertical {width: 7px;}
+.categoryReg .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {background: rgba(124, 124, 124, 0.4);}
+.categoryReg .btnWrap{padding: 22px 0;text-align: center;}
+.categoryReg .btnWrap button{width: 120px;height: 40px;margin: 0 2px;font-size: 14px;font-weight: bold;letter-spacing: -.8px;border: solid 1px #ccc;border-radius: 20px;}
+.categoryReg .btnWrap button.btnComplet{color: #7725ff;border-color: #7725ff;}
+
 .listBookmark ul{padding: 12px 0 10px 16px;}
 .listBookmark ul li .inpRadio{display: block;font-size: 12px;font-weight: 500;letter-spacing: -.75px;}
 .listBookmark ul li .inpRadio span{display: block;}
@@ -224,6 +283,7 @@ span{position:relative;}
 
 .bookmarkAdd .inner{padding: 15px;}
 .bookmarkAdd .inner input{width: 210px;height: 32px;padding-left: 12px;color: #999;font-size: 12px;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 8px;}
+.bookmarkAdd .inner input:focus{border: 1px solid #999;}
 
 .wrapGuest{min-width: 356px;}
 .wrapGuest .txt1{padding: 42px 0 32px;font-size: 18px;letter-spacing: -1.1px;line-height: 1.5;text-align: center;}
@@ -291,7 +351,7 @@ span{position:relative;}
 .wrapLogin .locationSettings .address .adrsSelect .inner .choice{position: relative;width: 100%;border-right: 1px solid #f5f5f5;}
 .wrapLogin .locationSettings .address .adrsSelect .inner .choice:last-child{border-right: none;}
 .wrapLogin .locationSettings .address .adrsSelect .inner .choice a{display: block;height: 29px;line-height: 29px;padding-left: 10px;color: #777;font-size: 11px;letter-spacing: -.6px;}
-.wrapLogin .locationSettings .address .adrsSelect .inner .choice a:hover{background-color: #f5f5f5;text-decoration: none;}
+.wrapLogin .locationSettings .choice a:hover, .wrapLogin .locationSettings .choice a:focus{background-color: #f5f5f5;text-decoration: none;}
 .wrapLogin .os-theme-dark > .os-scrollbar-vertical, .wrapLogin .os-theme-light > .os-scrollbar-vertical {width: 7px;}
 .wrapLogin .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {background: rgba(124, 124, 124, 0.4);}
 .wrapLogin .locationSettings .address .adrsSelect .btnWrap{padding-top: 7px;border-top: 1px solid #f5f5f5;text-align: center;}
@@ -440,7 +500,7 @@ span{position:relative;}
 .lyBox.lyPrint .inner .mapArea .btnWrapZoom .btnZoomIn{background-position: -700px 0;border-bottom: 1px solid #e8e8e8;}
 .lyBox.lyPrint .inner .mapArea .btnWrapZoom .btnZoomOut{background-position: -750px 0;}
 .lyBox.lyPrint .inner .mapArea .btnWrapRef{position: absolute;bottom: 7px;left: 7px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 4px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
-.lyBox.lyPrint .inner .mapArea .btnWrapRef .btnsGnb{background-position-x: -150px;}
+.lyBox.lyPrint .inner .mapArea .btnWrapRef .btnsGnb{background-position-x: -780px;}
 .lyBox.lyPrint .inner textarea{width: 100%;height: 56px;padding: 10px 12px;color: #777;font-size: 11px;font-weight: 500;border: solid 1px #dcdcdc;border-radius: 2px;}
 .lyBox.lyPrint .inner .btnWrap{padding-top: 10px;text-align: center;}
 .lyBox.lyPrint .inner .btnWrap button{width: 80px;height: 32px;margin: 0 2px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 32px;}

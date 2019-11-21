@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 검색결과 -->
+	<div class="wrapSchResult themeSch" style="display: ;">
+		<div class="wrapTop">
+			<div class="listTheme">
+				<ul>
+					<li><button><span class="btnsTheme ic1"></span><span class="txt">주유소</span></button></li>
+					<li><button><span class="btnsTheme ic2"></span><span class="txt">LPG</span></button></li>
+					<li><button><span class="btnsTheme ic3"></span><span class="txt">주차장</span></button></li>
+					<li><button><span class="btnsTheme ic4"></span><span class="txt">숙박</span></button></li>
+					<li><button><span class="btnsTheme ic5"></span><span class="txt">은행/ATM</span></button></li>
+					<li><button><span class="btnsTheme ic6"></span><span class="txt">대형마트</span></button></li>
+					<li><button><span class="btnsTheme ic7"></span><span class="txt">병원</span></button></li>
+					<li><button><span class="btnsTheme ic8"></span><span class="txt">약국</span></button></li>
+					<li><button><span class="btnsTheme ic9"></span><span class="txt">화장실</span></button></li>
+					<li><button><span class="btnsTheme ic10"></span><span class="txt">세차장</span></button></li>
+					<li><button><span class="btnsTheme ic11"></span><span class="txt">음식점</span></button></li>
+					<li><button><span class="btnsTheme ic12"></span><span class="txt">편의점</span></button></li>
+				</ul>
+			</div>
+		</div>
+		<div class="plugin-scrollbar-bd">
+			<div class="plugin-scrollbar">
+				<div class="nodata">최근 검색/길찾기 검색결과가 없습니다.</div>
+				<div class="searchList" style="display: block;">
+					<ul>
+						<li><a href="#">예술의전당</a></li>
+						<li><a href="#">예술의전당</a></li>
+						<li><a href="#">서울 강남구 KT우면연구센터축구장 →  서울특별시 마포구 서교동 양화로7- 25</a></li>
+						<li><a href="#">예술의전당</a></li>
+						<li><a href="#">예술의전당</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="wrapBot">
+			<div class="btnWrap">
+				<button><span>전체삭제</span> <span class="btnsBg"></span></button>
+			</div>
+		</div>
+		<div class="btnToggleWrap">
+			<button class="btnsSch btnToggle">열기/닫기</button>
+		</div>
+	</div>
+	<!-- //검색결과 -->
+
+</body>
+</html>

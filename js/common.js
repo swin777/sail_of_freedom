@@ -17,6 +17,13 @@ $(document).ready(function(){
 			inheritedAttrs : ["style", "class"],
 		}
 	});
+
+	// 입력폼 포커스
+	$(".actInbx").focusin(function(){
+		$(".actInbx").removeClass("focus");
+		$(this).addClass("focus");
+	}).focusout(function(){$(this).removeClass("focus");});
+
 	// LNB
 	$(".wrapSearch .menuLnb").on("click", function(){
 		$(".wrapLnb").addClass("view");
@@ -118,15 +125,30 @@ $(document).ready(function(){
 		$(".listShare ul li button").removeClass("on");
 		$(this).addClass("on");
 	});
+	$("#cate1 a").on("click", function(){
+		$("#cate1 a").removeClass("on");
+		$(this).addClass("on");
+	});
+	$("#cate2 a").on("click", function(){
+		$("#cate2 a").removeClass("on");
+		$(this).addClass("on");
+	});
+	$("#cate3 a").on("click", function(){
+		$("#cate3 a").removeClass("on");
+		$(this).addClass("on");
+	});
 
 });
 
 
+function fncShare(){
+	$("#lypopShare").css("display","block");
+}
 function fncTheme(){
 	$("#lypopTheme").css("display","block");
 }
-function fncShare(){
-	$("#lypopShare").css("display","block");
+function fncInfoMod(){
+	$("#lypopInfoMod").css("display","block");
 }
 function fncBookmark(){
 	$("#lypopBookmark").css("display","block");

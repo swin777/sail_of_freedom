@@ -56,7 +56,7 @@
 							<div class="icons">
 								<button class="btnsSch ic_share" onclick="javascript:fncShare();" title="공유하기">공유하기</button>
 								<button class="btnsSch ic_theme" onclick="javascript:fncTheme();" title="주변테마">주변테마</button>
-								<button class="btnsSch ic_infomod" title="장소정보 수정">장소정보 수정</button>
+								<button class="btnsSch ic_infomod" onclick="javascript:fncInfoMod();" title="장소정보 수정">장소정보 수정</button>
 								<button class="btnsSch ic_bookmark" onclick="javascript:fncBookmark();" title="즐겨찾기">즐겨찾기</button>
 							</div>
 							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
@@ -204,9 +204,9 @@
 								<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
 							</div>
 							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
-							<div class="associationAreas">
+							<!-- <div class="associationAreas">
 								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
-							</div>
+							</div> -->
 						</li>
 						<li class="relevantPlace">
 							<div class="name"><span class="num">B2</span>예술의전당</div>
@@ -232,9 +232,9 @@
 								<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
 							</div>
 							<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
-							<div class="associationAreas">
+							<!-- <div class="associationAreas">
 								<button><span class="txt">연관장소보기(3)</span> <span class="iconsArrow"></span></button>
-							</div>
+							</div> -->
 						</li>
 						<li>
 							<div class="name"><span class="num">A</span>예술의전당</div>
@@ -313,6 +313,141 @@
 		</div>
 	</div>
 	<!-- //검색결과 -->
+
+	<!-- 장소정보 수정 -->
+	<div class="lyBox placeInfoMod" id="lypopInfoMod" style="display: none;">
+		<div class="title">장소정보 수정</div>
+		<div class="plugin-scrollbar-bd">
+			<div class="plugin-scrollbar">
+				<div class="inner">
+					<div class="txt1">*필수내용</div>
+					<dl>
+						<dt class="ess">장소명</dt>
+						<dd><input type="text" class="inpSt1"></dd>
+					</dl>
+					<dl class="address">
+						<dt class="ess">주소</dt>
+						<dd>
+							<div class="inpBx actInbx">
+								<span class="dv">도로명</span>
+								<input type="text" class="inpSt1">
+								<button class="btnsBg btnFind">검색</button>
+							</div>
+							<div class="inpBx actInbx">
+								<span class="dv">지번</span>
+								<input type="text" class="inpSt1">
+								<button class="btnsBg btnFind">검색</button>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="ess">카테고리</dt>
+						<dd>
+							<div class="inpBx actInbx">
+								<input type="text" class="inpSt1">
+								<button class="btnsBg btnFind">검색</button>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>전화번호</dt>
+						<dd><input type="text" class="inpSt1" placeholder=""></dd>
+					</dl>
+					<dl>
+						<dt>홈페이지</dt>
+						<dd><input type="text" class="inpSt1" placeholder=""></dd>
+					</dl>
+					<dl class="placePhoto">
+						<dt>장소사진</dt>
+						<dd>
+							<div class="img">
+								<img src="../imgs/data/@Tulips.jpg" alt="">
+								<!-- <button class="btnsSch btnDel">삭제</button> -->
+							</div>
+							<div class="img">
+								<img src="../imgs/data/@Tulips.jpg" alt="">
+								<button class="btnsSch btnDel">삭제</button>
+							</div>
+							<button class="btnsBg btnAdd">추가</button>
+						</dd>
+					</dl>
+					<dl>
+						<dt>장소설명</dt>
+						<dd><textarea name="" id="" class="inpSt1" placeholder=""></textarea></dd>
+					</dl>
+				</div>
+				<div class="btnWrap"><button class="btnMod"><span>수정하기</span></button></div>
+			</div>
+		</div>
+		<button class="btnsSch btnClose">닫기</button>
+	</div>
+	<!-- //장소정보 수정 -->
+
+	<!-- 카테고리 등록 -->
+	<div class="lyBox categoryReg" id="lypopCategoryReg" style="display: ;">
+		<div class="title">카테고리 등록</div>
+		<div class="inner">
+			<div class="dvBox" id="cate1">
+				<div class="stitle">대분류</div>
+				<div class="plugin-scrollbar-bd">
+					<div class="plugin-scrollbar">
+						<a href="#">레저/체육/공원</a>
+						<a href="#">근린생활</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+					</div>
+				</div>
+			</div>
+			<div class="dvBox" id="cate2">
+				<div class="stitle">중분류</div>
+				<div class="plugin-scrollbar-bd">
+					<div class="plugin-scrollbar">
+						<a href="#">레저/체육/공원</a>
+						<a href="#">근린생활</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+					</div>
+				</div>
+			</div>
+			<div class="dvBox" id="cate3">
+				<div class="stitle">소분류</div>
+				<div class="plugin-scrollbar-bd">
+					<div class="plugin-scrollbar">
+						<a href="#">레저/체육/공원</a>
+						<a href="#">근린생활</a>
+						<a href="#">레저/체육/공원/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+						<a href="#">레저/체육/공원</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btnWrap">
+			<button class="btnCancel"><span>취소</span></button>
+			<button class="btnComplet"><span>완료</span></button>
+		</div>
+		<button class="btnsSch btnClose">닫기</button>
+	</div>
+	<!-- //카테고리 등록 -->
 
 </body>
 </html>
