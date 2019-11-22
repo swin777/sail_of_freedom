@@ -36,7 +36,7 @@ $(document).ready(function(){
 		$(".searchList").css("display","block");
 	});
 	$(".searchList a").on("click", function(){
-		$(".searchList").css("display","none");
+		// $(".searchList").css("display","none");
 	});
 	$(".searchList .btnOff").on("click", function(){
 		$(".searchList>ul").css("display","none");
@@ -111,6 +111,9 @@ $(document).ready(function(){
 	$(".wrapSchResult .wrapAddress .wrapTop .btnToggle").on("click", function(){
 		$(".wrapSchResult .wrapAddress").toggleClass("hide");
 	});
+	$(".wrapSchResult.themeSch .btnDel").on("click", function(){
+		$(".wrapSchResult.themeSch .searchList>ul").css("display","none");
+	});
 
 	// 검색결과 레이어팝업
 	$(".lyBox .btnClose").on("click", function(){
@@ -135,6 +138,10 @@ $(document).ready(function(){
 	});
 	$("#cate3 a").on("click", function(){
 		$("#cate3 a").removeClass("on");
+		$(this).addClass("on");
+	});
+	$(".addressFind .addressList a").on("click", function(){
+		$(".addressFind .addressList a").removeClass("on");
 		$(this).addClass("on");
 	});
 
@@ -162,4 +169,10 @@ function fncGuest(){
 }
 function fncPrint(){
 	$("#lypopPrint").css("display","block");
+}
+function fncCategoryReg(){
+	$("#lypopCategoryReg").css("display","block");
+}
+function fncAddressFind(){
+	$("#lypopAddressFind").css("display","block");
 }
