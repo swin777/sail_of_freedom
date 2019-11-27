@@ -66,15 +66,14 @@
 					</div>
 					<div class="list1 small">
 						<ul>
-							<li><a href="#">지도범례</a></li>
-							<li><a href="#">지도 Open API</a></li>
-							<li><a href="#">KT GEO Master 소개</a></li>
+							<li>지도범례</li>
+							<li><a href="https://apilink.kt.co.kr/Geomaster" target="_blank">지도 Open API</a></li>
+							<li>KT GEO Master 소개</li>
 						</ul>
 					</div>
 					<div class="banner">
 						<ul>
-							<li><a href="#"><img src="../imgs/data/banner@x2.png" alt="KT GIS 플랫폼 서비스를 경험하세요! 신규 계약안내"></a></li>
-							<li><a href="#"><img src="../imgs/data/banner@x2.png" alt="KT GIS 플랫폼 서비스를 경험하세요! 신규 계약안내"></a></li>
+							<li><a href="https://apilink.kt.co.kr/Geomaster" target="_blank"><img src="../imgs/data/banner@x2.png" alt="KT GIS 플랫폼 서비스를 경험하세요! 신규 계약안내"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -163,51 +162,6 @@
 					<img src="../imgs/data/icon_dust.png" alt="매우나쁨">
 					<span class="dust lv4">매우나쁨</span>
 				</a>
-				<div class="lyBox weatherInfo" style="display: none;">
-					<div class="title">양재1동</div>
-					<div class="detail">
-						<img src="../imgs/data/icon_weather_sample.png" alt="">
-						<div class="wpWether">
-							<span class="txt1">구름많음</span>
-							<span class="txt2">20<strong>℃</strong></span>
-						</div>
-						<div class="wpDust">
-							<dl>
-								<dt>미세</dt>
-								<dd class="dust lv4">매우나쁨</dd>
-							</dl>
-							<dl>
-								<dt>초미세</dt>
-								<dd class="dust lv1">좋음</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="week">
-						<ul>
-							<li>
-								<span class="txt1">오늘</span>
-								<img src="../imgs/data/icon_weather_sample.png" alt="">
-								<span class="txt2">7˚/13˚</span>
-							</li>
-							<li>
-								<span class="txt1">내일</span>
-								<img src="../imgs/data/icon_weather_sample.png" alt="">
-								<span class="txt2">7˚/13˚</span>
-							</li>
-							<li>
-								<span class="txt1">모레</span>
-								<img src="../imgs/data/icon_weather_sample.png" alt="">
-								<span class="txt2">7˚/13˚</span>
-							</li>
-							<li>
-								<span class="txt1">11.11 월</span>
-								<img src="../imgs/data/icon_weather_sample.png" alt="">
-								<span class="txt2">7˚/13˚</span>
-							</li>
-						</ul>
-					</div>
-					<button class="btnsSch btnClose">닫기</button>
-				</div>
 			</div>
 		</div>
 		<div class="modChange">
@@ -355,7 +309,6 @@
 			</div>
 			<textarea name="" id="" placeholder="메모를 남기면 지도와 함께 인쇄됩니다."></textarea>
 			<div class="btnWrap">
-				<button class="btnCancel"><span>취소</span></button>
 				<button class="btnPrint"><span>인쇄</span></button>
 			</div>
 		</div>
@@ -396,6 +349,118 @@
 		<button class="btnsBg btnToggle">열기/닫기</button>
 	</div>
 	<!-- //미니맵 -->
+
+	<!-- 날씨팝업 -->
+	<div class="lyWeatherDust" style="position: absolute;top: 50%;left: 50%;display: none;">
+		<!-- simple -->
+		<div class="lyBox weatherSimple">
+			<div class="wpWether">
+				<img src="../imgs/data/icon_weather_sample.png" alt="">
+				<div class="txt2">20<strong>℃</strong></div>
+				<div class="txt3">양재1동</div>
+			</div>
+			<div class="wpDust">
+				<dl>
+					<dt>미세</dt>
+					<dd class="dust lv4">매우나쁨</dd>
+				</dl>
+				<dl>
+					<dt>초미세</dt>
+					<dd class="dust lv1">좋음</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- //simple -->
+
+		<!-- detail -->
+		<div class="lyBox weatherInfo" style="top: -345px;left: -120px;display: none;">
+			<div class="title">양재1동</div>
+			<div class="detail">
+				<img src="../imgs/data/icon_weather_sample.png" alt="">
+				<div class="wpWether">
+					<span class="txt1">구름많음</span>
+					<span class="txt2">20<strong>℃</strong></span>
+				</div>
+				<div class="wpDust">
+					<dl>
+						<dt>미세</dt>
+						<dd class="dust lv4">매우나쁨</dd>
+					</dl>
+					<dl>
+						<dt>초미세</dt>
+						<dd class="dust lv1">좋음</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="week">
+				<ul>
+					<li>
+						<span class="txt1">오늘</span>
+						<img src="../imgs/data/icon_weather_sample.png" alt="">
+						<span class="txt2">7˚/13˚</span>
+					</li>
+					<li>
+						<span class="txt1">내일</span>
+						<img src="../imgs/data/icon_weather_sample.png" alt="">
+						<span class="txt2">7˚/13˚</span>
+					</li>
+					<li>
+						<span class="txt1">모레</span>
+						<img src="../imgs/data/icon_weather_sample.png" alt="">
+						<span class="txt2">7˚/13˚</span>
+					</li>
+					<li>
+						<span class="txt1">11.11 월</span>
+						<img src="../imgs/data/icon_weather_sample.png" alt="">
+						<span class="txt2">7˚/13˚</span>
+					</li>
+				</ul>
+			</div>
+			<button class="btnsSch btnClose">닫기</button>
+			<div class="dustWrap">
+				<dl>
+					<dt>미세먼지</dt>
+					<dd>
+						<span class="dust lv1">좋음</span>
+						<span class="scope">0~30</span>
+					</dd>
+					<dd>
+						<span class="dust lv2">보통</span>
+						<span class="scope">~80</span>
+					</dd>
+					<dd>
+						<span class="dust lv3">나쁨</span>
+						<span class="scope">~150</span>
+					</dd>
+					<dd>
+						<span class="dust lv4">매우나쁨</span>
+						<span class="scope">151~</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>초미세먼지</dt>
+					<dd>
+						<span class="dust lv1">좋음</span>
+						<span class="scope">0~15</span>
+					</dd>
+					<dd>
+						<span class="dust lv2">보통</span>
+						<span class="scope">~35</span>
+					</dd>
+					<dd>
+						<span class="dust lv3">나쁨</span>
+						<span class="scope">~75</span>
+					</dd>
+					<dd>
+						<span class="dust lv4">매우나쁨</span>
+						<span class="scope">76~</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- //detail -->
+	</div>
+	<!-- //날씨팝업 -->
 
 </body>
 </html>

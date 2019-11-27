@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 길찾기 -->
+	<div class="wrapSchResult wrapNavi">
+		<div class="wrapPoint">
+			<div class="menuTop">
+				<button class="btnsBg menuLnb">메뉴</button>
+				<ul>
+					<li><a href="#" class="current">자동차</a></li>
+					<li><a href="#">대중교통</a></li>
+					<li><span class="disabled">도보</span></li>
+					<li><span class="disabled">자전거</span></li>
+				</ul>
+				<button class="btnsBg btnClose">닫기</button>
+			</div>
+			<div class="pointList">
+				<ul>
+					<li>
+						<span class="iconsNavi icStart"></span>
+						<input type="text" placeholder="출발지를 검색하거나 클릭하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnReInput" title="다시입력">다시입력</button>
+					</li>
+					<li>
+						<span class="iconsNavi icWaypoint"></span>
+						<input type="text" placeholder="추가할 경유지를 선택하세요.">
+						<button class="btnsBg btnFind" title="검색">검색</button>
+						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button>
+					</li>
+					<li>
+						<div class="WrapMuch">
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<!-- <div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div>
+							<div class="muchWayPoint">
+								<span class="iconsNavi"></span>
+								<button class="btnsNavi btnAdd" title="추가" style="display: none;">추가</button>
+								<span class="txt1">스타벅스 봉은사지점</span>
+								<button class="btnsNavi btnDel" title="삭제">삭제</button>
+							</div> -->
+						</div>
+					</li>
+					<li>
+						<span class="iconsNavi icDest"></span>
+						<input type="text" placeholder="목적지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnAdd" title="경유지 추가">경유지 추가</button>
+					</li>
+				</ul>
+				<div class="wrapRoadFind">
+					<!-- <button disabled="disabled"><span class="iconsNavi"></span><span>길찾기</span></button> -->
+					<button><span class="iconsNavi"></span><span>길찾기</span></button>
+				</div>
+				<div class="startNow">출발시간<span class="iconsArrow"></span></div>
+				<div class="timeSetting">
+					<a href="#" class="current">11월  28일 13:30</a>
+					<span class="iconsNavi"></span>
+					<div class="innerBox" style="display: none;">
+						<div class="date">
+							<div class="plugin-scrollbar-bd">
+								<div class="plugin-scrollbar">
+									<a href="#">11월 9일</a>
+									<a href="#">11월 9일</a>
+									<a href="#">11월 9일</a>
+									<a href="#">11월 10일</a>
+									<a href="#">11월 10일</a>
+									<a href="#">11월 10일</a>
+									<a href="#">11월 10일</a>
+									<a href="#">11월 10일</a>
+									<a href="#">11월 10일</a>
+									<a href="#">11월 10일</a>
+								</div>
+							</div>
+						</div>
+						<div class="time">
+							<div class="plugin-scrollbar-bd">
+								<div class="plugin-scrollbar">
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+									<a href="#">00:00</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="wrapTop">
+				<div class="resultNum">장소 <span class="num">888</span>건 <span class="iconsArrow"></span></div>
+				<div class="sort">
+					<ul>
+						<li><button class="on"><span>관련도순</span></button></li>
+						<li><button><span>거리순</span></button></li>
+					</ul>
+				</div>
+			</div> -->
+		</div>
+		<div class="plugin-scrollbar-bd" style="top: 491px;"><!-- style="top: px;" = wrapPoint 의 height -->
+			<div class="plugin-scrollbar">
+				<div class="loading">
+					<img src="../imgs/loading.png" alt="로딩중">
+					<div class="txt1">길찾기 실행중입니다.</div>
+				</div>
+			</div>
+		</div><!-- //.plugin-scrollbar-bd -->
+		<div class="wrapBot">
+			<div class="pagenation">
+				<a href="#" class="btnsSch prev disabled">이전</a>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#" class="btnsSch next">다음</a>
+			</div>
+			<a href="#" class="btnLink">GIS 신규계약안내</a>
+		</div>
+		<div class="btnToggleWrap">
+			<button class="btnsSch btnToggle">열기/닫기</button>
+		</div>
+	</div>
+	<!-- //길찾기 -->
+
+</body>
+</html>

@@ -32,12 +32,15 @@ input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration { display: none; }
 body{overflow: hidden;color: #4a4a4a;}
+a{color: #4a4a4a;}
 button,button:focus,button:active{padding: 0;}
 span{position:relative;}
 
 /* common */
 .iconsBg{display: inline-block;background: url(../imgs/icons_01.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .iconsArrow{display: inline-block;background: url(../imgs/icons_arrow.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
+.iconsNavi{display: inline-block;background: url(../imgs/icons_navi.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
+.sticker{display: inline-block;background: url(../imgs/sticker.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .btnsBg{display: inline-block;background: url(../imgs/btns_01.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .btnsBg:hover,.btnsBg:focus{background-position-y: -50px !important;}
 .iconMap{display: inline-block;background: url(../imgs/icons_map.png) no-repeat;background-size: auto 100px;}
@@ -48,6 +51,8 @@ span{position:relative;}
 .btnsGnb:hover,.btnsGnb:focus{background-position-y: -50px !important;}
 .btnsSch{display: inline-block;background: url(../imgs/btns_sch.png) no-repeat;background-size: auto 200px;}
 .btnsSch:hover,.btnsSch:focus{background-position-y: -50px !important;}
+.btnsNavi{display: inline-block;background: url(../imgs/btns_navi.png) no-repeat;background-size: auto 200px;}
+.btnsNavi:hover,.btnsNavi:focus{background-position-y: -50px !important;}
 .btnsTheme{display: inline-block;background: url(../imgs/btns_theme.png) no-repeat;background-size: auto 200px;}
 .btnsShare{display: inline-block;background: url(../imgs/btns_share.png) no-repeat;background-size: auto 200px;}
 .plugin-scrollbar-bd{position:absolute;left:0;right:0;top: 0;bottom: 0;}
@@ -65,6 +70,120 @@ span{position:relative;}
 .inpSt1{height:34px;padding:0 12px;border:1px solid #dcdcdc;background-color:#fff;vertical-align:middle;border-radius: 2px;}
 .inpSt1:focus{border-color:#999;}
 
+.wrapNavi{position: absolute;top: 12px;bottom: 12px;left: 12px;width: 384px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);transition:.3s;}
+.wrapNavi.wrapSchResult{top: 12px;}
+.wrapNavi.wrapSchResult .wrapTop{position: relative;}
+.wrapNavi.hide{left: -384px;}
+.wrapNavi .wrapPoint{position: relative;}
+.wrapNavi .wrapPoint .menuTop{position: relative;height: 46px;padding-top: 3px;border-bottom: solid 1px #dedede;}
+.wrapNavi .wrapPoint .menuTop .menuLnb{width: 40px;height: 40px;margin-left: 9px;}
+.wrapNavi .wrapPoint .menuTop ul{position: absolute;bottom: 0;left: 70px;}
+.wrapNavi .wrapPoint .menuTop ul li{display: inline-block;margin-right: 28px;}
+.wrapNavi .wrapPoint .menuTop ul li a{position: relative;display: block;height: 46px;line-height: 48px;color: #777;font-size: 14px;font-weight: 500;letter-spacing: -.7px;text-align: center;}
+.wrapNavi .wrapPoint .menuTop ul li a:hover{color: #7725ff;text-decoration: none;}
+.wrapNavi .wrapPoint .menuTop ul li a.current{color: #7725ff;}
+.wrapNavi .wrapPoint .menuTop ul li a.current:after{content: "";display: block;position: absolute;left: 0;right: 0;bottom: 0;height: 4px;background-color: #7725ff;}
+.wrapNavi .wrapPoint .menuTop ul li .disabled{position: relative;display: block;height: 46px;line-height: 48px;color: #ccc;font-size: 14px;font-weight: 500;letter-spacing: -.7px;text-align: center;}
+.wrapNavi .wrapPoint .menuTop .btnClose{position: absolute;top: 9px;right: 12px;width: 26px;height: 26px;background-position-x: -350px;}
+.wrapNavi .wrapPoint .pointList{position: relative;padding: 12px 18px;background-color: #f5f5f5;}
+.wrapNavi .wrapPoint .pointList ul{width: 312px;background-color: #fff;border: 1px solid #ccc;border-radius: 8px;}
+.wrapNavi .wrapPoint .pointList ul li{position: relative;min-height: 48px;border-bottom: 1px solid #ccc;}
+.wrapNavi .wrapPoint .pointList ul li:last-child{border-bottom: none;background-color: #fff;border-radius: 0 0 8px 8px;}
+.wrapNavi .wrapPoint .pointList ul li input{width: 228px;height: 47px;margin-left: 37px;color: #777;font-size: 14px;letter-spacing: -1px;border: none;}
+.wrapNavi .wrapPoint .pointList ul li .btnFind{position: absolute;top: 50%;right: 6px;margin-top: -20px;width: 40px;height: 40px;background-position-x: -50px;}
+.wrapNavi .wrapPoint .pointList ul li .iconsNavi{position: absolute;width: 10px;height: 10px;top: 19px;left: 14px;}
+.wrapNavi .wrapPoint .pointList ul li .icStart{background-position: -150px 0;}
+.wrapNavi .wrapPoint .pointList ul li .icWaypoint{background-position: -175px 0;}
+.wrapNavi .wrapPoint .pointList ul li .icDest{background-position: -200px 0;}
+.wrapNavi .wrapPoint .pointList .btnsNavi{position: absolute;width: 25px;height: 25px;top: 50%;margin-top: -13px;text-indent: -9999px;}
+.wrapNavi .wrapPoint .pointList .btnReInput{right: -40px;background-position: -100px 0;}
+.wrapNavi .wrapPoint .pointList .btnAdd{right: -40px;background-position: 0px 0;}
+.wrapNavi .wrapPoint .pointList .btnDel{right: -40px;background-position: -50px 0;}
+.wrapNavi .wrapPoint .pointList .btnMove{right: 13px;background-position: -125px 0;cursor: move;}
+.wrapNavi .wrapPoint .wrapRoadFind{position: relative;padding-top: 14px;text-align: right;}
+.wrapNavi .wrapPoint .wrapRoadFind button{width: 100px;height: 40px;color: #7725ff;font-size: 14px;font-weight: 500;letter-spacing: -.8px;border: solid 1px #7725ff;border-radius: 20px;}
+.wrapNavi .wrapPoint .wrapRoadFind button:disabled{color: #999;border: solid 1px #dcdcdc;opacity: 1;}
+.wrapNavi .wrapPoint .wrapRoadFind button .iconsNavi{position: relative;width: 25px;height: 25px;background-position: -225px 2px;vertical-align: middle;}
+.wrapNavi .wrapPoint .wrapRoadFind button:disabled .iconsNavi{background-position: -250px 2px;}
+.wrapNavi .wrapPoint .startNow{position: absolute;bottom: 10px;font-size: 12px;letter-spacing: -.6px;}
+.wrapNavi .wrapPoint .startNow .iconsArrow{width: 16px;height: 16px;margin-left: 2px;background-position: -25px 0;vertical-align: -3px;}
+.wrapNavi .myPoint{min-height: 48px;padding: 13px 0 0 23px;border-top: solid 1px #dedede;border-bottom: solid 1px #dedede;}
+.wrapNavi .myPoint button{font-size: 12px;}
+.wrapNavi .myPoint a{display: inline-block;margin: 0 46px 0 2px;color: #888;font-size: 11px;text-decoration: underline;}
+.wrapNavi .myPoint .iconsNavi{width: 25px;height: 25px;vertical-align: -10px;}
+.wrapNavi .myPoint .btnHome .iconsNavi{background-position-x: -275px;}
+.wrapNavi .myPoint .btnOffice .iconsNavi{background-position-x: -300px;}
+.wrapNavi .recentSch{padding: 40px 18px;}
+.wrapNavi .recentSch .title{padding-bottom: 10px;line-height: 1;font-size: 14px;font-weight: 500;letter-spacing: -.7px;border-bottom: 1px solid #dedede;}
+.wrapNavi .recentSch .list{padding: 10px 0;}
+.wrapNavi .recentSch .list a{display: block;min-height: 44px;padding: 12px 0 10px;font-size: 14px;font-weight: 500;letter-spacing: -1px;line-height: 1.4;}
+.wrapNavi .recentSch .list a:hover{background-color: #f5f5f5;text-decoration: none;}
+.wrapNavi .recentSch .list a .txt1{display: inline-block;color: #4a4a4a;vertical-align: middle;}
+.wrapNavi .recentSch .list a .txt2{display: inline-block;color: #777;vertical-align: middle;}
+.wrapNavi .recentSch .list a .move{display: inline-block;margin: 0 2px;color: #777;vertical-align: middle;}
+.wrapNavi .recentSch .btnWrap{padding-top: 10px;text-align: center;}
+.wrapNavi .recentSch .btnWrap button{width: 72px;height: 28px;color: #888;font-size: 12px;border: 1px solid #9b9b9b;border-radius: 20px;}
+.wrapNavi .recentSch .btnWrap button .iconsArrow{width: 16px;height: 16px;background-position: -25px 0;vertical-align: -3px;}
+.wrapNavi .list ul li .iconsNavi{position: absolute;top: 17px;right: 18px;width: 32px;height: 42px;padding-top: 6px;line-height: 1;text-align: center;text-indent: 0;}
+.wrapNavi .list ul li .iconsNavi span{color: #fff;font-size: 10px;}
+.wrapNavi .list ul li .icStart{background-position: -0px 0;}
+.wrapNavi .list ul li .icWaypoint{background-position: -50px 0;}
+.wrapNavi .list ul li .icDest{background-position: -100px 0;}
+.wrapNavi .list ul li.current .iconsNavi{background-position-y: -50px;}
+.wrapNavi .WrapMuch{overflow-y: auto;margin-bottom: -10px;padding: 0px 0 20px 4px;width: 328px;max-height: 280px;}
+.wrapNavi .WrapMuch:after{content:".";clear:both;display:block;height:0;visibility:hidden;}
+.wrapNavi .WrapMuch .muchWayPoint{position: relative;float: left;margin-top: 10px;padding-left: 24px;width: 150px;cursor: move;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .iconsNavi{top: 50%;left: 3px;margin-top: -11px;width: 20px;height: 20px;background-position: -175px -25px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .iconsNavi.startPoint{background-position-x: -150px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .muchWayPoint:first-child .iconsNavi{background-position-x: -150px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .muchWayPoint:first-child .btnDel{background-position-x: -175px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .muchWayPoint:last-child .iconsNavi{background-position-x: -200px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .muchWayPoint:last-child .btnDel{background-position-x: -225px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .muchWayPoint .txt1{display: block;position: relative;overflow:hidden;width: 120px;height: 32px;line-height: 32px;padding: 0 14px 0 7px;font-size: 13px;letter-spacing: -.8px;background-color: #e8e8e8;border-radius: 8px;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .btnsNavi{top: 50%;width: 20px;height: 20px;margin-top: -11px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .btnAdd{left: 3px;background-position-x: -150px;}
+.wrapNavi .wrapPoint .pointList ul li .WrapMuch .btnDel{right: 8px;background-position-x: -200px;}
+.wrapNavi .wrapPoint .pointList .timeSetting{position: absolute;z-index: 9;left: 99px;bottom: 10px;}
+.wrapNavi .wrapPoint .pointList .timeSetting a.current{color: #7725ff;font-size: 12px;font-weight: 500;letter-spacing: -.6px;text-decoration: underline;}
+.wrapNavi .wrapPoint .pointList .timeSetting .iconsNavi{width: 16px;height: 16px;background-position-x: -325px;vertical-align: middle;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox{position: absolute;top: 22px;left: 0;display: flex;width: 170px;height: 178px;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox a{display: block;height: 20px;margin-top: 4px;line-height: 20px;color: #4a4a4a;font-size: 12px;letter-spacing: -.7px;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox .plugin-scrollbar-bd{top: 4px;bottom: 4px;left: 18px;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox .date{position: relative;width: 100%;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox .date:after{content: "";position: absolute;top: 8px;right: 0;bottom: 8px;width: 1px;background-color: #e7e7e7;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox .time{position: relative;width: 100%;}
+.wrapNavi .wrapPoint .pointList .timeSetting .innerBox .time .plugin-scrollbar-bd{left: 26px;}
+.timeSetting .os-theme-dark > .os-scrollbar-vertical, .timeSetting .os-theme-light > .os-scrollbar-vertical {width: 7px;}
+.timeSetting .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {background: rgba(124, 124, 124, 0.4);}
+.wrapNavi .loading{padding: 40px 0;text-align: center;}
+.wrapNavi .loading img{width: 39px;height: 39px;}
+.wrapNavi .loading img{animation: loadingImg 1s infinite;}
+@keyframes loadingImg {
+  100% {transform: rotate(-360deg);}
+}
+.wrapNavi .loading .txt1{margin-top: 18px;}
+
+.wrapNavi .btnToggleWrap{position: absolute;top: 50%;right: -17px;margin-top: -28px;width: 17px;height: 56px;border-radius: 0 8px 8px 0;background-color: #fff;}
+.wrapNavi .btnToggleWrap button.btnToggle{width: 100%;height: 100%;background-position: 0px -78px;text-indent: -9999px;}
+.wrapNavi .btnToggleWrap button.btnToggle:hover,.wrapNavi .btnToggleWrap button.btnToggle:focus{background-position-y: -78px !important;}
+.wrapNavi.hide .btnToggleWrap button.btnToggle{background-position: -23px -78px;}
+
+/* 스티커 */
+.sticker{width: 20px;height: 20px;border-radius: 20px;vertical-align: middle;background-color: #bbb;}
+.sticker.ic1{background-position-x: 0px;}
+.sticker.ic2{background-position-x: -25px;}
+.sticker.ic3{background-position-x: -50px;}
+.sticker.ic4{background-position-x: -75px;}
+.sticker.ic5{background-position-x: -100px;}
+.sticker.ic6{background-position-x: -125px;}
+.sticker.ic7{background-position-x: -150px;}
+.sticker.bg1{background-color: #d0021b;}
+.sticker.bg2{background-color: #f58323;}
+.sticker.bg3{background-color: #f8c41c;}
+.sticker.bg4{background-color: #3dcb21;}
+.sticker.bg5{background-color: #4a90e2;}
+.sticker.bg6{background-color: #2d2cd5;}
+.sticker.bg7{background-color: #7725ff;}
 
 .wrapSearch{position: absolute;top: 12px;left: 12px;width: 384px;min-height: 48px;padding: 3px 0px 0;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
 .wrapSearch .menuLnb{width: 40px;height: 40px;margin-left: 9px;}
@@ -81,13 +200,14 @@ span{position:relative;}
 .wrapSearch .searchList ul li a:hover, .wrapSearch .searchList ul li a:focus{color: #333;background-color: #faf6ff;text-decoration: none;}
 .wrapSearch .searchList .autoCompt{height: 48px;line-height: 48px;padding-right: 16px;border-top: 1px solid #e8e8e8;text-align: right;}
 .wrapSearch .searchList .autoCompt .btnOff{letter-spacing: -.78px;}
-.wrapSearch .searchList .autoCompt .btnOff .btnsBg{width: 20px;height: 20px;margin-left: 6px;background-position-x: -250px;vertical-align: middle;}
+.wrapSearch .searchList .autoCompt .btnOff span{padding-right: 6px;}
+.wrapSearch .searchList .autoCompt .btnOff .btnsBg{display: none;width: 20px;height: 20px;background-position-x: -250px;vertical-align: middle;}
 
 .wrapSchResult{position: absolute;top: 70px;bottom: 12px;left: 12px;width: 384px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);transition:.3s;}
 .wrapSchResult.hide{left: -384px;}
 .wrapSchResult .wrapAddress{position: relative;}
 .wrapSchResult .wrapPlace{position: absolute;width: 100%;bottom: 0;}
-.wrapSchResult .plugin-scrollbar-bd{top:42px;bottom:48px;}
+.wrapSchResult .plugin-scrollbar-bd{top:42px;bottom:47px;}
 .wrapSchResult .wrapTop{position: absolute;top: 0;width: 100%;height: 42px;padding: 0 0 0 18px;border-bottom: solid 1px #e8e8e8;}
 .wrapSchResult .wrapAddress .wrapTop{position: relative;}
 .wrapSchResult .wrapTop .btnWrap{position: absolute;top: 0;right: 0;}
@@ -128,7 +248,6 @@ span{position:relative;}
 .wrapSchResult .list ul li:hover{background-color: #faf6ff;}
 .wrapSchResult .list ul li.current{background-color: #faf6ff;}
 .wrapSchResult .list ul li:after{content:"";display: block;position: absolute;right: 18px;bottom: 0;left: 18px;height: 1px;background-color: #ececec;}
-.wrapSchResult .list ul li:last-child:after{display: none;}
 .wrapSchResult .list ul li.relevantPlace{background-color: #fafafa;}
 .wrapSchResult .list ul li.relevantPlace:hover{background-color: #faf6ff;}
 .wrapSchResult .list ul li.relevantPlace.current{background-color: #faf6ff;}
@@ -189,7 +308,7 @@ span{position:relative;}
 .wrapSchResult.themeSch .btnWrap .btnsBg{width: 40px;height: 40px;margin-left: -4px;vertical-align: -14px;background-position-x: -100px;}
 
 /* 검색리스트 레이어팝업 */
-.lyBox{position: absolute;overflow: hidden;z-index: 19;top: 50%;right: 50%;min-width: 200px;border: solid 1px #ccc;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
+.lyBox{position: absolute;z-index: 19;top: 50%;right: 50%;min-width: 200px;border: solid 1px #ccc;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
 .lyBox .title{height: 40px;line-height: 40px;padding-left: 15px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border-bottom: 1px solid #f5f5f5;}
 .lyBox .btnClose{position: absolute;top: 6px;right: 6px;width: 26px;height: 26px;background-position-x: -275px;text-indent: -9999px;}
 .wrapSchResult .lyBox{top: 12px;right: 12px;}
@@ -329,8 +448,8 @@ span{position:relative;}
 .wrapLnb .list1 a{display: block;position: relative;height: 48px;font-size: 16px;letter-spacing: -.67px;line-height: 48px;}
 .wrapLnb .list1 a.disabled{opacity: .5;}
 .wrapLnb .list1 a.disabled:after{content: "coming soon";position: absolute;right: 0;bottom: 0;color: #999;font-size: 12px;letter-spacing: -.5px;}
-.wrapLnb .list1 a.disabled:hover,.wrapLnb .list1 a.disabled:focus{cursor: default;}
-.wrapLnb .list1 a.disabled:hover .btnsLnb,.wrapLnb .list1 a.disabled:focus .btnsLnb{background-position-y: 0px;}
+.wrapLnb .list1 a.disabled:hover,.wrapLnb .list1 a.disabled:focus{color: #4a4a4a;cursor: default;}
+.wrapLnb .list1 a.disabled:hover .btnsLnb,.wrapLnb .list1 a.disabled:focus .btnsLnb{background-position-y: 0px !important;}
 .wrapLnb .list1 a:hover,.wrapLnb .list1 a:focus{color: #222;text-decoration: none;}
 .wrapLnb .list1 a:hover .btnsLnb,.wrapLnb .list1 a:focus .btnsLnb{background-position-y: -50px;}
 .wrapLnb .list1 a .btnsLnb{margin-right: 6px;vertical-align: middle;}
@@ -342,7 +461,8 @@ span{position:relative;}
 .wrapLnb .btnsLnb.ic6{background-position: -200px 0;}
 .wrapLnb .btnsLnb.ic7{background-position: -230px 0;}
 .wrapLnb .list1.small{padding: 8px 0;border-top: solid 1px #dcdcdc;border-bottom: solid 1px #dcdcdc;}
-.wrapLnb .list1.small a{height: 32px;line-height: 32px;padding-left: 25px;font-size: 12px;}
+.wrapLnb .list1.small li{height: 32px;color: #999;line-height: 32px;padding-left: 25px;font-size: 12px;}
+.wrapLnb .list1.small a{height: 32px;line-height: 32px;font-size: 12px;}
 .wrapLnb .list1.small a:hover{text-decoration: underline;}
 .wrapLnb .banner ul{width: 294px;margin: 15px auto;}
 .wrapLnb .banner ul li{margin-bottom: 10px;}
@@ -381,28 +501,42 @@ span{position:relative;}
 .wrapLogin .locationSettings .weatherWrap{position: relative;z-index: 9;}
 .wrapLogin .locationSettings .weatherWrap .current{color: #4a4a4a;font-weight: bold;}
 .wrapLogin .locationSettings .weatherWrap .current img{width: 16px;height: 16px;margin: 0 4px 0 10px;vertical-align: -3px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo.lyBox{top: 36px;right: -12px;min-width: 312px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail{position: relative;height: 83px;margin: 0 10px;line-height: 1;border-bottom: 2px solid #f5f5f5;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail img{position: absolute;top: 15px;left: 16px;width: 54px;height: 54px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether{position: absolute;top: 17px;left: 86px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether>span{display: block;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether .txt1{margin-bottom: 2px;font-size: 10px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether .txt2{font-size: 30px;letter-spacing: -1.6px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpWether .txt2 strong{font-family: LucidaGrande;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust{position: absolute;top: 17px;right: 16px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust dl{margin-bottom: 8px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust dl dt{display: inline-block;width: 36px;height: 16px;line-height: 16px;color: #777;font-size: 10px;letter-spacing: -.5px;text-align: center;background-color: #f5f5f5;border-radius: 4px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .detail .wpDust dl dd{display: inline-block;width: 60px;font-size: 11px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .week ul{display: flex;padding: 0 10px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .week ul li{width: 100%;padding: 15px 0;text-align: center;line-height: 1;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .week img{display: block;margin: 14px auto 18px;width: 32px;height: 32px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .week li span{display: block;font-size: 10px;letter-spacing: -.5px;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .week .txt1{color: #999;font-weight: 500;}
-.wrapLogin .locationSettings .weatherWrap .weatherInfo .week .txt2{color: #777;font-weight: bold;}
-.wrapLogin .locationSettings .dust.lv1{color: #4A90E2;}
-.wrapLogin .locationSettings .dust.lv2{color: #57BD3F;}
-.wrapLogin .locationSettings .dust.lv3{color: #F5A623;}
-.wrapLogin .locationSettings .dust.lv4{color: #D0021B;}
+.weatherInfo.lyBox{min-width: 312px;}
+.weatherInfo .detail{position: relative;height: 83px;margin: 0 10px;line-height: 1;border-bottom: 2px solid #f5f5f5;}
+.weatherInfo .detail img{position: absolute;top: 15px;left: 16px;width: 54px;height: 54px;}
+.weatherInfo .detail .wpWether{position: absolute;top: 17px;left: 86px;}
+.weatherInfo .detail .wpWether>span{display: block;}
+.weatherInfo .detail .wpWether .txt1{margin-bottom: 2px;font-size: 10px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
+.weatherInfo .detail .wpWether .txt2{font-size: 30px;letter-spacing: -1.6px;}
+.weatherInfo .detail .wpWether .txt2 strong{font-family: LucidaGrande;}
+.weatherInfo .detail .wpDust{position: absolute;top: 17px;right: 16px;}
+.weatherInfo .detail .wpDust dl{margin-bottom: 8px;}
+.weatherInfo .detail .wpDust dl dt{display: inline-block;width: 36px;height: 16px;line-height: 16px;color: #777;font-size: 10px;letter-spacing: -.5px;text-align: center;background-color: #f5f5f5;border-radius: 4px;}
+.weatherInfo .detail .wpDust dl dd{display: inline-block;width: 60px;font-size: 11px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
+.weatherInfo .week ul{display: flex;padding: 0 10px;}
+.weatherInfo .week ul li{width: 100%;padding: 15px 0;text-align: center;line-height: 1;}
+.weatherInfo .week img{display: block;margin: 14px auto 18px;width: 32px;height: 32px;}
+.weatherInfo .week li span{display: block;font-size: 10px;letter-spacing: -.5px;}
+.weatherInfo .week .txt1{color: #999;font-weight: 500;}
+.weatherInfo .week .txt2{color: #777;font-weight: bold;}
+.weatherInfo .dustWrap{position: absolute;left: 0;right: 0;bottom: -102px;height: 96px;padding: 14px 0 0 25px;border-radius: 4px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border: solid 1px #ccc;background-color: #f5f5f5;}
+.weatherInfo .dustWrap dl{margin-bottom: 8px;font-size: 10px;font-weight: 500;line-height: 1;}
+.weatherInfo .dustWrap dt{display: inline-block;width: 72px;color: #777;vertical-align: top;}
+.weatherInfo .dustWrap dd{display: inline-block;margin-right: 22px;vertical-align: top;}
+.weatherInfo .dustWrap dd span{display: block;margin-bottom: 6px;}
+.weatherSimple{width: 120px;min-width: 120px;height: 120px;padding: 12px;cursor: pointer;}
+.weatherSimple .wpWether{position: relative;height: 50px;border-bottom: 1px solid #f5f5f5;text-align: right;line-height: 1;}
+.weatherSimple .wpWether img{position: absolute;top: 3px;left: 3px;width: 32px;height: 32px;}
+.weatherSimple .wpWether .txt2{padding: 6px 0 4px;font-size: 20px;font-weight: bold;}
+.weatherSimple .wpWether .txt3{color: #777;font-size: 10px;}
+.weatherSimple .wpDust{padding-top: 10px;}
+.weatherSimple .wpDust dl{overflow: hidden;margin-bottom: 4px;line-height: 1;}
+.weatherSimple .wpDust dl dt{float: left;height: 16px;line-height: 16px;color: #777;font-size: 10px;letter-spacing: -.5px;}
+.weatherSimple .wpDust dl dd{float: right;font-size: 11px;font-weight: 500;letter-spacing: -.5px;text-align: right;}
+.dust.lv1{color: #4A90E2;}
+.dust.lv2{color: #57BD3F;}
+.dust.lv3{color: #F5A623;}
+.dust.lv4{color: #D0021B;}
 
 .wrapLogin .modChange{height: 30px;font-size: 11px;color: #555;letter-spacing: -.6px;line-height: 29px;border: solid 1px #dedede;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);}
 .wrapLogin .modChange>div{display: inline-block;}
@@ -456,7 +590,7 @@ span{position:relative;}
 .wrapLogin .myInfo .myInfoMod{text-align: center;}
 .wrapLogin .myInfo .myInfoMod .photo{position: relative;width: 72px;margin: 28px auto 16px;}
 .wrapLogin .myInfo .myInfoMod .photo img{border-radius: 100px;}
-.wrapLogin .myInfo .myInfoMod .photo .photoChange{position: absolute;right: 0;bottom: 0;width: 20px;height: 20px;border-radius: 20px;background-position: -650px 0;}
+.wrapLogin .myInfo .myInfoMod .photo .photoChange{position: absolute;right: 0;bottom: 0;width: 20px;height: 20px;border-radius: 20px;}
 .wrapLogin .myInfo .myInfoMod .name{margin-bottom: 10px;}
 .wrapLogin .myInfo .myInfoMod .name strong{font-weight: 500;letter-spacing: -1px;}
 .wrapLogin .myInfo .myInfoMod .name a.mod{padding-left: 4px;color: #777;font-size: 10px;text-decoration: underline;}

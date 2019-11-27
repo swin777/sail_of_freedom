@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 길찾기 -->
+	<div class="wrapSchResult wrapNavi">
+		<div class="wrapPoint">
+			<div class="menuTop">
+				<button class="btnsBg menuLnb">메뉴</button>
+				<ul>
+					<li><a href="#" class="current">자동차</a></li>
+					<li><a href="#">대중교통</a></li>
+					<li><span class="disabled">도보</span></li>
+					<li><span class="disabled">자전거</span></li>
+				</ul>
+				<button class="btnsBg btnClose">닫기</button>
+			</div>
+			<div class="pointList">
+				<ul>
+					<li>
+						<span class="iconsNavi icStart"></span>
+						<input type="text" placeholder="출발지를 검색하거나 클릭하세요.">
+						<button class="btnsBg btnFind" title="검색">검색</button>
+						<button class="btnsNavi btnReInput" title="다시입력">다시입력</button>
+					</li>
+					<li>
+						<span class="iconsNavi icWaypoint"></span>
+						<input type="text" placeholder="경유지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button>
+					</li>
+					<li>
+						<span class="iconsNavi icWaypoint"></span>
+						<input type="text" placeholder="경유지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button>
+					</li>
+					<li>
+						<span class="iconsNavi icDest"></span>
+						<input type="text" placeholder="목적지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnAdd" title="경유지 추가">경유지 추가</button>
+					</li>
+				</ul>
+				<div class="wrapRoadFind">
+					<button disabled="disabled"><span class="iconsNavi"></span><span>길찾기</span></button>
+					<button><span class="iconsNavi"></span><span>길찾기</span></button>
+				</div>
+				<div class="startNow">지금출발<span class="iconsArrow"></span></div>
+			</div>
+		</div>
+		<div class="wrapRecentSch">
+			<div class="plugin-scrollbar-bd" style="top: 318px;"><!-- style="top: px;" = wrapPoint 의 height -->
+				<div class="plugin-scrollbar">
+					<div class="myPoint">
+						<button class="btnHome"><span class="iconsNavi"></span><span>집</span></button>
+						<a href="#">등록</a>
+						<button class="btnOffice"><span class="iconsNavi"></span><span>직장</span></button>
+						<a href="#">수정</a>
+					</div>
+					<div class="recentSch">
+						<div class="title">최근검색/길찾기</div>
+						<div class="list">
+							<a href="#">
+								<span class="sticker ic1 bg1"></span>
+								<span class="txt1">서울 강남구 테혜란로 87길 25</span>
+							</a>
+							<a href="#">
+								<span class="sticker ic2 bg2"></span>
+								<span class="txt1">서울빌딩</span>
+								<span class="txt2">서울 강남구 테혜란로 87길 25</span>
+							</a>
+							<a href="#">
+								<span class="sticker ic3 bg3"></span>
+								<span class="txt1">서울빌딩</span>
+								<span class="txt2">서울 강남구 테혜란로 87길 25</span>
+							</a>
+							<a href="#">
+								<span class="sticker ic4 bg4"></span>
+								<span class="txt1">서울빌딩</span>
+								<span class="txt2">서울 강남구 테혜란로 87길 25</span>
+							</a>
+							<a href="#">
+								<span class="sticker ic5 bg5"></span>
+								<span class="txt1">서울빌딩</span>
+								<span class="txt2">서울 강남구 테혜란로 87길 25</span>
+							</a>
+							<a href="#">
+								<span class="sticker ic6 bg6"></span>
+								<span class="txt1">서울빌딩</span>
+								<span class="txt2">서울 강남구 테혜란로 87길 25</span>
+							</a>
+							<a href="#">
+								<span class="sticker ic7 bg7"></span>
+								<span class="txt1">서울빌딩</span>
+								<span class="move">→</span>
+								<span class="txt2">북촌한옥마을</span>
+							</a>
+							<a href="#">
+								<!-- <span class="sticker ic7 bg7"></span> -->
+								<span class="txt1">서울빌딩</span>
+								<span class="move">→</span>
+								<span class="txt2">북촌한옥마을</span>
+							</a>
+						</div>
+						<div class="btnWrap">
+							<button class="btnsMore"><span>더보기</span><span class="iconsArrow"></span></button>
+						</div>
+					</div>
+				</div>
+			</div><!-- //.plugin-scrollbar-bd -->
+		</div>
+		<div class="btnToggleWrap">
+			<button class="btnsSch btnToggle">열기/닫기</button>
+		</div>
+	</div>
+	<!-- //길찾기 -->
+
+</body>
+</html>

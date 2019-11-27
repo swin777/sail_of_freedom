@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 길찾기 -->
+	<div class="wrapSchResult wrapNavi">
+		<div class="wrapPoint">
+			<div class="menuTop">
+				<button class="btnsBg menuLnb">메뉴</button>
+				<ul>
+					<li><a href="#" class="current">자동차</a></li>
+					<li><a href="#">대중교통</a></li>
+					<li><span class="disabled">도보</span></li>
+					<li><span class="disabled">자전거</span></li>
+				</ul>
+				<button class="btnsBg btnClose">닫기</button>
+			</div>
+			<div class="pointList">
+				<ul>
+					<li>
+						<span class="iconsNavi icStart"></span>
+						<input type="text" placeholder="출발지를 검색하거나 클릭하세요.">
+						<button class="btnsBg btnFind" title="검색">검색</button>
+						<button class="btnsNavi btnReInput" title="다시입력">다시입력</button>
+					</li>
+					<li>
+						<span class="iconsNavi icWaypoint"></span>
+						<input type="text" placeholder="경유지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button>
+					</li>
+					<li>
+						<span class="iconsNavi icWaypoint"></span>
+						<input type="text" placeholder="경유지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button>
+					</li>
+					<li>
+						<span class="iconsNavi icDest"></span>
+						<input type="text" placeholder="목적지를 선택하세요.">
+						<button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+						<button class="btnsNavi btnAdd" title="경유지 추가">경유지 추가</button>
+					</li>
+				</ul>
+				<div class="wrapRoadFind">
+					<button disabled="disabled"><span class="iconsNavi"></span><span>길찾기</span></button>
+					<button><span class="iconsNavi"></span><span>길찾기</span></button>
+				</div>
+				<div class="startNow">지금출발<span class="iconsArrow"></span></div>
+			</div>
+			<div class="wrapTop">
+				<div class="resultNum">장소 <span class="num">888</span>건 <span class="iconsArrow"></span></div>
+				<div class="sort">
+					<ul>
+						<li><button class="on"><span>관련도순</span></button></li>
+						<li><button><span>거리순</span></button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="plugin-scrollbar-bd" style="top: 360px;"><!-- style="top: px;" = wrapPoint 의 height -->
+			<div class="plugin-scrollbar">
+				<div class="list">
+					<ul>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="iconsNavi icStart">
+								<span>출발</span>
+							</div>
+						</li>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="iconsNavi icWaypoint">
+								<span>경유</span>
+							</div>
+						</li>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="iconsNavi icWaypoint">
+								<span>경유</span>
+							</div>
+						</li>
+						<li>
+							<div class="name"><span class="num">A</span>예술의전당</div>
+							<div class="info">
+								<span class="kind">대형예술센터</span>
+								<span class="tel">02-580-1300</span>
+							</div>
+							<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+							<div class="address">
+								<span class="jibun">지번</span>
+								서초동 700
+							</div>
+							<div class="iconsNavi icDest">
+								<span>도착</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- //.plugin-scrollbar-bd -->
+		<div class="wrapBot">
+			<div class="pagenation">
+				<a href="#" class="btnsSch prev disabled">이전</a>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#" class="btnsSch next">다음</a>
+			</div>
+			<a href="#" class="btnLink">GIS 신규계약안내</a>
+		</div>
+		<div class="btnToggleWrap">
+			<button class="btnsSch btnToggle">열기/닫기</button>
+		</div>
+	</div>
+	<!-- //길찾기 -->
+
+</body>
+</html>

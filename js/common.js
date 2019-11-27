@@ -24,8 +24,28 @@ $(document).ready(function(){
 		$(this).addClass("focus");
 	}).focusout(function(){$(this).removeClass("focus");});
 
+	// Navi
+	$(".wrapNavi .wrapTop li a").on("click", function(){
+		$(".wrapNavi .wrapTop li a").removeClass("current");
+		$(this).addClass("current");
+	});
+	$(".muchWayPoint").on("mouseover", function(){
+		$(this).find(".iconsNavi").css("display", "none");
+		$(this).find(".btnsNavi.btnAdd").css("display", "block");
+	});
+	$(".muchWayPoint").on("mouseout", function(){
+		$(this).find(".iconsNavi").css("display", "block");
+		$(this).find(".btnsNavi.btnAdd").css("display", "none");
+	});
+	$(".timeSetting a.current").on("click", function(){
+		$(".timeSetting .innerBox").css("display","flex");
+	});
+	$(".timeSetting .innerBox").on("click", function(){
+		$(this).css("display","none");
+	});
+
 	// LNB
-	$(".wrapSearch .menuLnb").on("click", function(){
+	$(".menuLnb").on("click", function(){
 		$(".wrapLnb").addClass("view");
 	});
 	$(".wrapLnb .btnClose").on("click", function(){
@@ -50,6 +70,9 @@ $(document).ready(function(){
 	});
 	// 날씨정보 확장
 	$(".weatherWrap a.current").on("click", function(){
+		$(".lyWeatherDust").css("display","block");
+	});
+	$(".weatherSimple").on("click", function(){
 		$(".weatherInfo").css("display","block");
 	});
 
