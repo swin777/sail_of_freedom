@@ -89,7 +89,8 @@ span{position:relative;}
 .wrapNavi .wrapPoint .pointList ul{width: 312px;background-color: #fff;border: 1px solid #ccc;border-radius: 8px;}
 .wrapNavi .wrapPoint .pointList ul li{position: relative;min-height: 48px;border-bottom: 1px solid #ccc;}
 .wrapNavi .wrapPoint .pointList ul li:last-child{border-bottom: none;background-color: #fff;border-radius: 0 0 8px 8px;}
-.wrapNavi .wrapPoint .pointList ul li input{width: 228px;height: 47px;margin-left: 37px;color: #777;font-size: 14px;letter-spacing: -1px;border: none;}
+.wrapNavi .wrapPoint .pointList ul li input{width: 228px;height: 47px;margin-left: 37px;padding-bottom: 1px;color: #777;font-size: 14px;letter-spacing: -1px;border: none;}
+.wrapNavi .wrapPoint .pointList ul li input::placeholder{color: #aaa;}
 .wrapNavi .wrapPoint .pointList ul li .btnFind{position: absolute;top: 50%;right: 6px;margin-top: -20px;width: 40px;height: 40px;background-position-x: -50px;}
 .wrapNavi .wrapPoint .pointList ul li .iconsNavi{position: absolute;width: 10px;height: 10px;top: 19px;left: 14px;}
 .wrapNavi .wrapPoint .pointList ul li .icStart{background-position: -150px 0;}
@@ -124,7 +125,7 @@ span{position:relative;}
 .wrapNavi .recentSch .btnWrap{padding-top: 10px;text-align: center;}
 .wrapNavi .recentSch .btnWrap button{width: 72px;height: 28px;color: #888;font-size: 12px;border: 1px solid #9b9b9b;border-radius: 20px;}
 .wrapNavi .recentSch .btnWrap button .iconsArrow{width: 16px;height: 16px;background-position: -25px 0;vertical-align: -3px;}
-.wrapNavi .list ul li .iconsNavi{position: absolute;top: 17px;right: 18px;width: 32px;height: 42px;padding-top: 6px;line-height: 1;text-align: center;text-indent: 0;}
+.wrapNavi .list ul li .iconsNavi{position: absolute;top: 16px;right: 18px;width: 32px;height: 42px;padding-top: 6px;line-height: 1;text-align: center;text-indent: 0;}
 .wrapNavi .list ul li .iconsNavi span{color: #fff;font-size: 10px;}
 .wrapNavi .list ul li .icStart{background-position: -0px 0;}
 .wrapNavi .list ul li .icWaypoint{background-position: -50px 0;}
@@ -162,6 +163,74 @@ span{position:relative;}
   100% {transform: rotate(-360deg);}
 }
 .wrapNavi .loading .txt1{margin-top: 18px;}
+
+.wrapSchResult.naviRoute .plugin-scrollbar-bd{bottom: 20px;}
+.wrapNavi.naviRoute .tabMenu{background-color: #f5f5f5;}
+.wrapNavi.naviRoute .tabMenu ul{display: flex;}
+.wrapNavi.naviRoute .tabMenu ul li{width: 100%;}
+.wrapNavi.naviRoute .tabMenu ul li a{display: block;height: 40px;line-height: 40px;color: #888;font-size: 12px;font-weight: 500;letter-spacing: -.6px;text-align: center;}
+.wrapNavi.naviRoute .tabMenu ul li a:hover{text-decoration: none;}
+.wrapNavi.naviRoute .tabMenu ul li.current a{color: #7725ff;background-color: #fff;border-radius: 8px 8px 0 0;}
+.wrapNavi.naviRoute .tabCont{display: none;}
+.wrapNavi.naviRoute .tabCont .innerTop{position: relative;padding: 24px 18px 20px;line-height: 1;border-bottom: 1px solid #dcdcdc;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv1 .time{font-size: 20px;font-weight: 500;letter-spacing: -1.6px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv1 .range{font-size: 14px;letter-spacing: -.6px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv2{margin-top: 14px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv2 span{display: inline-block;color: #888;font-size: 12px;letter-spacing: -.7px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv2 span:after{content: "";display: inline-block;width: 1px;height: 10px;margin: 0 8px 0 14px;border-right: 1px solid #e8e8e8;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv2 span:last-child:after{display: none;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3{margin-top: 10px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 ul li{display: inline-block;margin-top: 6px;padding-right: 6px;font-size: 12px;letter-spacing: -1px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 ul li:last-child{padding-right: 0;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 ul li:after{content: "→";}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 ul li:last-child:after{display: none;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 span{display: inline-block;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 .state{min-width: 28px;height: 18px;line-height: 18px;margin-right: 2px;padding: 0 5px;color: #fff;font-size: 10px;font-weight: 500;text-align: center;background-color: #999;border-radius: 8px;vertical-align: 1px;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 .state.co1{background-color: #28c8aa;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 .state.co2{background-color: #f5a623;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 .state.co3{background-color: #d0021b;}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 .name{}
+.wrapNavi.naviRoute .tabCont .innerTop .dv3 .range{padding: 0 4px;color: #888;}
+.wrapNavi.naviRoute .tabCont .innerTop .btnsWrap{position: absolute;top: 24px;right: 18px;}
+.wrapNavi.naviRoute .tabCont .innerTop .btnsWrap button{width: 30px;height: 30px;margin-left: 4px;border-radius: 30px;text-indent: -9999px;}
+.wrapNavi.naviRoute .tabCont .innerTop .btnsWrap button.btnBookmark{background-position-x: -300px;}
+.wrapNavi.naviRoute .tabCont .innerTop .btnsWrap button.btnDrive{background-position-x: -350px;}
+.wrapNavi.naviRoute .tabCont .innerTop .btnsWrap button.btnSearch{background-position-x: -400px;}
+.wrapNavi.naviRoute .tabCont .innerTop .btnsWrap button.btnOnenavi{background-position-x: -450px;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li{position: relative;min-height: 50px;padding: 15px 90px 12px 56px;font-size: 16px;font-weight: 500;letter-spacing: -1px;line-height: 1.3;border-bottom: 1px solid #e8e8e8;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li .spoint{display: block;position: absolute;top: 50%;left: 18px;width: 26px;height: 26px;line-height: 26px;margin-top: -13px;color: #fff;font-size: 10px;text-align: center;background-color: #9b9b9b;border-radius: 30px;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li .spoint.crStart{background-color: #4a90e2;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li .spoint.crWayPoint{background-color: #9b9b9b;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li .spoint.crDest{background-color: #d0021b;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li .view{display: block;position: absolute;top: 50%;right: 16px;height: 14px;margin-top: -7px;font-size: 12px;font-weight: 500;line-height: 1;}
+.wrapNavi.naviRoute .tabCont .innerCont ul li .view .iconsArrow{width: 5px;height: 10px;margin-left: 4px;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail{border-bottom: 1px solid #e8e8e8;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail li{padding: 17px 20px 15px 92px;color: #888;font-size: 14px;font-weight: normal;border-bottom: none;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail li:after{content: "";display: block;position: absolute;right: 15px;bottom: 0;left: 92px;height: 1px;border-bottom: 1px solid #f5f5f5;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail li:last-child:after{display: none;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail li img{position: absolute;top: 50%;left: 17px;margin-top: -17px;width: 30px;height: 35px;border: 1px solid #999;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail li .num{position: absolute;top: 50%;left: 61px;margin-top: -8px;display: block;padding: 0 4px 0 3px;min-width: 16px;height: 16px;line-height: 15px;color: #888;font-size: 10px;text-align: center;border: 1px solid #e8e8e8;border-radius: 16px;}
+
+.wayPointSelect{position: absolute;bottom: 178px;left: 40%;}
+.wayPointSelect button{width: 122px;height: 122px;margin-right: 26px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);border: solid 2px #e8e8e8;background-color: #fff;border-radius: 200px;transition: .3s;}
+.wayPointSelect button:hover,.wayPointSelect button:focus,.wayPointSelect button.current{transform: scale(1.2, 1.2);}
+.wayPointSelect button>span{display: block;line-height: 1;font-weight: 500;letter-spacing: -.7px;}
+.wayPointSelect button .txt1{margin: 6px 0 10px;font-size: 12px;}
+.wayPointSelect button .txt2{margin-bottom: 6px;font-size: 18px;letter-spacing: -1.5px;}
+.wayPointSelect button .txt3{margin-bottom: 12px;color: #777;font-size: 11px;font-weight: normal;}
+.wayPointSelect button .txt4{font-size: 12px;}
+.wayPointSelect button.type1 .txt1{color: #d0021b;}
+.wayPointSelect button.type1 .txt4{color: #d0021b;}
+.wayPointSelect button.type2 .txt1{color: #4a90e2;}
+.wayPointSelect button.type2 .txt4{color: #4a90e2;}
+.wayPointSelect button.type3 .txt1{color: #f5a623;}
+.wayPointSelect button.type3 .txt4{color: #f5a623;}
+.wayPointSelect button.type4 .txt1{color: #28c8aa;}
+.wayPointSelect button.type4 .txt4{color: #28c8aa;}
+.wayPointSelect button.type1.current{border-color: #d0021b;}
+.wayPointSelect button.type2.current{border-color: #4a90e2;}
+.wayPointSelect button.type3.current{border-color: #f5a623;}
+.wayPointSelect button.type4.current{border-color: #28c8aa;}
 
 .wrapNavi .btnToggleWrap{position: absolute;top: 50%;right: -17px;margin-top: -28px;width: 17px;height: 56px;border-radius: 0 8px 8px 0;background-color: #fff;}
 .wrapNavi .btnToggleWrap button.btnToggle{width: 100%;height: 100%;background-position: 0px -78px;text-indent: -9999px;}
@@ -244,7 +313,7 @@ span{position:relative;}
 .wrapSchResult .wrapBot .btnLink{position: absolute;display: block;right: 18px;bottom: 13px;height: 20px;padding: 0 10px;line-height: 20px;color: #777;font-size: 10px;letter-spacing: -.56px;background-color: #fff;border: solid 1px #e8e8e8;border-radius: 10px;}
 .wrapSchResult .wrapBot .btnLink:hover{color: #333;border: 1px solid #ddd;text-decoration: none;}
 
-.wrapSchResult .list ul li{position: relative;padding: 12px 18px 14px;}
+.wrapSchResult .list ul li{position: relative;padding: 16px 18px;}
 .wrapSchResult .list ul li:hover{background-color: #faf6ff;}
 .wrapSchResult .list ul li.current{background-color: #faf6ff;}
 .wrapSchResult .list ul li:after{content:"";display: block;position: absolute;right: 18px;bottom: 0;left: 18px;height: 1px;background-color: #ececec;}
@@ -311,15 +380,19 @@ span{position:relative;}
 .lyBox{position: absolute;z-index: 19;top: 50%;right: 50%;min-width: 200px;border: solid 1px #ccc;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
 .lyBox .title{height: 40px;line-height: 40px;padding-left: 15px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border-bottom: 1px solid #f5f5f5;}
 .lyBox .btnClose{position: absolute;top: 6px;right: 6px;width: 26px;height: 26px;background-position-x: -275px;text-indent: -9999px;}
+.lyBox>.inner{min-width: 356px;padding: 42px 0 10px;}
+.lyBox>.inner .txt1{margin-bottom: 26px;font-size: 18px;font-weight: 500;letter-spacing: -1.1px;line-height: 1.5;}
+.lyBox>.inner .txt1>span{color: #7725ff;}
+.lyBox>.inner .txt2{margin: -6px 0 22px;font-size: 12px;letter-spacing: -.4px;}
+.lyBox>.inner .txt2 a{text-decoration: underline;}
 .wrapSchResult .lyBox{top: 12px;right: 12px;}
-.wrapSchResult .lyBox ul li{padding: 0;}
-.wrapSchResult .lyBox ul li:after{display: none;}
-.wrapSchResult .lyBox ul li:hover{background-color: #fff;}
 .wrapSchResult .lyBox .btnWrap{padding: 0 0 20px;text-align: center;}
 .wrapSchResult .lyBox .btnWrap button{min-width: 100px;height: 32px;padding: 0 12px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 20px;}
 
 .listShare ul{overflow-y: hidden;padding: 4px 12px 8px;}
-.listShare ul li{float: left;width: 72px;height: 80px;}
+.wrapSchResult .listShare ul li{float: left;width: 72px;height: 80px;padding: 0;}
+.wrapSchResult .listShare ul li:after{display: none;}
+.wrapSchResult .listShare ul li:hover{background-color: #fff;}
 .listShare ul li button{width: 100%;height: 100%;}
 .listShare ul li button .btnsShare{width: 42px;height: 42px;}
 .listShare ul li button .btnsShare.icKakao{background-position-x: 0px;}
@@ -333,8 +406,9 @@ span{position:relative;}
 .listShare .copyUrl .inner button{width: 72px;color: #777;font-size: 12px;letter-spacing: -.75px;border-left: 1px solid #ccc;}
 
 .listTheme ul{overflow-y: hidden;width: 270px;}
-.listTheme ul li{float: left;width: 90px;height: 82px;border-bottom: 1px solid #f5f5f5;border-right: 1px solid #f5f5f5;}
-.listTheme ul li:hover{background-color: #faf6ff;}
+.wrapSchResult .listTheme ul li{float: left;width: 90px;height: 82px;padding: 0;border-bottom: 1px solid #f5f5f5;border-right: 1px solid #f5f5f5;}
+.wrapSchResult .listTheme ul li:hover{background-color: #faf6ff;}
+.wrapSchResult .listTheme ul li:after{display: none;}
 .wrapSchResult .lyBox .listTheme ul li:hover{background-color: #faf6ff;}
 .wrapSchResult .lyBox .listTheme ul li:nth-child(3n+3){border-right: none;}
 .listTheme ul li button{width: 100%;height: 100%;}
@@ -417,7 +491,10 @@ span{position:relative;}
 .addressFind .addressList a.on .txt2{color: #7725ff;}
 
 .listBookmark ul{padding: 12px 0 10px 16px;}
-.listBookmark ul li .inpRadio{display: block;font-size: 12px;font-weight: 500;letter-spacing: -.75px;}
+.wrapSchResult .listBookmark ul li{padding: 0;}
+.wrapSchResult .listBookmark ul li:after{display: none;}
+.wrapSchResult .listBookmark ul li:hover{background-color: #fff;}
+.listBookmark ul li .inpRadio{display: block;font-size: 12px;font-weight: 500;letter-spacing: -.75px;line-height: 22px;}
 .listBookmark ul li .inpRadio span{display: block;}
 .listBookmark ul li .inpRadio span:hover,.listBookmark ul li .inpRadio span:focus{text-decoration: underline;}
 
@@ -425,11 +502,28 @@ span{position:relative;}
 .bookmarkAdd .inner input{width: 210px;height: 32px;padding-left: 12px;color: #999;font-size: 12px;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 8px;}
 .bookmarkAdd .inner input:focus{border: 1px solid #999;}
 
-.wrapGuest{min-width: 356px;}
-.wrapGuest .txt1{padding: 42px 0 32px;font-size: 18px;letter-spacing: -1.1px;line-height: 1.5;text-align: center;}
-.wrapGuest .txt1>span{color: #7725ff;}
+.wrapGuest{text-align: center;}
 .wrapGuest .btnWrap.btnBig button{min-width: 120px;height: 40px;margin: 0 2px;font-size: 14px;font-weight: bold;letter-spacing: -.8px;}
 .wrapGuest .btnWrap.btnBig button.btnLogin{color: #7725ff;border: 1px solid #7725ff;}
+
+.lyBox>.inner.wrapContinueView{padding: 40px 58px 10px;}
+.wrapContinueView .btnWrap.btnBig button{min-width: 120px;height: 32px;margin: 0 2px;font-size: 12px;font-weight: bold;letter-spacing: -.8px;}
+
+.wrapOneNavi{text-align: center;}
+.wrapOneNavi .btnWrap a{padding: 0 4px;}
+.wrapOneNavi .btnWrap img{width: 120px;height: 32px;}
+
+.lyDimInner{position: absolute;z-index: 7;top: -1px;right: -1px;bottom: -1px;left: -1px;background: rgba(0,0,0,.3);border-radius: 16px;}
+.lyBox.routeSearch{top: 58px;right: 14px;bottom: 18px;left: 14px;}
+.lyBox.routeSearch .innerSearch{position: relative;padding: 12px 13px;border-bottom: 1px solid #e8e8e8;}
+.lyBox.routeSearch .innerSearch input{width: 100%;height: 40px;padding-left: 16px;font-size: 16px;font-weight: 500;letter-spacing: -.9px;border: solid 1px #ccc;border-radius: 8px;}
+.lyBox.routeSearch .innerSearch .btnDel{position: absolute;top: 12px;right: 16px;width: 40px;height: 40px;background-position-x: -100px;}
+.lyBox.routeSearch .plugin-scrollbar-bd{top: 105px;bottom: 48px;}
+.lyBox.routeSearch .txtWayPoint{position: absolute;top: 16px;right: 13px;min-width: 32px;height: 24px;line-height: 24px;padding: 0 4px;color: #fff;font-size: 10px;font-weight: bold;text-align: center;background-color: #9b9b9b;border: solid 1px #555;border-radius: 4px;}
+.lyBox.routeSearch .listTheme ul{width: 100%;}
+.lyBox.routeSearch .listTheme ul li{width: 88px;}
+.lyBox.routeSearch .listTheme ul li:nth-child(3n+3){border-right: 1px solid #f5f5f5;}
+.lyBox.routeSearch .listTheme ul li:nth-child(4n+4){width: 90px;border-right: none;}
 
 /* //검색리스트 레이어팝업 */
 

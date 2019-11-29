@@ -25,8 +25,8 @@ $(document).ready(function(){
 	}).focusout(function(){$(this).removeClass("focus");});
 
 	// Navi
-	$(".wrapNavi .wrapTop li a").on("click", function(){
-		$(".wrapNavi .wrapTop li a").removeClass("current");
+	$(".wrapNavi .menuTop li a").on("click", function(){
+		$(".wrapNavi .menuTop li a").removeClass("current");
 		$(this).addClass("current");
 	});
 	$(".muchWayPoint").on("mouseover", function(){
@@ -42,6 +42,28 @@ $(document).ready(function(){
 	});
 	$(".timeSetting .innerBox").on("click", function(){
 		$(this).css("display","none");
+	});
+	$(".wayPointSelect button").on("click", function(){
+		$(".wayPointSelect button").removeClass("current");
+		$(this).addClass("current");
+	});
+
+	// 탭메뉴
+	$(".naviRoute .tabMenu a").click(function(){
+		$(this).parent().addClass("current");
+		$(this).parent().siblings().removeClass("current");
+
+		// 클릭한 id값을 변수에 저장
+		var tab = $(this).attr("href");
+		// console.log(tab);
+
+		// id값이 일치하지 않을 경우 hidden
+		$(".naviRoute .tabCont").not(tab).css("display", "none");
+
+		// id값이 일치할 경우 show
+		$(tab).show();
+
+		return false;
 	});
 
 	// LNB
@@ -142,6 +164,10 @@ $(document).ready(function(){
 	$(".lyBox .btnClose").on("click", function(){
 		$(this).parent().css("display","none");
 	});
+	$(".lyDimInner .lyBox .btnClose").on("click", function(){
+		$(this).parent().parent().css("display","none");
+		$(this).parent().css("display","block");
+	});
 	$(".listTheme button").on("click", function(){
 		// $(this).toggleClass("on");
 		$(".listTheme button").removeClass("on");
@@ -198,4 +224,16 @@ function fncCategoryReg(){
 }
 function fncAddressFind(){
 	$("#lypopAddressFind").css("display","block");
+}
+function fncContinueView(){
+	$("#lypopContinueView").css("display","block");
+}
+function fncOneNavi(){
+	$("#lypopOneNavi").css("display","block");
+}
+function fncRouteSearch(){
+	$("#lypopRouteSearch").css("display","block");
+}
+function fncRouteTheme(){
+	$("#lypopRouteTheme").css("display","block");
 }
