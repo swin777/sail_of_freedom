@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!--  원네비 -->
+	<div class="wrapOnenaviSimul">
+		<div class="topWayPoint">
+			<span class="start">예술의전당</span>
+			<span class="wayPoint">경유(10)</span>
+			<span class="dest">예술의전당</span>
+		</div>
+		<div class="plugin-scrollbar-bd">
+			<div class="plugin-scrollbar">
+				원네비 영역
+			</div>
+		</div>
+		<div class="botWrap">
+			<div class="progressBg">
+				<div class="progressBar" style="left: 28%;"><!-- 28% 진행 --></div>
+				<span class="time">0:20 / 40:30</span>
+				<span class="current">서초구 태봉로</span>
+			</div>
+			<div class="control">
+				<button class="btnWith" onclick="javascript:fncOneNaviWith();">
+					<span class="btnsOneNavi"></span>
+					<span>같이가자</span>
+				</button>
+				<div class="playPause">
+					<button class="btnsOneNavi btnRR">뒤로</button>
+					<button class="btnsOneNavi btnPlay">진행/일시정지</button>
+					<button class="btnsOneNavi btnFF">앞으로</button>
+				</div>
+				<div class="ctrlRight">
+					<div class="zoom">
+						<button class="btnZoom">
+							<span>2X</span>
+							<span class="iconsArrow"></span>
+						</button>
+						<ul style="display: ;">
+							<li><a href="#">8X</a></li>
+							<li><a href="#">6X</a></li>
+							<li><a href="#">4X</a></li>
+							<li><a href="#">2X</a></li>
+							<li><a href="#">1X</a></li>
+						</ul>
+					</div>
+					<div class="volumeWrap">
+						<button class="btnsOneNavi btnVolume">볼륨</button>
+						<div class="rangeBox">
+							<div class="rangeWrap">
+								<div class="rangeBar" style="bottom: 20%;"></div>
+							</div>
+						</div>
+					</div>
+					<button class="btnsOneNavi btnScreen">확대/축소</button>
+				</div>
+			</div>
+		</div>
+		<!-- 원네비 -->
+		<div class="lyBox" id="lypopOneNaviWith" style="display: ;">
+			<div class="inner wrapOneNavi">
+				<div class="txt2">모의주행 코스를 친구들과 그룹을 만들어  함께  갈 수 있습니다.</div>
+				<div class="txt1">
+					지금 원내비 앱에 경로를 전송하고 <br>친구들과 함께 주행해 보세요.
+				</div>
+				<div class="txt2">
+					<a href="#">원내비 실행하기</a>
+				</div>
+				<div class="btnWrap">
+					<a href="#"><img src="../imgs/btn_google_gray.png" alt="google play"></a>
+					<a href="#"><img src="../imgs/btn_appstore_gray.png" alt="apple appstore"></a>
+				</div>
+			</div>
+			<button class="btnsSch btnClose">닫기</button>
+		</div>
+		<!-- //원네비 -->
+		<button class="btnsSch btnClose">닫기</button>
+	</div>
+	<!-- // 원네비 -->
+
+</body>
+</html>

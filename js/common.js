@@ -73,6 +73,12 @@ $(document).ready(function(){
 	$(".wrapLnb .btnClose").on("click", function(){
 		$(".wrapLnb").removeClass("view");
 	});
+	$(".wrapMore").on("mouseover", function(){
+		$(this).addClass("view");
+	});
+	$(".wrapMore").on("mouseout", function(){
+		$(this).removeClass("view");
+	});
 	// 검색 자동완성
 	$(".wrapSearch input").on("click", function(){
 		$(".searchList").css("display","block");
@@ -194,6 +200,34 @@ $(document).ready(function(){
 		$(this).addClass("on");
 	});
 
+	// 원네비
+	$(".wrapOnenaviSimul .btnPlay").on("click", function(){
+		$(this).toggleClass("btnPause");
+	});
+	$(".wrapOnenaviSimul .zoom").on("mouseover", function(){
+		$(this).addClass("open");
+	});
+	$(".wrapOnenaviSimul .volumeWrap").on("mouseover", function(){
+		$(this).addClass("open");
+	});
+	$(".wrapOnenaviSimul .zoom").on("mouseout", function(){
+		$(this).removeClass("open");
+	});
+	$(".wrapOnenaviSimul .volumeWrap").on("mouseout", function(){
+		$(this).removeClass("open");
+	});
+	$(".wrapOnenaviSimul .btnScreen").on("click", function(){
+		$(".wrapOnenaviSimul").toggleClass("fullscreen");
+	});
+	$(".choiceColor .sticker").on("click", function(){
+		$(".choiceColor .sticker").removeClass("select");
+		$(this).addClass("select");
+	});
+	$(".choiceShape .sticker").on("click", function(){
+		$(".choiceShape .sticker").removeClass("select");
+		$(this).addClass("select");
+	});
+
 });
 
 
@@ -231,9 +265,64 @@ function fncContinueView(){
 function fncOneNavi(){
 	$("#lypopOneNavi").css("display","block");
 }
+function fncOneNaviWith(){
+	$("#lypopOneNaviWith").css("display","block");
+}
 function fncRouteSearch(){
 	$("#lypopRouteSearch").css("display","block");
 }
 function fncRouteTheme(){
 	$("#lypopRouteTheme").css("display","block");
+}
+function fncMyBookmark(){
+	$(".wrapLnb").removeClass("view");
+	$("#lnbMyBookmark").addClass("view");
+}
+function fncMyBookmarkClose(){
+	$("#lnbMyBookmark").removeClass("view");
+	$(".wrapLnb").addClass("view");
+}
+function fncMyPlace(){
+	$("#lnbMyBookmark").removeClass("view");
+	$("#lnbMyPlace").addClass("view");
+}
+function fncProcessing(){
+	$(".wrapLnb").removeClass("view");
+	$("#lnbProcessing").addClass("view");
+}
+function fncProcessingClose(){
+	$(".wrapLnb").addClass("view");
+	$("#lnbProcessing").removeClass("view");
+}
+function fncMyPlaceMod(){
+	$("#lnbMyPlace").removeClass("view");
+	$("#lnbMyPlaceMod").addClass("view");
+}
+function fncOnenaviBookmark(){
+	$("#lnbMyBookmark").removeClass("view");
+	$("#lnbOnenaviBookmark").addClass("view");
+}
+function fncMyPlaceClose(){
+	$("#lnbMyPlace").removeClass("view");
+	$("#lnbMyBookmark").addClass("view");
+}
+function fncMyPlaceModClose(){
+	$("#lnbMyPlaceMod").removeClass("view");
+	$("#lnbMyPlace").addClass("view");
+}
+function fncOnenaviBookmarkClose(){
+	$("#lnbOnenaviBookmark").removeClass("view");
+	$("#lnbMyBookmark").addClass("view");
+}
+function fncListNameMod(){
+	$("#lypopListNameMod").css("display","block");
+}
+function fncStickerChange(){
+	$("#lypopStickerChange").css("display","block");
+}
+function fncStickerChange2(){
+	$("#lypopStickerChange2").css("display","block");
+}
+function fncBookmarkMod(){
+	$("#lypopBookmarkMod").css("display","block");
 }

@@ -40,7 +40,6 @@ span{position:relative;}
 .iconsBg{display: inline-block;background: url(../imgs/icons_01.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .iconsArrow{display: inline-block;background: url(../imgs/icons_arrow.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .iconsNavi{display: inline-block;background: url(../imgs/icons_navi.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
-.sticker{display: inline-block;background: url(../imgs/sticker.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .btnsBg{display: inline-block;background: url(../imgs/btns_01.png) no-repeat;text-indent: -9999px;background-size: auto 200px;}
 .btnsBg:hover,.btnsBg:focus{background-position-y: -50px !important;}
 .iconMap{display: inline-block;background: url(../imgs/icons_map.png) no-repeat;background-size: auto 100px;}
@@ -53,6 +52,8 @@ span{position:relative;}
 .btnsSch:hover,.btnsSch:focus{background-position-y: -50px !important;}
 .btnsNavi{display: inline-block;background: url(../imgs/btns_navi.png) no-repeat;background-size: auto 200px;}
 .btnsNavi:hover,.btnsNavi:focus{background-position-y: -50px !important;}
+.btnsOneNavi{display: inline-block;background: url(../imgs/btns_onenavi.png) no-repeat;background-size: auto 200px;text-indent: -9999px;}
+.btnsOneNavi:hover,.btnsOneNavi:focus{background-position-y: -50px !important;}
 .btnsTheme{display: inline-block;background: url(../imgs/btns_theme.png) no-repeat;background-size: auto 200px;}
 .btnsShare{display: inline-block;background: url(../imgs/btns_share.png) no-repeat;background-size: auto 200px;}
 .plugin-scrollbar-bd{position:absolute;left:0;right:0;top: 0;bottom: 0;}
@@ -69,6 +70,15 @@ span{position:relative;}
 .inpRadio input[type="radio"]:checked:disabled + span:before{border-color:#999;background:#e6e6e6;}
 .inpSt1{height:34px;padding:0 12px;border:1px solid #dcdcdc;background-color:#fff;vertical-align:middle;border-radius: 2px;}
 .inpSt1:focus{border-color:#999;}
+
+.inpCheck{position:relative;display:inline-block;min-height:20px;}
+.inpCheck + .inpCheck{margin-left:24px;}
+.inpCheck span{display:inline-block;min-height:20px;padding-left:26px;cursor:pointer;}
+.inpCheck span::before{content:"";display:inline-block;position:absolute;width:20px;height:20px;left:0;top:0px;border:2px solid #9b9b9b;border-radius:20px;background-color:#fafafa;}
+.inpCheck input[type="checkbox"]{position:absolute !important;left:0;top:0;opacity:0;z-index:1;}
+.inpCheck input[type="checkbox"]:checked + span::before{border:2px solid #7725ff;background:#fff url(../imgs/icons_01.png) no-repeat -25px 0px;background-size: auto 200px;}
+/*.inpCheck input[type="checkbox"]:disabled + span::before{border:1px solid #d9d9d9;background-color:#e6e6e6;cursor:not-allowed;}*/
+
 
 .wrapNavi{position: absolute;top: 12px;bottom: 12px;left: 12px;width: 384px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);transition:.3s;}
 .wrapNavi.wrapSchResult{top: 12px;}
@@ -237,8 +247,52 @@ span{position:relative;}
 .wrapNavi .btnToggleWrap button.btnToggle:hover,.wrapNavi .btnToggleWrap button.btnToggle:focus{background-position-y: -78px !important;}
 .wrapNavi.hide .btnToggleWrap button.btnToggle{background-position: -23px -78px;}
 
+.wrapOnenaviSimul{position: absolute;z-index: 199;top: 12px;bottom: 12px;left: 12px;width: 384px;border: solid 1px #e8e8e8;background-color: #fff;border-radius: 16px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);transition:.3s;}
+.wrapOnenaviSimul.fullscreen{top: 0;right: 0;bottom: 0;left: 0;width: 100%;border-radius: 0;}
+.wrapOnenaviSimul .topWayPoint{height: 48px;line-height: 48px;padding-left: 16px;border-bottom: 1px solid #e8e8e8;}
+.wrapOnenaviSimul.fullscreen .topWayPoint{text-align: center;}
+.wrapOnenaviSimul .topWayPoint span{font-size: 14px;font-weight: 500;letter-spacing: -.7px;}
+.wrapOnenaviSimul .topWayPoint span:after{content: "→";color: #4a4a4a;}
+.wrapOnenaviSimul .topWayPoint span:last-child:after{content: none;}
+.wrapOnenaviSimul .topWayPoint span.start{color: #4a90e2;}
+.wrapOnenaviSimul .topWayPoint span.dest{color: #d0021b;}
+.wrapOnenaviSimul .plugin-scrollbar-bd{top: 48px;bottom: 63px;}
+.wrapOnenaviSimul .botWrap{position: absolute;right: 0;bottom: 0;left: 0;height: 63px;}
+.wrapOnenaviSimul .botWrap .progressBg{position: relative;height: 16px;background-color: #7725ff;text-align: center;line-height: 16px;}
+.wrapOnenaviSimul .botWrap .progressBg .progressBar{position: absolute;top: 0;right: 0;height: 16px;background-color: #9b9b9b;}
+.wrapOnenaviSimul .botWrap .progressBg span{color: #fff;font-size: 12px;font-weight: bold;}
+.wrapOnenaviSimul .botWrap .progressBg span.time{position: absolute;left: 20px;}
+.wrapOnenaviSimul .botWrap .control{position: relative;height: 47px;background-color: #f5f5f5;border-radius: 0 0 16px 16px;}
+.wrapOnenaviSimul .botWrap .control .btnWith{position: absolute;top: 10px;left: 18px;min-width: 80px;height: 28px;padding-bottom: 2px;color: #777;font-size: 12px;font-weight: 500;letter-spacing: -.6px;border: solid 1px #ccc;background-color: #fff;border-radius: 14px;}
+.wrapOnenaviSimul .botWrap .control .btnWith .btnsOneNavi{width: 16px;height: 16px;vertical-align: middle;}
+.wrapOnenaviSimul .botWrap .control .playPause{padding-top: 13px;text-align: center;}
+.wrapOnenaviSimul .botWrap .control .playPause .btnsOneNavi{width: 20px;height: 20px;}
+.wrapOnenaviSimul .botWrap .control .playPause .btnRR{background-position-x: -25px;}
+.wrapOnenaviSimul .botWrap .control .playPause .btnPlay{margin: 0 28px;background-position-x: -50px;}
+.wrapOnenaviSimul.fullscreen .botWrap .control .playPause .btnPlay{margin: 0 100px;}
+.wrapOnenaviSimul .botWrap .control .playPause .btnPlay.btnPause{background-position-x: -75px;}
+.wrapOnenaviSimul .botWrap .control .playPause .btnFF{background-position-x: -100px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight{position: absolute;top: 11px;right: 13px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom{position: relative;z-index: 9;display: inline-block;margin-right: 8px;vertical-align: middle;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom .btnZoom{width: 40px;height: 20px;padding-left: 6px;color: #777;font-size: 10px;font-weight: 500;border: solid 1px #ccc;background-color: #fff;border-radius: 4px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom .btnZoom .iconsArrow{width: 16px;height: 16px;background-position-x: -75px;vertical-align: middle;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom.open .btnZoom .iconsArrow{background-position-x: -100px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom ul{display: none;position: absolute;left: 0;bottom: 24px;padding: 4px 0 2px;width: 40px;border: solid 1px #ccc;background-color: #fff;border-radius: 4px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom.open ul{display: block;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .zoom ul li a{display: block;padding: 2px 2px 2px 8px;color: #777;font-size: 10px;font-weight: 500;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .btnsOneNavi{width: 16px;height: 16px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .volumeWrap{position: relative;display: inline-block;margin-right: 8px;vertical-align: -3px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .volumeWrap .btnVolume{position: relative;z-index: 19;background-position-x: -125px;vertical-align: top;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .volumeWrap .rangeBox{display: none;position: absolute;z-index: 9;bottom: 0;left: -5px;width: 26px;height: 117px;border: solid 1px #ccc;background-color: #fff;border-radius: 4px;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .volumeWrap.open .rangeBox{display: block;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .volumeWrap .rangeWrap{position: absolute;width: 3px;bottom: 24px;left: 11px;top: 7px;background-color: #7725ff;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .volumeWrap .rangeWrap .rangeBar{position: absolute;right: 0;top: 0;left: 0;width: 3px;background-color: #9b9b9b;}
+.wrapOnenaviSimul .botWrap .control .ctrlRight .btnScreen{background-position-x: -175px;vertical-align: middle;}
+.wrapOnenaviSimul.fullscreen .botWrap .control .ctrlRight .btnScreen{background-position-x: -200px;}
+.wrapOnenaviSimul .btnClose{position: absolute;top: 10px;right: 10px;width: 24px;height: 24px;background-position-x: -275px;text-indent: -9999px;}
+
 /* 스티커 */
-.sticker{width: 20px;height: 20px;border-radius: 20px;vertical-align: middle;background-color: #bbb;}
+.sticker{display: inline-block;width: 20px;height: 20px;margin-right: 6px;background: url(../imgs/sticker.png) no-repeat;text-indent: -9999px;background-size: auto 200px;border-radius: 30px;vertical-align: middle;background-color: #bbb;}
 .sticker.ic1{background-position-x: 0px;}
 .sticker.ic2{background-position-x: -25px;}
 .sticker.ic3{background-position-x: -50px;}
@@ -383,11 +437,15 @@ span{position:relative;}
 .lyBox>.inner{min-width: 356px;padding: 42px 0 10px;}
 .lyBox>.inner .txt1{margin-bottom: 26px;font-size: 18px;font-weight: 500;letter-spacing: -1.1px;line-height: 1.5;}
 .lyBox>.inner .txt1>span{color: #7725ff;}
-.lyBox>.inner .txt2{margin: -6px 0 22px;font-size: 12px;letter-spacing: -.4px;}
-.lyBox>.inner .txt2 a{text-decoration: underline;}
+.lyBox>.inner .txt2{margin: -6px 0 22px;color: #999;font-size: 12px;letter-spacing: -.4px;}
+.lyBox>.inner .txt2 a{color: #4a4a4a;text-decoration: underline;}
 .wrapSchResult .lyBox{top: 12px;right: 12px;}
 .wrapSchResult .lyBox .btnWrap{padding: 0 0 20px;text-align: center;}
 .wrapSchResult .lyBox .btnWrap button{min-width: 100px;height: 32px;padding: 0 12px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 20px;}
+
+.wrapOnenaviSimul .lyBox{right: 12px;margin-top: -130px;}
+.wrapOnenaviSimul.fullscreen .lyBox{right: 50%;margin-right: -178px;}
+.wrapOnenaviSimul .btnWrap{padding-bottom: 20px;}
 
 .listShare ul{overflow-y: hidden;padding: 4px 12px 8px;}
 .wrapSchResult .listShare ul li{float: left;width: 72px;height: 80px;padding: 0;}
@@ -501,6 +559,8 @@ span{position:relative;}
 .bookmarkAdd .inner{padding: 15px;}
 .bookmarkAdd .inner input{width: 210px;height: 32px;padding-left: 12px;color: #999;font-size: 12px;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 8px;}
 .bookmarkAdd .inner input:focus{border: 1px solid #999;}
+.bookmarkAdd .inner textarea{width: 210px;height: 80px;padding: 12px;color: #999;font-size: 12px;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 8px;vertical-align: top;}
+.bookmarkAdd .inner textarea:focus{border: 1px solid #999;}
 
 .wrapGuest{text-align: center;}
 .wrapGuest .btnWrap.btnBig button{min-width: 120px;height: 40px;margin: 0 2px;font-size: 14px;font-weight: bold;letter-spacing: -.8px;}
@@ -512,6 +572,20 @@ span{position:relative;}
 .wrapOneNavi{text-align: center;}
 .wrapOneNavi .btnWrap a{padding: 0 4px;}
 .wrapOneNavi .btnWrap img{width: 120px;height: 32px;}
+
+.stickerWrap{width: 260px;}
+.stickerWrap .choiceColor{padding: 15px 0 15px 10px;text-align: center;}
+.stickerWrap .choiceColor .sticker{position: relative;margin: 0 -1px;background-image: none;}
+.stickerWrap .choiceColor span:hover{border: 1px solid #fff;cursor: pointer;}
+.stickerWrap .choiceColor span.select{border: 3px solid #fff;}
+.stickerWrap .choiceColor span.select:before{content:"";display: block;position: absolute;top: -6px;left: -6px;width: 26px;height: 26px;border: 3px solid #4a4a4a;border-radius: 30px;}
+.stickerWrap .choiceShape{position: relative;width: 232px;height: 160px;margin: 0 auto 20px;border-radius: 8px;border: solid 1px #cccccc;background-color: #f5f5f5;}
+.stickerWrap .choiceShape .plugin-scrollbar-bd{top: 0;bottom: 14px;}
+.choiceShape .os-theme-dark > .os-scrollbar-vertical, .choiceShape .os-theme-light > .os-scrollbar-vertical {width: 7px;}
+.choiceShape .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {background: rgba(124, 124, 124, 0.8);}
+.lnbDepth2 .myBookmark .stickerWrap .choiceShape .sticker{margin: 12px 0 0 8px;}
+.stickerWrap .choiceShape span:hover{cursor: pointer;}
+.stickerWrap .choiceShape span.select:before{content:"";display: block;position: absolute;top: -4px;left: -4px;width: 28px;height: 28px;border: 2px solid #4a4a4a;border-radius: 30px;}
 
 .lyDimInner{position: absolute;z-index: 7;top: -1px;right: -1px;bottom: -1px;left: -1px;background: rgba(0,0,0,.3);border-radius: 16px;}
 .lyBox.routeSearch{top: 58px;right: 14px;bottom: 18px;left: 14px;}
@@ -561,6 +635,98 @@ span{position:relative;}
 .wrapLnb .banner{padding: 0 0 20px 14px;}
 .wrapLnb .banner ul li{display: inline-block;padding: 15px 6px 0;}
 .wrapLnb .banner img{width: 144px;height: 160px;}
+
+.lnbDepth2{position: absolute;z-index: 99;top: 0;left: -442px;bottom: 0;transition: .3s;}
+.lnbDepth2 .inner{position: absolute;top: 0;bottom: 0;width: 344px;background-color: #fff;}
+.lnbDepth2:after{content: "";display: block;position: absolute;z-index: -1;top: 0;bottom: 0;left: 247px;width: 193px;background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));}
+.lnbDepth2.view{left: 0px;}
+.lnbDepth2 .header{position: relative;height: 80px;padding: 27px 0 0 58px;color: #fff;font-size: 16px;background: linear-gradient(to right, rgba(85,16,196,1) 0%, rgba(121,37,255,1) 100%);}
+.lnbDepth2 .header strong{color: #fff;}
+.lnbDepth2 .header .btnPrev{position: absolute;top: 50%;left: 11px;margin-top: -10px;width: 20px;height: 20px;background-position: 0 -100px;}
+.lnbDepth2 .header .btnPrev:hover{background-position: 0 -100px !important;}
+.lnbDepth2 .plugin-scrollbar-bd{top: 80px;bottom: 70px;}
+.lnbDepth2 .myPosition{margin-bottom: 10px;padding: 17px 16px 10px 24px;border-bottom: 1px solid #dedede;}
+.lnbDepth2 .myPosition li{position: relative;padding-bottom: 20px;}
+.lnbDepth2 .myPosition .dv{padding-bottom: 8px;font-size: 14px;font-weight: 500;letter-spacing: -.5px;}
+.lnbDepth2 .myPosition .iconsNavi{width: 20px;height: 20px;margin-right: 12px;vertical-align: -4px;}
+.lnbDepth2 .myPosition .iconHome{background-position-x: -275px;}
+.lnbDepth2 .myPosition .iconOffice{background-position-x: -300px;}
+.lnbDepth2 .myPosition input{width: 100%;padding-left: 35px;color: #777;font-size: 12px;letter-spacing: -.6px;border: none;}
+.lnbDepth2 .myPosition input::placeholder{color: #aaa;}
+.lnbDepth2 .myPosition button{position: absolute;top: 0;right: 0;min-width: 40px;height: 20px;color: #888;font-size: 10px;font-weight: 500;letter-spacing: -.6px;border: solid 1px #ccc;border-radius: 10px;}
+.lnbDepth2 .myBookmark{padding: 0 24px;}
+.lnbDepth2 .myBookmark.myPlace ul{margin-bottom: 10px;padding-bottom: 10px;border-bottom: 1px solid #f5f5f5;}
+.lnbDepth2 .myBookmark li{position: relative;}
+.lnbDepth2 .myBookmark li a{display: block;padding: 14px 0;font-size: 14px;font-weight: 500;letter-spacing: -.5px;line-height: 1;}
+.lnbDepth2 .myBookmark li a span.num{color: #7725ff;}
+.lnbDepth2 .myBookmark .iconsBg{width: 20px;height: 20px;vertical-align: -4px;margin-right: 12px;}
+.lnbDepth2 .myBookmark .sticker{margin-right: 12px;}
+.lnbDepth2 .myBookmark .iconMyPlace{background-position-x: -75px;}
+.lnbDepth2 .myBookmark .iconOneNavi{background-position-x: -100px;}
+.wrapMore{position: absolute;top: 14px;right: 0;}
+.wrapMore .btnMore{position: absolute;z-index: 9;width: 16px;height: 16px;top: 0;right: 0;background-position-x: -260px;}
+.wrapMore .lyMore{display: none;position: absolute;z-index: 10;top: 0;right: 0;width: 124px;padding: 10px 0;border: solid 1px #ccc;background-color: #fff;border-radius: 4px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);}
+.wrapMore.view .lyMore{display: block;}
+.wrapMore .lyMore a{display: block;padding: 8px 0 8px 17px;font-size: 12px;letter-spacing: -.7px;line-height: 1;}
+.lnbDepth2 .myBookmark .wrapMore .lyMore a{padding: 8px 0 8px 17px;font-size: 12px;letter-spacing: -.7px;}
+.lnbDepth2 .myBookmark .inner{position: relative;width: auto;}
+.lnbDepth2 .btnWrapBot{position: absolute;bottom: 40px;width: 100%;text-align: center;}
+.lnbDepth2 .btnWrapBot button{height: 28px;padding: 0 16px;color: #888;font-size: 12px;font-weight: 500;letter-spacing: -1px;border: 1px solid #9b9b9b;border-radius: 15px;}
+.lnbDepth2 .btnWrapBot button .btnAdd{width: 16px;height: 16px;background-position-x: -700px;}
+.lnbDepth2 .btnWrapBot button .btnAdd:hover{background-position-y: 0 !important;}
+.lnbDepth2 .lyBox{top: 0;right: 0;}
+.lnbDepth2 .lyBox .byte{position: absolute;bottom: 50px;right: 20px;color: #888;font-size: 10px;font-weight: 500;letter-spacing: -.6px;}
+.lnbDepth2 .lyBox .btnWrap{padding: 0 0 20px;text-align: center;}
+.lnbDepth2 .lyBox .btnWrap button{min-width: 100px;height: 32px;padding: 0 12px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 20px;}
+
+
+.lnbDepth3{position: absolute;z-index: 99;top: 0;left: -442px;bottom: 0;transition: .3s;}
+.lnbDepth3 .inner{position: absolute;top: 0;bottom: 0;width: 344px;background-color: #fff;}
+.lnbDepth3:after{content: "";display: block;position: absolute;z-index: -1;top: 0;bottom: 0;left: 247px;width: 193px;background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));}
+.lnbDepth3.view{left: 0px;}
+.lnbDepth3 .header{position: relative;height: 80px;padding: 27px 0 0 58px;color: #fff;font-size: 16px;background: #555;}
+.lnbDepth3 .header strong{color: #fff;}
+.lnbDepth3 .header .btnPrev{position: absolute;top: 50%;left: 11px;margin-top: -10px;width: 20px;height: 20px;background-position: 0 -100px;}
+.lnbDepth3 .header .btnPrev:hover{background-position: 0 -100px !important;}
+.lnbDepth3 .plugin-scrollbar-bd{top: 130px;}
+.lnbDepth3 .wrapSort{position: relative;height: 50px;background-color: #f5f5f5;border-bottom: 1px solid #dedede;}
+.lnbDepth3 .wrapSort select{position: absolute;top: 50%;left: 18px;margin-top: -13px;min-width: 100px;height: 26px;padding: 0 3px 1px;font-size: 12px;letter-spacing: -.6px;line-height: 1;}
+.lnbDepth3 .wrapSort .btnEdit{position: absolute;top: 50%;right: 18px;margin-top: -13px;width: 26px;height: 26px;background-position-x: -800px;}
+.lnbDepth3 .wrapSort .listSel{padding: 15px 0 0 18px;}
+.lnbDepth3 .wrapSort label{font-size: 12px;letter-spacing: -.6px;font-weight: 500;}
+.lnbDepth3 .wrapSort label:after{content: "|";padding: 0 4px 0 8px;color: #999;}
+.lnbDepth3 .wrapSort .btnSelDel{font-size: 12px;letter-spacing: -.6px;font-weight: 500;}
+.lnbDepth3 .wrapSort .btnSave{position: absolute;top: 50%;right: 17px;margin-top: -10px;width: 40px;height: 20px;font-size: 10px;font-weight: 500;letter-spacing: -.6px;border: 1px solid #ccc;border-radius: 20px;}
+.lnbDepth3 .iconOneNavi{position: absolute;top: 19px;left: 18px;width: 20px;height: 20px;vertical-align: -4px;margin-right: 12px;background-position-x: -100px;}
+.lnbDepth3 .lyBox .bookmarkAdd .inner{position: relative;width: auto;}
+.lnbDepth3 .lyBox .bookmarkAdd .inner.mb20{margin-bottom: 20px;}
+.lnbDepth3 .lyBox .bookmarkAdd .inner .txt1{margin-bottom: 4px;color: #888;font-size: 12px;font-weight: 500;letter-spacing: -.7px;}
+.lnbDepth3 .lyBox .bookmarkAdd .inner .byte{bottom: -2px;}
+.lnbDepth3 .listMyPlace .lyBox .sticker{position: relative;margin-right: 12px;top: inherit;left: inherit;}
+.lnbDepth3 .listMyPlace .lyBox .choiceShape .sticker{margin: 12px 0 0 8px;}
+.lnbDepth3 .lyBox .btnWrapBot{position: absolute;bottom: 40px;width: 100%;text-align: center;}
+.lnbDepth3 .lyBox .btnWrapBot button{height: 28px;padding: 0 16px;color: #888;font-size: 12px;font-weight: 500;letter-spacing: -1px;border: 1px solid #9b9b9b;border-radius: 15px;}
+.lnbDepth3 .lyBox .btnWrapBot button .btnAdd{width: 16px;height: 16px;background-position-x: -700px;}
+.lnbDepth3 .lyBox .btnWrapBot button .btnAdd:hover{background-position-y: 0 !important;}
+.lnbDepth3 .lyBox{top: 10px;right: 10px;}
+.lnbDepth3 .lyBox .byte{position: absolute;bottom: 50px;right: 20px;color: #888;font-size: 10px;font-weight: 500;letter-spacing: -.6px;}
+.lnbDepth3 .lyBox .btnWrap{padding: 0px 0 20px;text-align: center;}
+.lnbDepth3 .lyBox .btnWrap button{min-width: 100px;height: 32px;padding: 0 12px;font-size: 12px;font-weight: bold;letter-spacing: -.75px;border: 1px solid #ccc;border-radius: 20px;}
+
+.listMyPlace{}
+.listMyPlace ul li{position: relative;padding: 18px 48px 13px 48px;}
+.listMyPlace ul li:after{content: "";display: block;position: absolute;right: 12px;bottom: 0;left: 12px;height: 1px;background-color: #ececec;}
+.listMyPlace ul li:last-child:after{content: none;}
+.listMyPlace ul li:hover{background-color: #faf6ff;}
+.listMyPlace ul li .sticker{position: absolute;top: 19px;left: 18px;}
+.listMyPlace ul li .txtMain{margin-bottom: 2px;font-size: 14px;font-weight: 500;letter-spacing: -.5px;line-height: 1.3;}
+.listMyPlace ul li .txtAddress{margin-bottom: 2px;color: #888;font-size: 10px;font-weight: 500;letter-spacing: -.6px;line-height: 1.3;}
+.listMyPlace ul li .txtInd{margin-bottom: 2px;color: #7725ff;font-size: 10px;font-weight: 500;letter-spacing: -.6px;line-height: 1.3;}
+.listMyPlace .wrapMore{right: 24px;}
+.listMyPlace ul li label{margin: -6px 0 2px;font-size: 14px;font-weight: 500;letter-spacing: -.5px;line-height: 1.3;}
+.listMyPlace ul li .inpCheck{margin-left: -26px;}
+.listMyPlace ul li .inpCheck span::before{top: -2px;left: -3px;}
+.listMyPlace ul li .btnMove{position: absolute;width: 25px;height: 25px;top: 16px;right: 20px;background-position: -125px 0;cursor: move;text-indent: -9999px;}
 
 .wrapLogin{position: absolute;z-index: 99;top: 12px;right: 12px;}
 .wrapLogin>div{display: inline-block;margin-left: 2px;}
