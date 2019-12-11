@@ -23,7 +23,6 @@
 
 	<!-- 길찾기 -->
 	<div class="wrapSchResult wrapNavi naviRoute">
-
 		<!-- 경로 내 장소검색 -->
 		<div class="lyDimInner" id="lypopRouteSearch" style="display: none;">
 			<div class="lyBox routeSearch">
@@ -106,7 +105,7 @@
 		</div>
 		<!-- //경로 내 장소검색 -->
 
-		<!-- 경로 내 장소검색 -->
+		<!-- 경로 내 장소검색 - 테마 -->
 		<div class="lyDimInner" id="lypopRouteTheme" style="display: none;">
 			<div class="lyBox routeSearch">
 				<div class="title">경로 내 장소검색</div>
@@ -149,7 +148,7 @@
 				<button class="btnsSch btnClose">닫기</button>
 			</div>
 		</div>
-		<!-- //경로 내 장소검색 -->
+		<!-- //경로 내 장소검색 - 테마 -->
 
 		<div class="wrapPoint">
 			<div class="menuTop">
@@ -162,51 +161,101 @@
 				</ul>
 				<button class="btnsBg btnClose">닫기</button>
 			</div>
-			<div class="pointList">
-				<ul>
-					<li>
-						<span class="iconsNavi icStart"></span>
-						<input type="text" value="KT우면연구센터" placeholder="출발지를 검색하거나 클릭하세요.">
-						<!-- <button class="btnsBg btnFind" title="검색">검색</button>
-						<button class="btnsNavi btnReInput" title="다시입력">다시입력</button> -->
-					</li>
-					<li>
-						<span class="iconsNavi icWaypoint"></span>
-						<input type="text" value="KT우면연구센터" placeholder="경유지를 선택하세요.">
-						<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
-						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button> -->
-					</li>
-					<li>
-						<span class="iconsNavi icWaypoint"></span>
-						<input type="text" placeholder="경유지를 선택하세요.">
-						<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
-						<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button> -->
-					</li>
-					<li>
-						<span class="iconsNavi icDest"></span>
-						<input type="text" value="KT우면연구센터" placeholder="목적지를 선택하세요.">
-						<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
-						<button class="btnsNavi btnAdd" title="경유지 추가">경유지 추가</button> -->
-					</li>
-				</ul>
-				<div class="wrapRoadFind">
-					<!-- <button disabled="disabled"><span class="iconsNavi"></span><span>길찾기</span></button> -->
-					<button onclick="javascript:fncContinueView();"><span class="iconsNavi"></span><span>길찾기</span></button>
-				</div>
-				<div class="startNow">지금출발<span class="iconsArrow"></span></div>
-			</div>
-			<div class="tabMenu">
-				<ul>
-					<li class="current"><a href="#tabRoute-1">적극추천</a></li>
-					<li><a href="#tabRoute-2">가장빠름</a></li>
-					<li><a href="#tabRoute-3">가장짧음</a></li>
-					<li><a href="#tabRoute-4">통행료무료</a></li>
-				</ul>
-			</div>
 		</div>
-
-		<div class="plugin-scrollbar-bd" style="top: 358px;"><!-- style="top: px;" = wrapPoint 의 height -->
+		<div class="plugin-scrollbar-bd">
 			<div class="plugin-scrollbar">
+				<div class="pointList">
+					<ul>
+						<li>
+							<span class="iconsNavi icStart"></span>
+							<input type="text" value="KT우면연구센터" placeholder="출발지를 검색하거나 클릭하세요.">
+							<!-- <button class="btnsBg btnFind" title="검색">검색</button>
+							<button class="btnsNavi btnReInput" title="다시입력">다시입력</button> -->
+						</li>
+						<li>
+							<span class="iconsNavi icWaypoint"></span>
+							<input type="text" value="KT우면연구센터" placeholder="경유지를 선택하세요.">
+							<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+							<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button> -->
+						</li>
+						<li>
+							<span class="iconsNavi icWaypoint"></span>
+							<input type="text" placeholder="경유지를 선택하세요.">
+							<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+							<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button> -->
+						</li>
+						<li>
+							<span class="iconsNavi icWaypoint"></span>
+							<input type="text" placeholder="경유지를 선택하세요.">
+							<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+							<button class="btnsNavi btnDel" title="경유지 삭제">경유지 삭제</button> -->
+						</li>
+						<li>
+							<span class="iconsNavi icDest"></span>
+							<input type="text" value="KT우면연구센터" placeholder="목적지를 선택하세요.">
+							<!-- <button class="btnsNavi btnMove" title="순서이동">순서이동</button>
+							<button class="btnsNavi btnAdd" title="경유지 추가">경유지 추가</button> -->
+						</li>
+					</ul>
+					<div class="wrapRoadFind">
+						<!-- <button disabled="disabled"><span class="iconsNavi"></span><span>길찾기</span></button> -->
+						<button onclick="javascript:fncContinueView();"><span class="iconsNavi"></span><span>길찾기</span></button>
+					</div>
+					<div class="startNow">
+						<button><span>지금출발</span><span class="iconsArrow"></span></button>
+						<div class="innerBox">
+							<a href="#">지금출발</a>
+							<a href="#">출발시간</a>
+						</div>
+					</div>
+					<div class="timeSetting" style="display: none;">
+						<a href="#" class="current">11월  28일 13:30</a>
+						<span class="iconsNavi"></span>
+						<div class="innerBox" style="display: none;">
+							<div class="date">
+								<div class="plugin-scrollbar-bd">
+									<div class="plugin-scrollbar">
+										<a href="#">11월 9일</a>
+										<a href="#">11월 9일</a>
+										<a href="#">11월 9일</a>
+										<a href="#">11월 10일</a>
+										<a href="#">11월 10일</a>
+										<a href="#">11월 10일</a>
+										<a href="#">11월 10일</a>
+										<a href="#">11월 10일</a>
+										<a href="#">11월 10일</a>
+										<a href="#">11월 10일</a>
+									</div>
+								</div>
+							</div>
+							<div class="time">
+								<div class="plugin-scrollbar-bd">
+									<div class="plugin-scrollbar">
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+										<a href="#">00:00</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabMenu"><!-- 스크롤 감지하여 class="addFixed" 추가 -->
+					<ul>
+						<li class="current"><a href="#tabRoute-1">적극추천</a></li>
+						<li><a href="#tabRoute-2">가장빠름</a></li>
+						<li><a href="#tabRoute-3">가장짧음</a></li>
+						<li><a href="#tabRoute-4">통행료무료</a></li>
+					</ul>
+				</div>
+
 				<!-- 적극추천 -->
 				<div id="tabRoute-1" class="tabCont" style="display: block;">
 					<div class="innerTop">
@@ -355,6 +404,38 @@
 								<span class="spoint crDest">도착</span>
 								KT우면센터
 							</li>
+							<li>
+								<span class="spoint crWayPoint">경유</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crWayPoint">경유</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crWayPoint">경유</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crDest">도착</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crWayPoint">경유</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crWayPoint">경유</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crWayPoint">경유</span>
+								KT우면센터
+							</li>
+							<li>
+								<span class="spoint crDest">도착</span>
+								KT우면센터
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -391,25 +472,25 @@
 	<!-- 경로선택 -->
 	<div class="wayPointSelect">
 		<button class="type1 current">
-			<span class="txt1">적극추천해요</span>
+			<span class="txt1">적극 추천해요</span>
 			<span class="txt2">88분</span>
 			<span class="txt3">통행료 88,000원</span>
 			<span class="txt4">123.45km</span>
 		</button>
 		<button class="type2">
-			<span class="txt1">가장빨라요</span>
+			<span class="txt1">가장 빨라요</span>
 			<span class="txt2">88분</span>
 			<span class="txt3">통행료 88,000원</span>
 			<span class="txt4">123.45km</span>
 		</button>
 		<button class="type3">
-			<span class="txt1">가장짧아요</span>
+			<span class="txt1">가장 짧아요</span>
 			<span class="txt2">88분</span>
 			<span class="txt3">통행료 88,000원</span>
 			<span class="txt4">123.45km</span>
 		</button>
 		<button class="type4">
-			<span class="txt1">통행료무료에요</span>
+			<span class="txt1">통행료 무료에요</span>
 			<span class="txt2">88분</span>
 			<span class="txt3">통행료 88,000원</span>
 			<span class="txt4">123.45km</span>

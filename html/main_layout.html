@@ -46,7 +46,7 @@
 	<div class="wrapLnb">
 		<div class="inner">
 			<div class="header">
-				<span class="kt">kt</span> <strong>GEO</strong>Master
+				<img src="../imgs/kt_geo_master.png" alt="kt Geo Master">
 				<button class="btnsLnb btnClose">닫기</button>
 			</div>
 			<div class="plugin-scrollbar-bd">
@@ -93,6 +93,7 @@
 			<div class="header">
 				내 즐겨찾기
 				<button class="btnsLnb btnPrev" onclick="javascript:fncMyBookmarkClose();">이전</button>
+				<button class="btnsLnb btnClose">닫기</button>
 			</div>
 			<div class="plugin-scrollbar-bd">
 				<div class="plugin-scrollbar">
@@ -320,14 +321,134 @@
 	<!-- //내 즐겨찾기 -->
 
 	<!-- 처리내역 조회 -->
-	<div id="lnbProcessing" class="lnbDepth2">
+	<div id="lnbProcessing" class="lnbDepth2 processing">
 		<div class="inner">
 			<div class="header">
 				처리내역 조회
 				<button class="btnsLnb btnPrev" onclick="javascript:fncProcessingClose();">이전</button>
+				<button class="btnsLnb btnClose">닫기</button>
+			</div>
+			<div class="wrapSort">
+				<div class="selBox">
+					<button><span>전체</span><span class="iconsArrow"></span></button>
+					<div class="innerBox">
+						<a href="#">접수중</a>
+						<a href="#">처리중</a>
+						<a href="#">완료</a>
+					</div>
+				</div>
 			</div>
 			<div class="plugin-scrollbar-bd">
-				<div class="plugin-scrollbar">처리내역 조회</div>
+				<div class="plugin-scrollbar">
+					<div class="listProcessing">
+						<ul>
+							<li>
+								<div class="title">
+									장소정보 수정
+									<span class="date">2019.12.12</span>
+								</div>
+								<div class="adrs">
+									<span class="bx">장소</span>
+									예술의 전당
+								</div>
+								<div class="adrs">
+									<span class="bx">주소</span>
+									서울특별시 서초구 남부순환로 1111
+								</div>
+								<div class="stat accetp">접수중</div>
+							</li>
+							<li>
+								<button onclick="javascript:fncLnbMyPlaceInfoMod();">장소정보수정 바로가기</button>
+							</li>
+							<li>
+								<div class="title">
+									장소정보 수정
+									<span class="date">2019.12.12</span>
+								</div>
+								<div class="adrs">
+									<span class="bx">장소</span>
+									예술의 전당
+								</div>
+								<div class="adrs">
+									<span class="bx">주소</span>
+									서울특별시 서초구 남부순환로 1111
+								</div>
+								<div class="stat prosse">처리중</div>
+							</li>
+							<li>
+								<div class="title">
+									장소정보 수정
+									<span class="date">2019.12.12</span>
+								</div>
+								<div class="adrs">
+									<span class="bx">장소</span>
+									예술의 전당
+								</div>
+								<div class="adrs">
+									<span class="bx">주소</span>
+									서울특별시 서초구 남부순환로 1111
+								</div>
+								<div class="stat complt">완료</div>
+							</li>
+							<li>
+								<div class="title">
+									장소정보 수정
+									<span class="date">2019.12.12</span>
+								</div>
+								<div class="adrs">
+									<span class="bx">장소</span>
+									예술의 전당
+								</div>
+								<div class="adrs">
+									<span class="bx">주소</span>
+									서울특별시 서초구 남부순환로 1111
+								</div>
+								<div class="stat accetp">접수중</div>
+							</li>
+							<li>
+								<div class="title">
+									장소정보 수정
+									<span class="date">2019.12.12</span>
+								</div>
+								<div class="adrs">
+									<span class="bx">장소</span>
+									예술의 전당
+								</div>
+								<div class="adrs">
+									<span class="bx">주소</span>
+									서울특별시 서초구 남부순환로 1111
+								</div>
+								<div class="stat prosse">처리중</div>
+							</li>
+							<li>
+								<div class="title">
+									장소정보 수정
+									<span class="date">2019.12.12</span>
+								</div>
+								<div class="adrs">
+									<span class="bx">장소</span>
+									예술의 전당
+								</div>
+								<div class="adrs">
+									<span class="bx">주소</span>
+									서울특별시 서초구 남부순환로 1111
+								</div>
+								<div class="stat complt">완료</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="wrapBot">
+				<div class="pagenation">
+					<a href="#" class="btnsSch prev disabled">이전</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" class="btnsSch next">다음</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -420,13 +541,16 @@
 			<div class="header">
 				내 장소 (33)
 				<button class="btnsLnb btnPrev" onclick="javascript:fncMyPlaceClose();">이전</button>
+				<button class="btnsLnb btnClose">닫기</button>
 			</div>
 			<div class="wrapSort">
-				<select name="" id="">
-					<option value="">최신순</option>
-					<option value="">이름순</option>
-					<option value="">내순서</option>
-				</select>
+				<div class="selBox">
+					<button><span>최신순</span><span class="iconsArrow"></span></button>
+					<div class="innerBox">
+						<a href="#">이름순</a>
+						<a href="#">내순서</a>
+					</div>
+				</div>
 				<button class="btnsBg btnEdit" onclick="javascript:fncMyPlaceMod();">편집</button>
 			</div>
 			<div class="plugin-scrollbar-bd">
@@ -613,6 +737,7 @@
 			<div class="header">
 				내 장소 (33)
 				<button class="btnsLnb btnPrev" onclick="javascript:fncMyPlaceModClose();">이전</button>
+				<button class="btnsLnb btnClose">닫기</button>
 			</div>
 			<div class="wrapSort">
 				<div class="listSel">
@@ -661,19 +786,153 @@
 	</div>
 	<!-- //내 장소 수정 -->
 
+	<!-- 장소 정보 수정 -->
+	<div id="lnbMyPlaceInfoMod" class="lnbDepth3 lnbPlaceInfoMod">
+		<div class="inner">
+			<div class="header">
+				장소 정보 수정
+				<button class="btnsLnb btnPrev" onclick="javascript:fncPlaceModClose();">이전</button>
+				<button class="btnsLnb btnClose">닫기</button>
+			</div>
+			<div class="plugin-scrollbar-bd">
+				<div class="plugin-scrollbar">
+					<div class="listProcessing nowStat">
+						<div class="demandStat">
+							<div class="txt1">현재 요청건을 접수 중입니다.</div>
+							<div class="date">2019.12.06</div>
+							<div class="stat accetp">접수중</div>
+							<!-- <div class="notiBox">
+								<span class="iconsBg iconAttend"></span>
+								고객님께서 주신 수정 사항 중 홈페이지 주소에 오류가 있어 http://www.abc.co.kr로 변경해 등록되었습니다.
+							</div> -->
+						</div>
+						<div class="detailDemand">
+							<dl>
+								<dt>장소</dt>
+								<dd>예술의 전당</dd>
+							</dl>
+							<dl>
+								<dt>주소</dt>
+								<dd>
+									<div class="adrs">
+										<span class="bx">도로명</span>
+										예술의 전당
+									</div>
+									<div class="adrs">
+										<span class="bx">지번</span>
+										서울특별시 서초구 남부순환로 1111
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>카테고리</dt>
+								<dd>주요건물기타 &gt; 대형예술센터</dd>
+							</dl>
+							<dl>
+								<dt>전화번호</dt>
+								<dd>02-555-5555, 02-555-5555</dd>
+							</dl>
+							<dl>
+								<dt>홈페이지</dt>
+								<dd><a href="#" target="_blank">http://www.sadfasdf.com</a></dd>
+							</dl>
+							<dl>
+								<dt>장소사진</dt>
+								<dd>
+									<img src="../imgs/data/@Tulips.jpg" alt="" class="thumb">
+									<img src="../imgs/data/@Tulips.jpg" alt="" class="thumb">
+								</dd>
+							</dl>
+							<dl>
+								<dt>장소설명</dt>
+								<dd>더미텍스트 더미텍스트 더미텍스트 더미텍스트 더미텍스트 더미텍스트 더미텍스트 </dd>
+							</dl>
+						</div>
+						<div class="btnWrapBot">
+							<button>결고 바로보기</button>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="listProcessing nowStat">
+						<div class="demandStat">
+							<div class="txt1">요청 내용이 반영되었습니다.</div>
+							<div class="date">2019.12.06</div>
+							<div class="stat complt">완료</div>
+							<div class="notiBox">
+								<span class="iconsBg iconAttend"></span>
+								고객님께서 주신 수정 사항 중 홈페이지 주소에 오류가 있어 http://www.abc.co.kr로 변경해 등록되었습니다.
+							</div>
+						</div>
+						<div class="detailDemand">
+							<dl>
+								<dt>장소</dt>
+								<dd>예술의 전당</dd>
+							</dl>
+							<dl>
+								<dt>주소</dt>
+								<dd>
+									<div class="adrs">
+										<span class="bx">도로명</span>
+										예술의 전당
+									</div>
+									<div class="adrs">
+										<span class="bx">지번</span>
+										서울특별시 서초구 남부순환로 1111
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>카테고리</dt>
+								<dd>주요건물기타 &gt; 대형예술센터</dd>
+							</dl>
+							<dl>
+								<dt>전화번호</dt>
+								<dd>02-555-5555, 02-555-5555</dd>
+							</dl>
+							<dl>
+								<dt>홈페이지</dt>
+								<dd><a href="#" target="_blank">http://www.sadfasdf.com</a></dd>
+							</dl>
+							<dl>
+								<dt>장소사진</dt>
+								<dd>
+									<img src="../imgs/data/@Tulips.jpg" alt="" class="thumb">
+									<img src="../imgs/data/@Tulips.jpg" alt="" class="thumb">
+								</dd>
+							</dl>
+							<dl>
+								<dt>장소설명</dt>
+								<dd>더미텍스트 더미텍스트 더미텍스트 더미텍스트 더미텍스트 더미텍스트 더미텍스트 </dd>
+							</dl>
+						</div>
+						<div class="btnWrapBot">
+							<button>결고 바로보기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //장소 정보 수정 -->
+
 	<!-- 원내비 즐겨찾기 -->
 	<div id="lnbOnenaviBookmark" class="lnbDepth3">
 		<div class="inner">
 			<div class="header">
 				원내비 즐겨찾기 (33)
 				<button class="btnsLnb btnPrev" onclick="javascript:fncOnenaviBookmarkClose();">이전</button>
+				<button class="btnsLnb btnClose">닫기</button>
 			</div>
 			<div class="wrapSort">
-				<select name="" id="">
-					<option value="">최신순</option>
-					<option value="">이름순</option>
-					<option value="">내순서</option>
-				</select>
+				<div class="selBox">
+					<button><span>최신순</span><span class="iconsArrow"></span></button>
+					<div class="innerBox">
+						<a href="#">이름순</a>
+						<a href="#">내순서</a>
+					</div>
+				</div>
 				<!-- <button class="btnsBg btnEdit">편집</button> -->
 			</div>
 			<div class="plugin-scrollbar-bd">

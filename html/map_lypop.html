@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 검색영역 -->
+	<div class="wrapSearch">
+		<button class="btnsBg menuLnb">메뉴</button>
+		<input type="search" placeholder="방문할 목적지를 검색해 주세요.">
+		<div class="iconLoc">
+			<button class="btnsBg btnFind">검색</button>
+			<!-- <button class="btnsBg btnDel">삭제</button> -->
+		</div>
+		<button class="btnsBg findingWay">길찾기</button>
+		<div class="searchList" style="display: none;">
+			<ul>
+				<li><a href="#">예술의전당</a></li>
+				<li><a href="#">예술의전당</a></li>
+				<li><a href="#">예술의전당</a></li>
+			</ul>
+			<div class="autoCompt">
+				<button class="btnOff"><span>자동완성 끄기</span> <span class="btnsBg"></span></button>
+			</div>
+		</div>
+	</div>
+	<!-- //검색영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 마커 -->
+	<a href="#" class="markerBg" style="top: 300px;left: 500px;">
+		<span>A</span>
+	</a>
+
+	<a href="#" class="markerBg relevantPlace" style="top: 350px;left: 500px;">
+		<span>B2</span>
+	</a>
+
+	<a href="#" class="markerBg selected" style="top: 300px;left: 600px;">
+		<!-- 선택한장소 -->
+	</a>
+
+	<a href="#" class="markerBg newPlace" style="top: 350px;left: 600px;">
+		<!-- 신규장소등록 -->
+	</a>
+
+	<a href="#" class="markerBg route start" style="top: 300px;left: 700px;">
+		<span>출발</span>
+	</a>
+
+	<a href="#" class="markerBg route wayPoint" style="top: 350px;left: 700px;">
+		<span>경유<br>33</span>
+	</a>
+
+	<a href="#" class="markerBg route finish" style="top: 400px;left: 700px;">
+		<span>도착</span>
+	</a>
+
+	<a href="#" class="sticker stickerMap" style="top: 250px;left: 1050px;">
+		<!-- 기본스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic1 bg1" style="top: 300px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic2 bg2" style="top: 350px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic3 bg3" style="top: 400px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic4 bg4" style="top: 450px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic5 bg5" style="top: 500px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic6 bg6" style="top: 550px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+	<a href="#" class="sticker stickerMap ic7 bg7" style="top: 600px;left: 1050px;">
+		<!-- 스티커 -->
+	</a>
+
+	<div class="bubbleWp" style="top: 300px;left: 800px;">
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">122,34km</span>
+		</div>
+		<div class="txt2 type1">적극추천</div>
+	</div>
+	<div class="bubbleWp" style="top: 350px;left: 800px;">
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">1,34km</span>
+		</div>
+		<div class="txt2 type2">가장 빠른길</div>
+	</div>
+	<div class="bubbleWp" style="top: 400px;left: 800px;">
+		<div class="txt1">
+			<span class="time">1시간 30분</span>
+			<span class="km">12,34km</span>
+		</div>
+		<div class="txt2 type3">가장 짧은길</div>
+	</div>
+	<div class="bubbleWp" style="top: 450px;left: 800px;">
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">12,34km</span>
+		</div>
+		<div class="txt2 type4">통행료 무료</div>
+	</div>
+
+	<div class="lyBox innerMap" id="" style="left: 500px;bottom: 400px;">
+		<div class="title">
+			<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+			예술의전당
+		</div>
+		<div class="info">
+			<span class="kind">대형예술센터</span>
+			<span class="tel">02-580-1300</span>
+			<a href="#" target="_blank" class="web">홈페이지</a>
+		</div>
+		<div class="address">서울 서초구 남부순환로 2406 예술의 전당</div>
+		<div class="address">
+			<span class="jibun">지번</span>
+			서초동 700
+		</div>
+		<div class="departureArrival">
+			<button class="ic_start"><span class="btnsSch"></span><span>출발</span></button>
+			<button class="ic_waypoint"><span class="btnsSch"></span><span>경유지</span></button>
+			<button class="ic_arrival"><span class="btnsSch"></span><span>도착</span></button>
+		</div>
+		<img src="../imgs/data/@Tulips.jpg" alt="" class="photo">
+
+		<button class="btnsSch btnClose">닫기</button>
+	</div>
+
+	<div class="lyBox innerMap simple" id="" style="left: 900px;bottom: 400px;">
+		<div class="title">
+			<button class="btnsSch ic_bookmark" title="즐겨찾기">즐겨찾기</button>
+			예술의전당
+		</div>
+		<div class="departureArrival">
+			<button class="ic_start"><span class="btnsSch"></span><span>출발</span></button>
+			<button class="ic_waypoint"><span class="btnsSch"></span><span>경유지</span></button>
+			<button class="ic_arrival"><span class="btnsSch"></span><span>도착</span></button>
+		</div>
+
+		<button class="btnsSch btnClose">닫기</button>
+	</div>
+
+	<!-- 마우스 우측버튼메뉴 -->
+	<div class="mouseMenu" style="top: 300px;right: 300px;">
+		<ul>
+			<li><a href="#"><span class="btnsMouseMenu ic1"></span>이 위치 주소보기</a></li>
+			<li><a href="#"><span class="btnsMouseMenu ic2"></span>이 위치 재검색</a></li>
+			<li><a href="#"><span class="btnsMouseMenu ic3"></span>내 위치로 지정</a></li>
+		</ul>
+		<ul>
+			<li><a href="#"><span class="btnsMouseMenu ic4"></span>출발지로 지정</a></li>
+			<li><a href="#"><span class="btnsMouseMenu ic5"></span>도착지로 지정</a></li>
+			<li><a href="#"><span class="btnsMouseMenu ic6"></span>경유지로 지정</a></li>
+		</ul>
+		<ul>
+			<li><a href="#"><span class="btnsMouseMenu ic7"></span>신규 장소등록</a></li>
+		</ul>
+	</div>
+	<!-- //마우스 우측버튼메뉴 -->
+
+</body>
+</html>

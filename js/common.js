@@ -70,14 +70,26 @@ $(document).ready(function(){
 	$(".menuLnb").on("click", function(){
 		$(".wrapLnb").addClass("view");
 	});
-	$(".wrapLnb .btnClose").on("click", function(){
+	$(".wrapLnb .header .btnClose").on("click", function(){
 		$(".wrapLnb").removeClass("view");
+	});
+	$(".lnbDepth2 .header .btnClose").on("click", function(){
+		$(".lnbDepth2").removeClass("view");
+	});
+	$(".lnbDepth3 .header .btnClose").on("click", function(){
+		$(".lnbDepth3").removeClass("view");
 	});
 	$(".wrapMore").on("mouseover", function(){
 		$(this).addClass("view");
 	});
 	$(".wrapMore").on("mouseout", function(){
 		$(this).removeClass("view");
+	});
+	$(".selBox button").on("click", function(){
+		$(this).parent().toggleClass("open");
+	});
+	$(".selBox .innerBox").on("click", function(){
+		$(".selBox").removeClass("open");
 	});
 	// 검색 자동완성
 	$(".wrapSearch input").on("click", function(){
@@ -227,6 +239,9 @@ $(document).ready(function(){
 		$(".choiceShape .sticker").removeClass("select");
 		$(this).addClass("select");
 	});
+	$(".startNow button").on("click", function(){
+		$(this).parent().toggleClass("open");
+	});
 
 });
 
@@ -310,6 +325,14 @@ function fncMyPlaceModClose(){
 	$("#lnbMyPlaceMod").removeClass("view");
 	$("#lnbMyPlace").addClass("view");
 }
+function fncLnbMyPlaceInfoMod(){
+	$("#lnbProcessing").removeClass("view");
+	$("#lnbMyPlaceInfoMod").addClass("view");
+}
+function fncPlaceModClose(){
+	$("#lnbMyPlaceInfoMod").removeClass("view");
+	$("#lnbProcessing").addClass("view");
+}
 function fncOnenaviBookmarkClose(){
 	$("#lnbOnenaviBookmark").removeClass("view");
 	$("#lnbMyBookmark").addClass("view");
@@ -325,4 +348,7 @@ function fncStickerChange2(){
 }
 function fncBookmarkMod(){
 	$("#lypopBookmarkMod").css("display","block");
+}
+function fncPlaceOpen(){
+	$(".addressPlace").toggleClass("wrapPlaceView");
 }
