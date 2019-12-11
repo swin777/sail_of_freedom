@@ -1027,7 +1027,7 @@ span{position:relative;}
 .bubbleWp>div.txt2.type3{background-color: #f5a623;}
 .bubbleWp>div.txt2.type4{background-color: #28c8aa;}
 
-.lyBox.innerMap{display: block;padding-bottom: 16px;min-width: 300px;border: solid 1px #9b9b9b;top: inherit;right: inherit;}
+.lyBox.innerMap{display: block;min-width: 300px;border: solid 1px #9b9b9b;top: inherit;right: inherit;}
 .innerMap:after{content: '';display: block;position: absolute;bottom: -7px;left: -10px;width: 16px;height: 14px;background: url(../imgs/bubble_ar.png) no-repeat;background-size: 16px 14px;}
 .lyBox.innerMap .title{padding-left: 12px;}
 .lyBox.innerMap.simple .title{border-bottom: none;}
@@ -1038,7 +1038,7 @@ span{position:relative;}
 .innerMap .info .web{color: #7725ff;font-size: 10px;letter-spacing: -.2px;text-decoration: underline;vertical-align: 1px;}
 .innerMap .address{padding: 0 90px 0 16px;color: #999;font-size: 12px;line-height: 18px;letter-spacing: -.25px;}
 .innerMap .address .jibun{display: inline-block;height: 16px;line-height: 16px;padding: 0 3px;color: #fff;font-size: 10px;background-color: #aaa;vertical-align: 1px;border-radius: 4px;}
-.innerMap .departureArrival{margin-top: 11px;padding-left: 16px;}
+.innerMap .departureArrival{margin-top: 11px;padding-left: 16px;padding-bottom: 16px;}
 .innerMap .departureArrival button{min-width: 60px;height: 28px;margin-right: -5px;padding: 0 6px;font-size: 12px;font-weight: 500;letter-spacing: -.25px;border: solid 1px #dcdcdc;}
 .innerMap .departureArrival button:hover>span,.innerMap .departureArrival button:focus>span{background-position-y: -50px !important;}
 .innerMap .departureArrival button:first-child{border-radius: 8px 0 0 8px;}
