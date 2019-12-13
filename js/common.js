@@ -49,7 +49,7 @@ $(document).ready(function(){
 	});
 
 	// 탭메뉴
-	$(".naviRoute .tabMenu a").click(function(){
+	$(".tabMenu a").click(function(){
 		$(this).parent().addClass("current");
 		$(this).parent().siblings().removeClass("current");
 
@@ -58,7 +58,7 @@ $(document).ready(function(){
 		// console.log(tab);
 
 		// id값이 일치하지 않을 경우 hidden
-		$(".naviRoute .tabCont").not(tab).css("display", "none");
+		$(".tabCont").not(tab).css("display", "none");
 
 		// id값이 일치할 경우 show
 		$(tab).show();
@@ -143,7 +143,11 @@ $(document).ready(function(){
 	});
 	$(".wrapGnb li button").on("click", function(){
 		$(this).parent().toggleClass("open");
+		$(".wrapGnb li button").removeClass("on");
+		$(this).addClass("on");
 	});
+	// $(".wrapGnb li button").on("click", function(){
+	// });
 	// 확대축소 펼치기
 	$(".btnFoldToggle").on("click", function(){
 		$(".wrapZoom .btnsZoom").toggleClass("open");
@@ -241,6 +245,18 @@ $(document).ready(function(){
 	});
 	$(".startNow button").on("click", function(){
 		$(this).parent().toggleClass("open");
+	});
+
+	// 그림도구
+	$(".drawingTool .btnClose").on("click", function(){
+		$(this).parent().css("display","none");
+	});
+	$(".innerDraw").on("click", function(){
+		$(this).toggleClass("open");
+	});
+	$(".selBoxImg a img").on("click", function(){
+		$(".selBoxImg a").removeClass("selected");
+		$(this).parent().addClass("selected");
 	});
 
 });

@@ -793,7 +793,7 @@ span{position:relative;}
 .wrapLogin .locationSettings .address .current span:after{content: "";display: inline-block;width: 6px;height: 12px;margin: 0px 5px 0 7px;vertical-align: -2px;background: url(../imgs/icons_arrow.png) no-repeat;background-size: auto 200px;}
 .wrapLogin .locationSettings .address .current span:last-child:after{display: none;}
 .wrapLogin .locationSettings .address .adrsSelect.lyBox{top: 36px;left: -12px;width: 312px;height: 264px;}
-.wrapLogin .locationSettings .address .adrsSelect .inner{position: relative;display: flex;height: 220px;padding: 4px 0 0;}
+.wrapLogin .locationSettings .address .adrsSelect .inner{position: relative;display: flex;min-width: auto;height: 220px;padding: 4px 0 0;}
 .wrapLogin .locationSettings .address .adrsSelect .inner .choice{position: relative;width: 100%;border-right: 1px solid #f5f5f5;}
 .wrapLogin .locationSettings .address .adrsSelect .inner .choice:last-child{border-right: none;}
 .wrapLogin .locationSettings .address .adrsSelect .inner .choice a{display: block;height: 29px;line-height: 29px;padding-left: 10px;color: #777;font-size: 11px;letter-spacing: -.6px;}
@@ -938,11 +938,15 @@ span{position:relative;}
 .wrapGnb.small ul li .sub{right: 35px;}
 .wrapGnb ul li .sub.ea4{width: 214px;}
 .wrapGnb ul li.open .sub{display: flex;flex-wrap: wrap;}
+.wrapGnb ul li button.on .btnsGnb{background-position-y: -100px;}
+.wrapGnb ul li button.on .txt{color: #7725ff;}
+.wrapGnb ul li button.on:hover .btnsGnb{background-position-y: -100px !important;}
+.wrapGnb ul li button.on:focus .btnsGnb{background-position-y: -100px !important;}
 .wrapGnb ul li.hasSubmenu.open>button{background-color: #ebebeb;opacity: .6;}
 .wrapGnb ul li.hasSubmenu:after{content:"";display: block;position: absolute;bottom: 3px;left: 2px;width: 0;height: 0;border-left: 7px solid #888;border-top: 7px solid transparent;}
 .wrapGnb ul li.hasSubmenu.open:after{opacity: .6;}
 .wrapGnb ul li .sub>button{margin: 0 1px;}
-.wrapGnb .btnToggle{position: absolute;bottom: 0;width: 50px;height: 14px;background: #f5f5f5 url(../imgs/btns_gnb.png) no-repeat;background-position: 0 -100px;background-size: auto 200px;text-indent: -9999px;border-radius: 0 0 16px 16px;}
+.wrapGnb .btnToggle{position: absolute;bottom: 0;width: 50px;height: 14px;background: #f5f5f5 url(../imgs/btns_gnb.png) no-repeat;background-position: 0 -150px;background-size: auto 200px;text-indent: -9999px;border-radius: 0 0 16px 16px;}
 .wrapGnb.small{right: 0px;border-radius: 16px 0 0 16px;border-right: none;}
 .wrapGnb.small ul li button{width: 35px;}
 .wrapGnb.small .sub button{width: 50px;}
@@ -996,6 +1000,71 @@ span{position:relative;}
 .wrapMiniMap.small .btnToggle{width: 24px;height: 24px;background-position: -199px -96px;}
 .wrapMiniMap.small .btnToggle:hover,.wrapMiniMap.small .btnToggle:focus{background-position-y: -96px !important;}
 
+.drawingTool{position: absolute;width: 360px;border: solid 1px #dedede;background-color: #fff;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);border-radius: 4px;}
+.drawingTool .header{height: 30px;line-height: 30px;padding-left: 14px;margin: -1px -1px 0;color: #e8e8e8;font-size: 12px;font-weight: 500;letter-spacing: -.7px;background-color: #555;border-radius: 4px 4px 0 0;}
+.drawingTool .btnClose{position: absolute;top: 5px;right: 7px;width: 16px;height: 16px;background-position-x: -850px;}
+.drawingTool .tabMenu{}
+.drawingTool .tabMenu ul{border-bottom: 1px solid #dedede;text-align: center;}
+.drawingTool .tabMenu ul li{display: inline-block;}
+.drawingTool .tabMenu ul li:nth-child(2){margin: 0 70px;}
+.drawingTool .tabMenu ul li a{position: relative;display: block;height: 50px;line-height: 50px;font-size: 14px;font-weight: 500;letter-spacing: -.6px;opacity: .38;transition:.2s;}
+.drawingTool .tabMenu ul li a:hover{text-decoration: none;opacity: .8;}
+.drawingTool .tabMenu ul li .btnsGnb{background-position-y: -0px !important;vertical-align: -6px;}
+.drawingTool .tabMenu ul li .btnsGnb:hover{background-position-y: -0px !important;}
+.drawingTool .tabMenu ul li .btnsGnb.dw1{background-position-x: -300px;}
+.drawingTool .tabMenu ul li .btnsGnb.dw2{background-position-x: -270px;}
+.drawingTool .tabMenu ul li .btnsGnb.dw3{background-position-x: -180px;}
+.drawingTool .tabMenu ul li.current a{opacity: 1;}
+.drawingTool .tabMenu ul li.current a:after{content: "";display: block;position: absolute;left: 0;right: 0;bottom: 0;height: 4px;background-color: #7725ff;}
+.drawingTool .tabContents{min-height: 242px;border-bottom: 1px solid #dedede;}
+.drawingTool .tabCont{display: none;padding: 20px 18px 0;}
+.drawingTool .tabCont dl{display: flex;margin-bottom: 20px;}
+.drawingTool .tabCont dl dt{width: 86px;padding-top: 4px;font-size: 14px;font-weight: 500;letter-spacing: -.8px;}
+.drawingTool .tabCont dl dd{width: 100%;}
+.drawingTool .tabCont dl dd .innerDraw{position: relative;}
+.drawingTool .tabCont dl dd .innerDraw a{position: relative;display: block;padding-left: 18px;line-height: 30px;font-size: 12px;font-weight: 500;letter-spacing: -.7px;}
+.drawingTool .tabCont dl dd .innerDraw .line{position: absolute;top: 14px;left: 54px;right: 40px;height: 1px;background-color: #4a4a4a;}
+.drawingTool .tabCont dl dd .innerDraw .line.px1{height: 1px;top: 14px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px2{height: 2px;top: 14px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px3{height: 3px;top: 13px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px4{height: 4px;top: 13px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px5{height: 5px;top: 12px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px6{height: 6px;top: 12px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px7{height: 7px;top: 11px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px8{height: 8px;top: 11px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px9{height: 9px;top: 10px;}
+.drawingTool .tabCont dl dd .innerDraw .line.px10{height: 10px;top: 10px;}
+.drawingTool .tabCont dl dd .iconsArrow{position: absolute;top: 7px;right: 10px;width: 16px;height: 16px;background-position-x: -75px;}
+.drawingTool .tabCont dl dd .selected{height: 32px;border: solid 1px #ccc;border-radius: 8px;}
+.drawingTool .tabCont dl dd .selBox{display: none;position: absolute;z-index: 9;top: 38px;left: 0;right: 0;height: 167px;padding: 6px 0;border: solid 1px #ccc;background-color: #fff;border-radius: 8px;}
+.drawingTool .tabCont dl dd .innerDraw.open .iconsArrow{background-position-x: -100px;}
+.drawingTool .tabCont dl dd .innerDraw.open .selBox{display: block;}
+.drawingTool .tabCont dl dd .selBoxImg{position: relative;height: 132px;border: solid 1px #ccc;background-color: #f5f5f5;border-radius: 8px;}
+.drawingTool .tabCont dl dd .selBoxImg a{position: relative;display: inline-block;width: 40px;height: 40px;border-radius: 40px;margin: 3px 10px 14px 3px;vertical-align: top;}
+.drawingTool .tabCont dl dd .selBoxImg a.selected{border: 3px solid #f5f5f5;}
+.drawingTool .tabCont dl dd .selBoxImg a.selected:after{content:"";position: absolute;top: -6px;left: -6px;display: block;width: 46px;height: 46px;border: 3px solid #4a4a4a;border-radius: 40px;}
+.drawingTool .tabCont dl dd .selBoxImg a.dim:before{content:"";display: block;position: absolute;z-index: 2;top: 0;left: 0;width: 40px;height: 40px;background: rgba(0,0,0,.4);border-radius: 40px;}
+.drawingTool .tabCont dl dd .selBoxImg a.dim:after{content:"";display: block;position: absolute;z-index: 3;top: 7px;left: 7px;width: 22px;height: 22px;background: url(../imgs/btns_navi.png) no-repeat;background-size: auto 200px;background-position-x: -50px;}
+.drawingTool .tabCont dl dd .selBoxImg img{width: 100%;height: 100%;border-radius: 40px;}
+.drawingTool .tabCont dl dd .selBoxImg .btnAdd{background-color: #ccc;background-position: -447px 4px;}
+.drawingTool .tabCont dl dd .selBoxImg .btnAdd:hover{background-color: #ddd;background-position: -447px 4px !important;}
+.drawingTool .tabCont dl dd .btnWrap{margin: 5px 0 -10px;text-align: right;}
+.drawingTool .tabCont dl dd .btnWrap button{width: 40px;height: 20px;color: #777;font-size: 10px;font-weight: 500;letter-spacing: -.6px;border: 1px solid #ccc;border-radius: 20px;}
+.drawingTool .tabCont dl dd .btnWrap button.btnCancel{background-color: #f5f5f5;}
+.drawingTool .stickerWrap .choiceColor{padding: 4px 0 0 0;}
+.drawingTool .stickerWrap .choiceColor .sticker{margin-right: 10px;}
+.drawingTool .wrapOpacity{position: relative;margin-top: 12px;}
+.drawingTool .wrapOpacity .bar{height: 4px;background-color: #e8e8e8;border-radius: 4px;}
+.drawingTool .wrapOpacity .pointer{position: absolute;top: -6px;width: 16px;height: 16px;border: 3px solid #4a4a4a;background-color: #fff;border-radius: 10px;}
+.drawingTool .wrapOpacity .per{position: absolute;right: 0;top: 10px;color: #777;font-size: 10px;font-weight: 500;}
+.drawingTool .btnWrapBot{padding: 20px 0;text-align: center;}
+.drawingTool .btnWrapBot button{min-width: 88px;height: 32px;margin: 0 3px;padding: 0 10px;font-size: 12px;font-weight: bold;letter-spacing: -.7px;border: 1px solid #ccc;border-radius: 20px;}
+.drawingTool .btnWrapBot button.point{color: #7725ff;border-color: #7725ff;}
+.drawingTool .plugin-scrollbar-bd{top: 6px;bottom: 6px;}
+.drawingTool .selBoxImg .plugin-scrollbar-bd{top: 15px;right: 0px;bottom: 0;left: 15px;}
+.drawingTool .os-theme-dark > .os-scrollbar-vertical, .drawingTool .os-theme-light > .os-scrollbar-vertical {width: 7px;}
+.drawingTool .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {background: rgba(124, 124, 124, 0.4);}
+
 /* 지도 내 마커 및 팝업 */
 
 /* Marker */
@@ -1005,6 +1074,8 @@ span{position:relative;}
 .markerBg:hover>span,.markerBg:focus>span,.markerBg.current>span{color: #fff;}
 .markerBg.relevantPlace>span{font-size: 14px;}
 .markerBg.selected{width: 36px;height: 48px;background-position-x: -50px;}
+.markerBg.selected.number{background-position-x: -300px;}
+.markerBg.selected.number>span{color: #fff;font-size: 20px;line-height: 34px;}
 .markerBg.route{width: 32px;height: 42px;}
 .markerBg.route>span{padding-top: 10px;color: #fff;font-size: 10px;letter-spacing: -.5px;line-height: 1.2;}
 .markerBg.start{background-position-x: -100px;}
@@ -1016,7 +1087,7 @@ span{position:relative;}
 .sticker.stickerMap{position: absolute;width: 32px;height: 32px;background-position-y: -50px;box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);border: solid 2px rgba(0,0,0,.4);}
 
 .bubbleWp{display: flex;position: absolute;background: #fff;border: solid 1px #9b9b9b;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);border-radius: 3px;}
-.bubbleWp:after{content: '';display: block;position: absolute;bottom: -7px;left: -10px;width: 16px;height: 14px;background: url(../imgs/bubble_ar.png) no-repeat;background-size: 16px 14px;}
+.bubbleWp:after{content: '';display: block;position: absolute;width: 16px;height: 14px;background: url(../imgs/bubble_ar.png) no-repeat;background-size: auto 14px;bottom: -7px;left: -10px;background-position-x: -48px;}
 .bubbleWp>div{height: 32px;line-height: 32px;}
 .bubbleWp>div.txt1{padding: 0 10px;letter-spacing: -1px;border-right: 1px solid #9b9b9b;}
 .bubbleWp>div.txt1 .time{font-size: 15px;font-weight: bold;}
@@ -1027,8 +1098,12 @@ span{position:relative;}
 .bubbleWp>div.txt2.type3{background-color: #f5a623;}
 .bubbleWp>div.txt2.type4{background-color: #28c8aa;}
 
-.lyBox.innerMap{display: block;min-width: 300px;border: solid 1px #9b9b9b;top: inherit;right: inherit;}
-.innerMap:after{content: '';display: block;position: absolute;bottom: -7px;left: -10px;width: 16px;height: 14px;background: url(../imgs/bubble_ar.png) no-repeat;background-size: 16px 14px;}
+.lyBox.innerMap{display: block;width: 300px;border: solid 1px #9b9b9b;top: inherit;right: inherit;}
+.innerMap:after{content: '';display: block;position: absolute;width: 16px;height: 14px;background: url(../imgs/bubble_ar.png) no-repeat;background-size: auto 14px;background-position-x: -48px;}
+.innerMap.topLeft:after{top: -7px;left: -10px;background-position-x: 0px;}
+.innerMap.topRight:after{top: -7px;right: -10px;background-position-x: -16px;}
+.innerMap.botRight:after{bottom: -7px;right: -10px;background-position-x: -32px;}
+.innerMap.botLeft:after{bottom: -7px;left: -10px;background-position-x: -48px;}
 .lyBox.innerMap .title{padding-left: 12px;}
 .lyBox.innerMap.simple .title{border-bottom: none;}
 .lyBox.innerMap .btnsSch.ic_bookmark{width: 20px;height: 20px;text-indent: -9999px;background-position-x: -150px;}

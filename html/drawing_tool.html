@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/lib/OverlayScrollbars.css">
+	<link rel="stylesheet" href="../css/gisweb_pc.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/lib/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도영역 -->
+	<div style="height: 100%;background: #000;">
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg);background-size: auto 1289px;opacity:1;"></div>
+	</div>
+	<!-- //지도영역 -->
+
+	<!-- 검색영역 -->
+	<div class="wrapSearch">
+		<button class="btnsBg menuLnb">메뉴</button>
+		<input type="search" placeholder="방문할 목적지를 검색해 주세요.">
+		<div class="iconLoc">
+			<button class="btnsBg btnFind">검색</button>
+			<!-- <button class="btnsBg btnDel">삭제</button> -->
+		</div>
+		<button class="btnsBg findingWay">길찾기</button>
+		<div class="searchList" style="display: none;">
+			<ul>
+				<li><a href="#">예술의전당</a></li>
+				<li><a href="#">예술의전당</a></li>
+				<li><a href="#">예술의전당</a></li>
+			</ul>
+			<div class="autoCompt">
+				<button class="btnOff"><span>자동완성 끄기</span> <span class="btnsBg"></span></button>
+			</div>
+		</div>
+	</div>
+	<!-- //검색영역 -->
+
+	<!-- 공통레이아웃 -->
+	<!--#include virtual="../include/layout.html" -->
+
+	<!-- 그림도구 -->
+	<div class="drawingTool" style="top: 300px;left: 500px;">
+		<div class="header">그림도구</div>
+		<div class="tabMenu">
+			<ul>
+				<li class="current"><a href="#tabDrawing-1"><span class="btnsGnb dw1"></span>포인트</a></li>
+				<li><a href="#tabDrawing-2"><span class="btnsGnb dw2"></span>선</a></li>
+				<li><a href="#tabDrawing-3"><span class="btnsGnb dw3"></span>도형</a></li>
+			</ul>
+		</div>
+		<div class="tabContents">
+			<div id="tabDrawing-1" class="tabCont" style="display: block;">
+				<dl>
+					<dt>크기</dt>
+					<dd>
+						<div class="innerDraw">
+							<div class="selected">
+								<a href="#">5px <span class="iconsArrow"></span></a>
+							</div>
+							<div class="selBox">
+								<div class="plugin-scrollbar-bd">
+									<div class="plugin-scrollbar">
+										<a href="#">5px</a>
+										<a href="#">10px</a>
+										<a href="#">15px</a>
+										<a href="#">20px</a>
+										<a href="#">25px</a>
+										<a href="#">30px</a>
+										<a href="#">35px</a>
+										<a href="#">40px</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>이미지</dt>
+					<dd>
+						<div class="selBoxImg">
+							<div class="plugin-scrollbar-bd">
+								<div class="plugin-scrollbar">
+									<a href="#" class="selected"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#" class="dim"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#" class="btnsBg btnAdd">추가</button>
+									<a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<!-- <a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a>
+									<a href="#"><img src="../imgs/data/@Tulips.jpg" alt=""></a> -->
+								</div>
+							</div>
+						</div>
+						<div class="btnWrap">
+							<button><span>수정</span></button>
+							<!--
+								수정버튼 클릭시
+								1. 저장, 취소버튼 생성
+								2. a태그에 class: selected 삭제, dim 추가
+							-->
+							<button><span>저장</span></button>
+							<button class="btnCancel"><span>취소</span></button>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div id="tabDrawing-2" class="tabCont">
+				<dl>
+					<dt>두께</dt>
+					<dd>
+						<div class="innerDraw">
+							<div class="selected">
+								<a href="#">1px <span class="line"></span> <span class="iconsArrow"></span></a>
+							</div>
+							<div class="selBox">
+								<div class="plugin-scrollbar-bd">
+									<div class="plugin-scrollbar">
+										<a href="#">1px <span class="line px1"></span></a>
+										<a href="#">2px <span class="line px2"></span></a>
+										<a href="#">3px <span class="line px3"></span></a>
+										<a href="#">4px <span class="line px4"></span></a>
+										<a href="#">5px <span class="line px5"></span></a>
+										<a href="#">6px <span class="line px6"></span></a>
+										<a href="#">7px <span class="line px7"></span></a>
+										<a href="#">8px <span class="line px8"></span></a>
+										<a href="#">9px <span class="line px9"></span></a>
+										<a href="#">10px <span class="line px10"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>색상</dt>
+					<dd>
+						<div class="stickerWrap">
+							<div class="choiceColor">
+								<span class="sticker bg1 select"></span>
+								<span class="sticker bg2"></span>
+								<span class="sticker bg3"></span>
+								<span class="sticker bg4"></span>
+								<span class="sticker bg5"></span>
+								<span class="sticker bg6"></span>
+								<span class="sticker bg7"></span>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>투명도</dt>
+					<dd>
+						<div class="wrapOpacity">
+							<div class="bar"></div>
+							<button class="pointer" style="left: 20%;"></button>
+							<div class="per">20%</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div id="tabDrawing-3" class="tabCont">
+				<dl>
+					<dt>선두께</dt>
+					<dd>
+						<div class="innerDraw">
+							<div class="selected">
+								<a href="#">1px <span class="line"></span> <span class="iconsArrow"></span></a>
+							</div>
+							<div class="selBox">
+								<div class="plugin-scrollbar-bd">
+									<div class="plugin-scrollbar">
+										<a href="#">1px <span class="line px1"></span></a>
+										<a href="#">2px <span class="line px2"></span></a>
+										<a href="#">3px <span class="line px3"></span></a>
+										<a href="#">4px <span class="line px4"></span></a>
+										<a href="#">5px <span class="line px5"></span></a>
+										<a href="#">6px <span class="line px6"></span></a>
+										<a href="#">7px <span class="line px7"></span></a>
+										<a href="#">8px <span class="line px8"></span></a>
+										<a href="#">9px <span class="line px9"></span></a>
+										<a href="#">10px <span class="line px10"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>선색상</dt>
+					<dd>
+						<div class="stickerWrap">
+							<div class="choiceColor">
+								<span class="sticker bg1 select"></span>
+								<span class="sticker bg2"></span>
+								<span class="sticker bg3"></span>
+								<span class="sticker bg4"></span>
+								<span class="sticker bg5"></span>
+								<span class="sticker bg6"></span>
+								<span class="sticker bg7"></span>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>면색상</dt>
+					<dd>
+						<div class="stickerWrap">
+							<div class="choiceColor">
+								<span class="sticker bg1"></span>
+								<span class="sticker bg2"></span>
+								<span class="sticker bg3"></span>
+								<span class="sticker bg4"></span>
+								<span class="sticker bg5"></span>
+								<span class="sticker bg6"></span>
+								<span class="sticker bg7"></span>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>투명도</dt>
+					<dd>
+						<div class="wrapOpacity">
+							<div class="bar"></div>
+							<button class="pointer" style="left: 70%;"></button>
+							<div class="per">70%</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="btnWrapBot">
+			<button><span>초기화</span></button>
+			<button class="point"><span>즐겨찾기 저장</span></button>
+		</div>
+		<button class="btnsBg btnClose">닫기</button>
+	</div>
+	<!-- //그림도구 -->
+
+</body>
+</html>
