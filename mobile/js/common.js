@@ -5,12 +5,6 @@ $(document).ready(function(){
 		$(this).addClass("focus");
 	}).focusout(function(){$(this).removeClass("focus");});
 
-	// Navi
-	$(".wrapNavi .menuTop li a").on("click", function(){
-		$(".wrapNavi .menuTop li a").removeClass("current");
-		$(this).addClass("current");
-	});
-
 	// 탭메뉴
 	$(".tabMenu a").click(function(){
 		$(this).parent().addClass("current");
@@ -29,4 +23,33 @@ $(document).ready(function(){
 		return false;
 	});
 
+	// RNB
+	$(".floatMenuRight .btnsBg").on("click", function(){
+		$(".floatMenuRight").addClass("view");
+	});
+	$(".floatMenuRight .btnClose").on("click", function(){
+		$(".floatMenuRight").removeClass("view");
+	});
+	$(".dimmed").on("click", function(){
+		$(".wrapLnb").removeClass("view");
+		$(".dimmed").css("display","none");
+	});
+
 });
+
+function fncLnbOpen(){
+	$(".wrapLnb").addClass("view");
+	$(".dimmed").css("display","block");
+}
+function fncLogin(){
+	$("#loginBefore").css("display","none");
+	$("#loginAfter").css("display","block");
+	$(".lypopLogin").css("display","block");
+}
+function fncLogout(){
+	$("#loginBefore").css("display","block");
+	$("#loginAfter").css("display","none");
+}
+function fncLypooLoginClose(){
+	$(".lypopLogin").css("display","none");
+}

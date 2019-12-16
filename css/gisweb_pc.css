@@ -1105,6 +1105,11 @@ span{position:relative;}
 .innerMap.botRight:after{bottom: -7px;right: -10px;background-position-x: -32px;}
 .innerMap.botLeft:after{bottom: -7px;left: -10px;background-position-x: -48px;}
 .lyBox.innerMap .title{padding-left: 12px;}
+.lyBox.innerMap img.tbt{width: 30px;height: 35px;margin-right: 4px;}
+.lyBox.innerMap .routeMove{padding: 0 20px 10px;text-align: right;}
+.lyBox.innerMap .routeMove .btnsBg{width: 32px;height: 22px;border: 1px solid #ccc;border-radius: 4px;}
+.lyBox.innerMap .routeMove .btnsBg.btnPrev{background-position-x: -943px;}
+.lyBox.innerMap .routeMove .btnsBg.btnNext{background-position-x: -993px;}
 .lyBox.innerMap.simple .title{border-bottom: none;}
 .lyBox.innerMap .btnsSch.ic_bookmark{width: 20px;height: 20px;text-indent: -9999px;background-position-x: -150px;}
 .innerMap .info{margin-bottom: 4px;padding: 12px 90px 0 16px;font-size: 12px;letter-spacing: -.67px;}
