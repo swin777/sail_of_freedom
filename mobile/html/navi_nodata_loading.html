@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/gisweb_mobile.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 메인 헤더 -->
+	<div class="naviHeader">
+		<header>
+			<button class="btnsBg btnLnb" onclick="javascript:fncLnbOpen();">메뉴</button>
+			<h1><a href="#"><img src="../imgs/kt_geo_master.png" alt="kt Geo Master"></a></h1>
+			<button class="btnsBg btnClose">닫기</button>
+
+		</header>
+	</div>
+	<!-- //메인 헤더 -->
+
+	<!-- 길찾기 -->
+	<div class="wrapNavi">
+		<div class="listPoint">
+			<ul>
+				<li>
+					<button class="btnsBg btnSearch">검색</button>
+					<input type="text" placeholder="출발지 검색">
+					<button class="btnsBg btnRefresh">새로고침</button>
+				</li>
+				<li>
+					<button class="btnsBg btnMove">이동</button>
+					<input type="text" placeholder="경유지 검색">
+					<button class="btnsBg btnDel">삭제</button>
+				</li>
+				<li>
+					<button class="btnsBg btnMove">이동</button>
+					<input type="text" placeholder="도착지 검색">
+					<button class="btnsBg btnAdd">추가</button>
+				</li>
+			</ul>
+		</div>
+		<div class="moveWay">
+			<button class="on">자동차</button>
+			<button>대중교통</button>
+			<button disabled="disabled">도보</button>
+			<button disabled="disabled">자전거</button>
+		</div>
+		<div class="placeSelect">
+			<button>
+				<span class="iconsBg iconMyAcc"></span>
+				내 위치
+			</button>
+			<button>
+				<span class="iconsBg iconHome"></span>
+				집
+			</button>
+			<button disabled="disabled">
+				<span class="iconsBg iconOffice"></span>
+				직장
+			</button>
+		</div>
+
+		<!-- 최근검색 -->
+		<div class="recentSch">
+			<div class="list">
+				<div class="nodata">최근 검색/길찾기 결과가 없습니다.</div>
+			</div>
+		</div>
+		<!-- //최근검색 -->
+
+		<!-- loading -->
+		<div class="loading">
+			<div class="loader">
+				<svg class="circular-loader"viewBox="25 25 50 50" >
+				<circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#7725ff" stroke-width="4" />
+				</svg>
+			</div>
+			<div class="txt1">길찾기 실행 중입니다.</div>
+		</div>
+		<!-- //loading -->
+	</div>
+	<!-- //길찾기 -->
+
+	<div class="dimmed"></div>
+
+</body>
+</html>

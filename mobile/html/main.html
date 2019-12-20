@@ -10,17 +10,62 @@
 	<script src="../js/common.js"></script>
 </head>
 <body>
+	<!-- 메인 헤더 -->
+	<div class="mainHeader">
+		<header>
+			<button class="btnsBg btnLnb" onclick="javascript:fncLnbOpen();">메뉴</button>
+			<h1><a href="#"><img src="../imgs/kt_geo_master.png" alt="kt Geo Master"></a></h1>
 
-	<!-- 지도영역 -->
-	<div style="height: 100%;background: #000;">
-		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg) center;background-size: auto 1289px;opacity:1;"></div>
+			<!-- 장소,주소 검색 -->
+			<div class="wrapSearch">
+				<div class="innerInp">
+					<button class="btnsBg btnSearch">검색</button>
+					<input type="search" placeholder="장소, 주소 검색">
+					<button class="btnsBg btnRoadFind">길찾기</button>
+				</div>
+			</div>
+			<!-- //장소,주소 검색 -->
+		</header>
 	</div>
-	<!-- //지도영역 -->
+	<!-- //메인 헤더 -->
 
-	<header>
-		<button class="btnsBg btnLnb" onclick="javascript:fncLnbOpen();">메뉴</button>
-		<h1><a href="#"><img src="../imgs/kt_geo_master.png" alt="kt Geo Master"></a></h1>
-	</header>
+	<!-- 지도 및 플로팅버튼 -->
+	<div class="wrapCont">
+		<div class="mapSchTop">
+			<!-- 플로팅 메뉴 -->
+			<div class="mapBtnTop">
+				<!-- 왼쪽 -->
+				<div class="floatMenuLeft">
+					<button class="myAccessLoc">
+						<span class="btnsBg">현재위치</span>
+					</button>
+					<div class="zoom">
+						<button><span class="btnsBg btnZoomIn">확대</span></button>
+						<button><span class="btnsBg btnZoomOut">축소</span></button>
+					</div>
+				</div>
+				<!-- //왼쪽 -->
+
+				<!-- 오른쪽 -->
+				<div class="floatMenuRight">
+					<div class="rnb">
+						<ul>
+							<li><button class="btnsBg btnClose">닫기</button></li>
+							<li><button class="btnsBg btnMap1"><span>일반지도</span></button></li>
+							<li><button class="btnsBg btnMap2 on"><span>위성지도</span></button></li>
+							<li><button class="btnsBg btnTraffic"><span>교통정보</span></button></li>
+						</ul>
+					</div>
+				</div>
+				<!-- //오른쪽 -->
+			</div>
+			<!-- //플로팅 메뉴 -->
+		</div>
+		<!-- 지도영역 -->
+		<div class="mapWrapper"></div>
+		<!-- //지도영역 -->
+	</div>
+	<!-- //지도 및 플로팅버튼 -->
 
 	<!-- LNB -->
 	<div class="wrapLnb">
@@ -65,6 +110,7 @@
 			<a href="#"><img src="../imgs/data/banner_onenavi.png" alt="당신이 찾는 모든 길 안내 - 원내비"></a></li>
 		</div>
 	</div>
+	<div class="dimmedLnb"></div>
 	<!-- //LNB -->
 
 	<!-- 로그인 팝업 -->
@@ -94,62 +140,74 @@
 	<!-- //로그인 팝업 -->
 
 	<!-- 내 즐겨찾기 -->
-	<div class="lypop lypopBookmark">
+	<div class="lypop lypopBookmark" style="display: none;">
 		<header>
-			<button class="btnsBg btnPrev" onclick="javascript:();">이전</button>
+			<button class="btnsBg btnPrev" onclick="javascript:fncCloseBookmark();">이전</button>
 			<div class="title">내 즐겨찾기</div>
-			<button class="btnsBg btnClose" onclick="javascript:fncLypooBookmark();">닫기</button>
+			<button class="btnsBg btnClose" onclick="javascript:fncCloseLnb();">닫기</button>
 		</header>
 		<div class="myPosition">
-			<a href="#">
-				<span class="iconsBg"></span>
+			<a>
+				<span class="iconsBg iconHome"></span>
 				<span class="tx1">집</span>
-				<span class="address">PC에서 등록 가능합니다.</span>
+				<span class="tx2 disabled">PC에서 등록 가능합니다.</span>
 			</a>
 			<a href="#">
-				<span class="iconsBg"></span>
+				<span class="iconsBg iconOffice"></span>
 				<span class="tx1">직장</span>
-				<span class="address">PC에서 등록 가능합니다.</span>
+				<span class="tx2">서울시 동작구 보라매로 5길 23</span>
+			</a>
+		</div>
+		<div class="myBookmark myPlace">
+			<a href="#">
+				<span class="iconsBg iconMyPlace"></span>
+				내 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg iconOneNavi"></span>
+				원내비 즐겨찾기 (<span class="num">33</span>)
+			</a>
+		</div>
+		<div class="myBookmark">
+			<a href="#">
+				<span class="iconsBg sticker ic1 bg1"></span>
+				주말 산행 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg sticker ic2 bg2"></span>
+				주말 산행 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg sticker ic3 bg3"></span>
+				주말 산행 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg sticker ic4 bg4"></span>
+				주말 산행 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg sticker ic5 bg5"></span>
+				주말 산행 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg sticker ic6 bg6"></span>
+				주말 산행 장소 (<span class="num">33</span>)
+			</a>
+			<a href="#">
+				<span class="iconsBg sticker ic7 bg7"></span>
+				주말 산행 장소 (<span class="num">33</span>)
 			</a>
 		</div>
 	</div>
 	<!-- //내 즐겨찾기 -->
 
-	<div class="wrapSearch">
-		<div class="innerInp">
-			<button class="btnsBg btnSearch">검색</button>
-			<input type="search" placeholder="장소, 주소 검색">
-			<button class="btnsBg btnRoadFind">길찾기</button>
-		</div>
-	</div>
+	<!-- 내 장소 -->
 
-	<!-- 왼쪽 플로팅 메뉴 -->
-	<div class="floatMenuLeft">
-		<button class="myAccessLoc">
-			<span class="btnsBg">현재위치</span>
-		</button>
-		<div class="zoom">
-			<button><span class="btnsBg btnZoomIn">확대</span></button>
-			<button><span class="btnsBg btnZoomOut">축소</span></button>
-		</div>
+	<!-- 토스트팝업 -->
+	<div class="toastMsg">
+		<p>설정에서 위치 기능 사용을 승인해 주세요.</p>
 	</div>
-	<!-- //왼쪽 플로팅 메뉴 -->
-
-	<!-- 오른쪽 플로팅 메뉴 -->
-	<div class="floatMenuRight">
-		<div class="rnb">
-			<ul>
-				<li><button class="btnsBg btnClose">닫기</button></li>
-				<li><button class="btnsBg btnMap1"><span>일반지도</span></button></li>
-				<li><button class="btnsBg btnMap2 on"><span>위성지도</span></button></li>
-				<li><button class="btnsBg btnTraffic"><span>교통정보</span></button></li>
-			</ul>
-		</div>
-		<div class="toastMsg">
-			<p>설정에서 위치 기능 사용을 승인해 주세요.</p>
-		</div>
-	</div>
-	<!-- //오른쪽 플로팅 메뉴 -->
+	<!-- //토스트팝업 -->
 
 	<div class="dimmed"></div>
 

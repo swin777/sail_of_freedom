@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<title>GIS WEB</title>
+	<link rel="stylesheet" href="../css/gisweb_mobile.css">
+	<script src="../js/lib/jquery-2.1.4.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+
+	<!-- 지도 및 플로팅버튼 -->
+	<div class="wrapCont" style="height:100%;">
+		<!-- 지도영역 -->
+		<div style="height: 100%;background: url(../imgs/data/@bg_map.jpg) center;background-size: auto 1289px;opacity:1;"><!-- height = body - .mainHeader --></div>
+		<!-- //지도영역 -->
+	</div>
+	<!-- //지도 및 플로팅버튼 -->
+
+	<a href="#" class="markerBg" style="top: 100px;left: 20px;"></a>
+	<a href="#" class="markerBg selected" style="top: 150px;left: 20px;"></a>
+	<a href="#" class="markerBg selected" style="top: 200px;left: 20px;">
+		<span class="markerBg bookmark"></span>
+	</a>
+	<a href="#" class="markerBg address" style="top: 250px;left: 20px;"></a>
+	<a href="#" class="markerBg address" style="top: 300px;left: 20px;">
+		<span class="markerBg bookmark"></span>
+	</a>
+
+	<a href="#" style="position: absolute;top: 100px;left: 80px;"><img src="../imgs/data/theme_parking.png" alt="" style="width: 20px;height: 20px;"></a>
+	<a href="#" style="position: absolute;top: 140px;left: 80px;"><img src="../imgs/data/theme_bank.png" alt="" style="width: 20px;height: 20px;"></a>
+	<a href="#" style="position: absolute;top: 180px;left: 80px;"><img src="../imgs/data/theme_lpg.png" alt="" style="width: 20px;height: 20px;"></a>
+	<a href="#" style="position: absolute;top: 220px;left: 80px;"><img src="../imgs/data/theme_parking.png" alt="" style="width: 30px;height: 30px;"></a>
+	<a href="#" style="position: absolute;top: 260px;left: 80px;">
+		<img src="../imgs/data/theme_parking.png" alt="" style="width: 30px;height: 30px;">
+		<span class="markerBg bookmark"></span>
+	</a>
+
+	<a href="#" class="markerBg route start" style="top: 100px;left: 140px;">
+		<span>출발</span>
+	</a>
+	<a href="#" class="markerBg route wayPoint" style="top: 150px;left: 140px;">
+		<span>경유</span>
+	</a>
+	<a href="#" class="markerBg route finish" style="top: 200px;left: 140px;">
+		<span>도착</span>
+	</a>
+	<a href="#" class="markerBg route wayNum" style="top: 250px;left: 140px;">
+		<span>3</span>
+	</a>
+
+	<a href="#" class="stickerMap ic1 bg1" style="top: 100px;left: 190px;"></a>
+	<a href="#" class="stickerMap ic2 bg2" style="top: 140px;left: 190px;"></a>
+	<a href="#" class="stickerMap ic3 bg3" style="top: 180px;left: 190px;"></a>
+	<a href="#" class="stickerMap ic4 bg4" style="top: 220px;left: 190px;"></a>
+	<a href="#" class="stickerMap ic5 bg5" style="top: 260px;left: 190px;"></a>
+	<a href="#" class="stickerMap ic6 bg6" style="top: 300px;left: 190px;"></a>
+	<a href="#" class="stickerMap ic7 bg7" style="top: 340px;left: 190px;"></a>
+
+	<div class="bubbleWp type1 botLeft" style="bottom: 200px;left: 20px;">
+		<div class="txt2">적극추천</div>
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">122,34km</span>
+		</div>
+	</div>
+	<div class="bubbleWp type2 botRight" style="bottom: 200px;left: 220px;">
+		<div class="txt2">가장빠름</div>
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">122,34km</span>
+		</div>
+	</div>
+	<div class="bubbleWp type3 botLeft" style="bottom: 100px;left: 20px;">
+		<div class="txt2">가장짧음</div>
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">122,34km</span>
+		</div>
+	</div>
+	<div class="bubbleWp type4 botRight" style="bottom: 100px;left: 220px;">
+		<div class="txt2">통행료 무료</div>
+		<div class="txt1">
+			<span class="time">30분</span>
+			<span class="km">122,34km</span>
+		</div>
+	</div>
+
+
+</body>
+</html>

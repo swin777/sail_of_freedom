@@ -225,7 +225,7 @@ span{position:relative;}
 .wrapNavi.naviRoute .tabCont .innerCont .detail li{padding: 17px 20px 15px 92px;color: #888;font-size: 14px;font-weight: normal;border-bottom: none;}
 .wrapNavi.naviRoute .tabCont .innerCont .detail li:after{content: "";display: block;position: absolute;right: 15px;bottom: 0;left: 92px;height: 1px;border-bottom: 1px solid #f5f5f5;}
 .wrapNavi.naviRoute .tabCont .innerCont .detail li:last-child:after{display: none;}
-.wrapNavi.naviRoute .tabCont .innerCont .detail li img{position: absolute;top: 50%;left: 17px;margin-top: -17px;width: 30px;height: 35px;border: 1px solid #999;}
+.wrapNavi.naviRoute .tabCont .innerCont .detail li img{position: absolute;top: 50%;left: 17px;margin-top: -17px;width: 30px;height: 35px;}
 .wrapNavi.naviRoute .tabCont .innerCont .detail li .num{position: absolute;top: 50%;left: 61px;margin-top: -8px;display: block;padding: 0 4px 0 3px;min-width: 16px;height: 16px;line-height: 15px;color: #888;font-size: 10px;text-align: center;border: 1px solid #e8e8e8;border-radius: 16px;}
 
 .wayPointSelect{position: absolute;bottom: 178px;left: 40%;}
@@ -1105,11 +1105,13 @@ span{position:relative;}
 .innerMap.botRight:after{bottom: -7px;right: -10px;background-position-x: -32px;}
 .innerMap.botLeft:after{bottom: -7px;left: -10px;background-position-x: -48px;}
 .lyBox.innerMap .title{padding-left: 12px;}
-.lyBox.innerMap img.tbt{width: 30px;height: 35px;margin-right: 4px;}
-.lyBox.innerMap .routeMove{padding: 0 20px 10px;text-align: right;}
-.lyBox.innerMap .routeMove .btnsBg{width: 32px;height: 22px;border: 1px solid #ccc;border-radius: 4px;}
-.lyBox.innerMap .routeMove .btnsBg.btnPrev{background-position-x: -943px;}
-.lyBox.innerMap .routeMove .btnsBg.btnNext{background-position-x: -993px;}
+.lyBox.innerMap .title .txt1{padding: 12px 0 2px 40px;font-size: 14px;line-height: 1.4;}
+.lyBox.innerMap .title .txt2{padding: 0 0 0 40px;color: #7725ff;font-size: 16px;line-height: 1.4;}
+.lyBox.innerMap img.tbt{position: absolute;top: 5px;width: 30px;height: 35px;margin-right: 4px;}
+.lyBox.innerMap .routeMove{padding: 10px 15px 10px;text-align: right;}
+.lyBox.innerMap .routeMove .btnsBg{width: 24px;height: 24px;margin-right: -5px;border: 1px solid #ccc;}
+.lyBox.innerMap .routeMove .btnsBg.btnPrev{background-position-x: -950px;border-radius: 4px 0 0 4px;}
+.lyBox.innerMap .routeMove .btnsBg.btnNext{background-position-x: -999px;border-radius: 0 4px 4px 0;}
 .lyBox.innerMap.simple .title{border-bottom: none;}
 .lyBox.innerMap .btnsSch.ic_bookmark{width: 20px;height: 20px;text-indent: -9999px;background-position-x: -150px;}
 .innerMap .info{margin-bottom: 4px;padding: 12px 90px 0 16px;font-size: 12px;letter-spacing: -.67px;}
